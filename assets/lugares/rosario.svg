@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Monumento a la Bandera">
+  <rect width="640" height="360" fill="#12304a"/>
+  <rect y="250" width="640" height="110" fill="#0d2438"/>
+  <rect x="280" y="40" width="80" height="230" fill="#e8eef5"/>
+  <polygon points="360,55 520,90 360,125" fill="#74acdf"/>
+  <rect x="200" y="250" width="240" height="28" fill="#d7e2ea"/>
+  <circle cx="320" cy="90" r="10" fill="#ffc43a"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Caminito">
+  <rect width="640" height="360" fill="#1a2740"/>
+  <rect x="40" y="90" width="120" height="180" fill="#e23d3d"/>
+  <rect x="160" y="70" width="120" height="200" fill="#f0c419"/>
+  <rect x="280" y="110" width="120" height="160" fill="#2aa7e0"/>
+  <rect x="400" y="60" width="120" height="210" fill="#3ecf7a"/>
+  <rect x="520" y="100" width="90" height="170" fill="#c45cff"/>
+  <g fill="#0b1624" opacity="0.45">
+    <rect x="58" y="118" width="28" height="28"/>
+    <rect x="108" y="118" width="28" height="28"/>
+    <rect x="182" y="100" width="28" height="28"/>
+    <rect x="230" y="100" width="28" height="28"/>
+    <rect x="304" y="138" width="28" height="28"/>
+    <rect x="424" y="90" width="28" height="28"/>
+  </g>
+  <rect y="270" width="640" height="90" fill="#c45b1c"/>
+  <path d="M0 300 Q160 250 320 300 T640 300" fill="none" stroke="#ffc43a" stroke-width="8"/>
+</svg>

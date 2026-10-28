@@ -1,0 +1,352 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0.85rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--azul);
+  font-weight: 800;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 50% 50%, var(--sol) 0 28%, transparent 29%),
+    linear-gradient(180deg, var(--celeste) 0 33%, #fff 33% 66%, var(--celeste) 66% 100%);
+  border: 1px solid #c5d9ec;
+  flex-shrink: 0;
+}
+
+.brand small {
+  display: block;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--celeste-oscuro);
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--sidebar);
+  z-index: 60;
+  background: #fff;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.9rem 0.5rem 1rem;
+  gap: 0.35rem;
+}
+
+.sidebar-brand {
+  display: grid;
+  place-items: center;
+  margin-bottom: 0.8rem;
+  text-decoration: none;
+}
+
+.sidebar-brand .brand-mark {
+  width: 46px;
+  height: 46px;
+}
+
+.sidebar a.nav-item,
+.sidebar button.nav-item {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: 0.2rem;
+  text-decoration: none;
+  color: var(--azul);
+  padding: 0.55rem 0.2rem;
+  border: 0;
+  background: transparent;
+  border-radius: 16px;
+  font: 700 0.68rem/1.1 var(--fuente);
+  cursor: pointer;
+}
+
+.sidebar svg,
+.dock svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sidebar a.nav-item:hover,
+.sidebar button.nav-item:hover,
+.sidebar a.nav-item[aria-current="page"],
+.sidebar button.nav-item[aria-current="true"] {
+  background: #eaf4fc;
+  color: var(--azul-medio);
+}
+
+.dock {
+  display: none;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.5rem 1.1rem 3rem;
+}
+
+.stripes {
+  height: 8px;
+  background: linear-gradient(
+    90deg,
+    var(--celeste) 0 33%,
+    #fff 33% 66%,
+    var(--celeste) 66% 100%
+  );
+}
+
+.site-footer {
+  background: var(--azul);
+  color: #d7e6f3;
+  padding: 2rem 1.1rem;
+}
+
+.site-footer a {
+  color: var(--sol);
+}
+
+.footer-grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.site-footer h2 {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.sheet {
+  display: none;
+}
+
+.sheet.is-open {
+  display: block;
+  position: fixed;
+  left: calc(var(--sidebar) + 12px);
+  top: 12px;
+  bottom: 12px;
+  width: min(340px, calc(100vw - 130px));
+  z-index: 80;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 1.1rem;
+  overflow: auto;
+  box-shadow: var(--sombra);
+}
+
+.sheet h2 {
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}
+
+.sheet a {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+  color: var(--azul);
+  padding: 0.7rem 0.3rem;
+  border-bottom: 1px solid var(--gris);
+  font-weight: 700;
+}
+
+.magazine {
+  display: grid;
+  grid-template-columns: 1.45fr 0.9fr;
+  gap: 1rem;
+  margin: 1.2rem auto 0;
+  max-width: var(--max);
+  padding: 0 1.1rem 1.2rem;
+}
+
+.feature,
+.play-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  min-height: 280px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.3rem;
+  background: #4a7eab center/cover no-repeat;
+  box-shadow: var(--sombra);
+}
+
+.play-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.play-card {
+  min-height: 134px;
+}
+
+.feature.has-photo,
+.play-card.has-photo,
+.page-hero.has-photo,
+.tile.has-photo {
+  background-color: #1c4a73;
+}
+
+.feature::after,
+.play-card::after,
+.tile::after,
+.page-hero.has-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 20%, rgba(18, 51, 84, 0.82) 100%);
+}
+
+.feature:not(.has-photo)::after,
+.play-card:not(.has-photo)::after,
+.tile:not(.has-photo)::after {
+  background: linear-gradient(180deg, transparent 45%, rgba(18, 51, 84, 0.4) 100%);
+}
+
+.feature > *,
+.play-card > *,
+.tile > *,
+.page-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.feature h1,
+.play-card h2,
+.tile h3 {
+  color: #fff;
+  margin: 0.2rem 0 0.35rem;
+}
+
+.feature p,
+.play-card p {
+  color: #eaf3fa;
+  margin: 0;
+}
+
+.mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  max-width: var(--max);
+  margin: 0 auto 2.5rem;
+  padding: 0 1.1rem;
+}
+
+.tile {
+  position: relative;
+  min-height: 150px;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.9rem;
+  background: #74acdf center/cover no-repeat;
+}
+
+.home-intro {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.4rem 1.1rem 0.4rem;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    display: none;
+  }
+
+  .sheet.is-open {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    top: auto;
+    bottom: 92px;
+    max-height: 55vh;
+  }
+
+  .dock {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    z-index: 70;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 0.35rem;
+    box-shadow: var(--sombra);
+  }
+
+  .dock a,
+  .dock button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--azul);
+    text-decoration: none;
+    display: grid;
+    justify-items: center;
+    gap: 0.15rem;
+    padding: 0.45rem 0.15rem;
+    border-radius: 16px;
+    font: 700 0.62rem/1 var(--fuente);
+    cursor: pointer;
+  }
+
+  .dock a[aria-current="page"],
+  .dock button[aria-current="true"],
+  .dock a:hover,
+  .dock button:hover {
+    background: #eaf4fc;
+  }
+
+  .magazine,
+  .mosaic {
+    grid-template-columns: 1fr;
+  }
+}

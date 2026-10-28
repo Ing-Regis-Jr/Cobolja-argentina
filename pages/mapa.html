@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mapa interactivo · Argentina 2026</title>
+    <link rel="icon" href="../assets/icons/sol.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/activities.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body data-base="../">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header" id="site-header"></header>
+    <main class="wrap" id="contenido">
+      <div class="page-hero" data-img="mapa.jpg" data-hint="Poné assets/img/mapa.jpg · paisaje o mapa de Argentina">
+        <p class="section-kicker">Actividad 1</p>
+        <h1>Mapa real de Argentina</h1>
+        <p>
+          Filtrá por tema, abrí un marcador o lanzá el recorrido guiado. Cada punto tiene
+          ilustración, dato curioso y una ficha. Si más adelante cargan fotos reales, van en
+          <code>assets/lugares/</code>.
+        </p>
+      </div>
+      <section class="map-layout">
+        <div class="map-shell">
+          <div class="filter-row" role="group" aria-label="Filtrar por categoría">
+            <button type="button" class="is-active" data-filter="todas">Todas</button>
+            <button type="button" data-filter="historia">Historia</button>
+            <button type="button" data-filter="cultura">Cultura</button>
+            <button type="button" data-filter="turismo">Turismo</button>
+            <button type="button" data-filter="naturaleza">Naturaleza</button>
+            <button type="button" class="btn btn-primary" id="tour-btn">Recorrido guiado</button>
+          </div>
+          <div id="map" role="application" aria-label="Mapa de Argentina con marcadores"></div>
+        </div>
+        <aside class="place-panel" id="place-panel" aria-live="polite"></aside>
+      </section>
+      <ul class="place-rail" id="place-rail"></ul>
+    </main>
+    <footer class="site-footer" id="site-footer"></footer>
+    <script src="../js/config.js"></script>
+    <script src="../js/nav.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="../data/lugares.js"></script>
+    <script src="../js/map.js"></script>
+  </body>
+</html>

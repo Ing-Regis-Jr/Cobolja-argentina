@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Teatro Colón">
+  <rect width="640" height="360" fill="#1b1430"/>
+  <rect y="250" width="640" height="110" fill="#120e22"/>
+  <rect x="90" y="130" width="460" height="140" fill="#e8d7b0"/>
+  <path d="M90 130h460l-40-48H130z" fill="#d4bf91"/>
+  <circle cx="320" cy="78" r="34" fill="#c9a44a"/>
+  <g fill="#f4ead2">
+    <rect x="130" y="150" width="22" height="120"/>
+    <rect x="190" y="150" width="22" height="120"/>
+    <rect x="250" y="150" width="22" height="120"/>
+    <rect x="368" y="150" width="22" height="120"/>
+    <rect x="428" y="150" width="22" height="120"/>
+    <rect x="488" y="150" width="22" height="120"/>
+  </g>
+  <rect x="292" y="188" width="56" height="82" fill="#5b3b1c"/>
+</svg>

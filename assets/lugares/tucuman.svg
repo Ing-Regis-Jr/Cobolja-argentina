@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Casa Histórica de Tucumán">
+  <rect width="640" height="360" fill="#142c20"/>
+  <rect y="230" width="640" height="130" fill="#1d3b2a"/>
+  <polygon points="80,210 320,70 560,210" fill="#c9a227"/>
+  <rect x="120" y="210" width="400" height="110" fill="#f3e2c2"/>
+  <rect x="290" y="248" width="60" height="72" fill="#6b3f24"/>
+  <rect x="170" y="248" width="54" height="42" fill="#3d6ea8"/>
+  <rect x="416" y="248" width="54" height="42" fill="#3d6ea8"/>
+  <rect x="250" y="40" width="16" height="50" fill="#d9d9d9"/>
+  <rect x="238" y="30" width="40" height="16" fill="#c53030"/>
+</svg>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trivia · Argentina 2026</title>
+    <link rel="icon" href="../assets/icons/sol.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/activities.css" />
+  </head>
+  <body data-base="../">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header" id="site-header"></header>
+    <main class="wrap" id="contenido">
+      <div class="page-hero" data-img="trivia.jpg" data-hint="Poné assets/img/trivia.jpg · bandera o aula">
+        <p class="section-kicker">Actividad 2</p>
+        <h1>Trivia educativa</h1>
+        <p>
+          Jugá con las preguntas del curso o abrí el banco para crear, editar y eliminar ítems.
+          El puntaje se calcula solo. Al terminar podés repetir o enviar un apodo al ranking.
+        </p>
+      </div>
+      <div class="mode-tabs" role="tablist" aria-label="Modo de trivia">
+        <button type="button" class="is-active" data-mode="play">Jugar</button>
+        <button type="button" data-mode="edit">Banco de preguntas</button>
+      </div>
+      <section class="quiz-shell" id="trivia-app"></section>
+      <section class="editor-shell" id="trivia-editor" hidden></section>
+    </main>
+    <footer class="site-footer" id="site-footer"></footer>
+    <script src="../js/config.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../data/preguntas.js"></script>
+    <script src="../js/ranking.js"></script>
+    <script src="../js/trivia.js"></script>
+  </body>
+</html>

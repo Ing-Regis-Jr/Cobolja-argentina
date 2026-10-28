@@ -1,0 +1,40 @@
+Guardá acá las fotos con ESTOS nombres (jpg o jpeg; si usás png, renombrala a .jpg).
+Tamaño cómodo: 1600 px de ancho, archivo de menos de 800 KB.
+
+INICIO
+- historia.jpg     Casa Histórica de Tucumán, Congreso o jura de la independencia
+- mapa.jpg         Paisaje amplio de Argentina o un mapa impreso/atractivo
+- trivia.jpg       Bandera, aula o chicos en la feria (sin caras si no hay permiso)
+- identidad.jpg    Bandera argentina o Casa Rosada
+- cultura.jpg      Tango, Caminito o mate
+- sociedad.jpg     Escuela pública, plaza o ciudad
+- legislacion.jpg  Congreso de la Nación o una escuela
+- deportes.jpg     Selección, cancha o copa (uso educativo)
+- ciencia.jpg      Laboratorio, satélite o edificio CONICET
+- economia.jpg     Campo, sojera, Vaca Muerta o puerto
+- gastronomia.jpg  Asado, empanadas o alfajores
+
+DENTRO DE CADA SECCIÓN (además de la de cabecera)
+identidad-bandera.jpg
+identidad-geografia.jpg     Andes, pampa, Iguazú o glaciar
+historia-origenes.jpg       Pueblos originarios o virreinato (museo)
+historia-independencia.jpg  San Martín, cruce de los Andes o Tucumán
+cultura-tango.jpg
+cultura-mate.jpg
+sociedad-escuela.jpg
+sociedad-ciudad.jpg
+legislacion-congreso.jpg
+legislacion-aula.jpg
+deportes-futbol.jpg
+deportes-otros.jpg          Leonas, Pumas, básquet o polo
+ciencia-conicet.jpg
+ciencia-satelite.jpg
+economia-campo.jpg
+economia-energia.jpg
+gastronomia-asado.jpg
+gastronomia-empanadas.jpg
+datos.jpg                   Infografía o paisaje impactante
+conclusion.jpg              Bandera al viento o grupo del curso (con permiso)
+
+Buscá en Wikimedia Commons o Unsplash con licencia libre y descargá vos.
+No hace falta subtitular el archivo: el sitio muestra un recuadro celeste hasta que la foto exista.

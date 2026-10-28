@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Casa Rosada">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#14375c"/>
+      <stop offset="1" stop-color="#0b2238"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#sky)"/>
+  <rect y="250" width="640" height="110" fill="#0a1a2b"/>
+  <rect x="70" y="120" width="500" height="160" rx="6" fill="#e7a0b4"/>
+  <rect x="70" y="92" width="500" height="36" fill="#d9889f"/>
+  <rect x="270" y="58" width="100" height="42" fill="#f0b8c6"/>
+  <circle cx="320" cy="58" r="18" fill="#ffc43a"/>
+  <g fill="#7a3b4d">
+    <rect x="110" y="150" width="36" height="70" rx="18"/>
+    <rect x="170" y="150" width="36" height="70" rx="18"/>
+    <rect x="230" y="150" width="36" height="70" rx="18"/>
+    <rect x="374" y="150" width="36" height="70" rx="18"/>
+    <rect x="434" y="150" width="36" height="70" rx="18"/>
+    <rect x="494" y="150" width="36" height="70" rx="18"/>
+  </g>
+  <rect x="292" y="168" width="56" height="112" fill="#8a4256"/>
+  <rect x="0" y="278" width="640" height="18" fill="#74acdf"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Salinas Grandes">
+  <rect width="640" height="200" fill="#5b2a86"/>
+  <polygon points="0,160 120,80 240,140 360,50 500,120 640,70 640,200 0,200" fill="#e07a3d"/>
+  <rect y="190" width="640" height="170" fill="#f4fbff"/>
+  <g stroke="#d7e6f2" stroke-width="2">
+    <path d="M0 230h640M0 270h640M0 310h640"/>
+    <path d="M80 190v170M180 190v170M300 190v170M430 190v170M550 190v170"/>
+  </g>
+  <circle cx="520" cy="70" r="28" fill="#ffc43a"/>
+</svg>

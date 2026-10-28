@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Cataratas del Iguazú">
+  <rect width="640" height="360" fill="#0d2a3a"/>
+  <rect y="40" width="640" height="80" fill="#1f6b46"/>
+  <path d="M0 120h250l40 160H0z" fill="#3aa0c8"/>
+  <path d="M250 120h140l20 160H290z" fill="#7ad7ff"/>
+  <path d="M390 120h250v160H410z" fill="#3aa0c8"/>
+  <rect y="270" width="640" height="90" fill="#0b4f6b"/>
+  <g fill="#2ee59d">
+    <circle cx="70" cy="70" r="18"/>
+    <circle cx="140" cy="58" r="22"/>
+    <circle cx="500" cy="64" r="20"/>
+    <circle cx="580" cy="78" r="16"/>
+  </g>
+</svg>

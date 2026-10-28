@@ -1,0 +1,112 @@
+:root {
+  --celeste: #74acdf;
+  --celeste-oscuro: #3d7eb3;
+  --blanco: #ffffff;
+  --papel: #f6f8fb;
+  --azul: #123354;
+  --azul-medio: #1c4a73;
+  --sol: #f6b40e;
+  --gris: #eef3f8;
+  --texto: #1c2a3a;
+  --muted: #5b6d80;
+  --ok: #1b7f4a;
+  --error: #b42318;
+  --sombra: 0 16px 40px rgba(18, 51, 84, 0.08);
+  --radio: 18px;
+  --max: 1160px;
+  --fuente: "Atkinson Hyperlegible", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --sidebar: 96px;
+  --dock: 74px;
+  --line: #d7e3ef;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  color: var(--texto);
+  background: var(--papel);
+  line-height: 1.65;
+  font-size: 1.05rem;
+  min-height: 100vh;
+  padding-left: var(--sidebar);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--azul-medio);
+}
+
+a:hover {
+  color: var(--celeste-oscuro);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  color: var(--azul);
+  margin-top: 0;
+  font-weight: 700;
+}
+
+p {
+  margin-top: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  background: #fff6d6;
+  color: #7a5b00;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--sol);
+  color: var(--azul);
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+code {
+  font-size: 0.9em;
+  background: var(--gris);
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+}
+
+@media (max-width: 900px) {
+  body {
+    padding-left: 0;
+    padding-bottom: calc(var(--dock) + 12px);
+  }
+}
