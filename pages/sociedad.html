@@ -3,75 +3,262 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Sociedad argentina: organización, educación, salud, situación actual y desafíos."
+    />
     <title>Sociedad · Argentina 2026</title>
     <link rel="icon" href="../assets/icons/sol.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/secciones.css" />
   </head>
   <body data-base="../">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <header class="site-header" id="site-header"></header>
     <main class="wrap" id="contenido">
       <article class="prose">
-        <div class="page-hero" data-img="sociedad.jpg" data-hint="Poné assets/img/sociedad.jpg · plaza, escuela o ciudad">
-          <p class="section-kicker">Investigación</p>
+        <div
+          class="page-hero"
+          data-img="sociedad.jpg"
+          data-hint="Imagen de la sociedad argentina"
+        >
+          <p class="section-kicker">Sección D</p>
           <h1>Sociedad</h1>
-          <p>Educación, salud, organización social y desafíos que conviene citar con datos actualizados.</p>
-          <span class="badge">Actualizar indicadores 2026 con INDEC y ministerios</span>
+          <p>
+            Cómo se organiza el país, cómo se educa y se cuida la salud, y qué
+            desafíos aparecen en las estadísticas oficiales.
+          </p>
         </div>
-        <div class="split">
-          <div>
-            <h2>Organización social</h2>
-            <p>
-              La sociedad argentina es mayoritariamente urbana. Gran parte de la población se concentra
-              en el Área Metropolitana de Buenos Aires y en ciudades como Córdoba, Rosario, Mendoza y
-              Tucumán. Hay comunidades indígenas y una historia de inmigración europea, latinoamericana
-              y, en menor medida, asiática.
-            </p>
-            <h2>Educación</h2>
-            <p>
-              La educación inicial, primaria y secundaria es obligatoria. Las universidades nacionales
-              públicas —como la UBA, la UNC o la UNLP— son un rasgo distintivo: el acceso de grado en
-              muchas de ellas no cobra arancel. El debate escolar suele incluir calidad, deserción y
-              desigualdad entre provincias.
-            </p>
+
+        <div class="sec-intro">
+          <p>
+            Cinco miradas, en orden. Los números llevan año y fuente para poder
+            verificarlos.
+          </p>
+        </div>
+
+        <div class="sec-cifras">
+          <div class="sec-cifra">
+            <strong>92&nbsp;%</strong>
+            <span>Población urbana (Censo 2022)</span>
           </div>
-          <figure class="shot" data-img="sociedad-escuela.jpg" data-alt="Escuela pública">
-            <figcaption>Archivo: sociedad-escuela.jpg · escuela o universidad pública</figcaption>
-          </figure>
-        </div>
-        <div class="split">
-          <figure class="shot" data-img="sociedad-ciudad.jpg" data-alt="Ciudad argentina">
-            <figcaption>Archivo: sociedad-ciudad.jpg · skyline, plaza o transporte urbano</figcaption>
-          </figure>
-          <div>
-            <h2>Salud</h2>
-            <p>
-              El sistema combina hospitales públicos, obras sociales y prepagas. La cobertura pública
-              es un derecho, pero el acceso real varía según el territorio. Para la feria, usen cifras
-              oficiales de natalidad, esperanza de vida o vacunación del último anuario disponible.
-            </p>
-            <h2>Desafíos actuales</h2>
-            <p>
-              Pobreza, inflación, empleo informal y brecha digital aparecen en informes públicos. Deben
-              presentarse como problemas documentados, no como opiniones. Conviene contrastar al menos
-              dos fuentes oficiales (INDEC y un organismo internacional).
-            </p>
+          <div class="sec-cifra">
+            <strong>~76 años</strong>
+            <span>Esperanza de vida al nacer</span>
+          </div>
+          <div class="sec-cifra">
+            <strong>14 años</strong>
+            <span>Escolaridad obligatoria</span>
+          </div>
+          <div class="sec-cifra">
+            <strong>23 + CABA</strong>
+            <span>Provincias y ciudad autónoma</span>
           </div>
         </div>
-        <div class="sources">
-          <strong>Fuentes</strong>
-          <ul>
-            <li>INDEC — Censo y estadísticas sociales</li>
-            <li>Ministerio de Educación y Ministerio de Salud de la Nación</li>
-            <li>CEPAL / Banco Mundial (indicadores comparables, con fecha)</li>
-          </ul>
+
+        <div class="sec-pasos">
+          <section class="sec-paso" id="organizacion">
+            <span class="sec-paso-num" aria-hidden="true">01</span>
+            <div>
+              <h2>Organización social</h2>
+              <p>
+                Argentina es un Estado federal: 23 provincias y la Ciudad Autónoma
+                de Buenos Aires. La vida cotidiana se concentra en las ciudades.
+                El Área Metropolitana de Buenos Aires reúne a una parte muy
+                grande de la población; le siguen Córdoba, Rosario, Mendoza y
+                Tucumán.
+              </p>
+              <p>
+                Conviven comunidades indígenas —reconocidas en la Constitución—
+                con una historia de inmigración europea, latinoamericana y, en
+                menor medida, de otros continentes.
+              </p>
+            </div>
+          </section>
+
+          <section class="sec-paso" id="educacion">
+            <span class="sec-paso-num" aria-hidden="true">02</span>
+            <div>
+              <h2>Educación</h2>
+              <div class="sec-destacado">
+                <div>
+                  <p>
+                    La educación inicial (sala de 4), primaria y secundaria es
+                    obligatoria. El sistema es de gestión estatal y privada. Las
+                    universidades nacionales públicas —como la UBA, la UNC o la
+                    UNLP— son un rasgo distintivo: el grado, en muchas de ellas,
+                    no cobra arancel.
+                  </p>
+                  <p>
+                    Los debates escolares suelen hablar de calidad, deserción y
+                    diferencias entre provincias.
+                  </p>
+                </div>
+                <figure class="shot" data-img="sociedad-escuela.jpg" data-alt="Escuela pública argentina">
+                  <figcaption>La escuela pública es parte de la vida cotidiana.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section class="sec-paso" id="salud">
+            <span class="sec-paso-num" aria-hidden="true">03</span>
+            <div>
+              <h2>Salud</h2>
+              <div class="sec-destacado sec-destacado--inverso">
+                <div>
+                  <p>
+                    El sistema combina hospitales públicos, obras sociales
+                    (ligadas al trabajo registrado) y prepagas privadas. La
+                    atención pública es un derecho, pero el acceso real cambia
+                    según el lugar: no es lo mismo una capital provincial que un
+                    paraje rural.
+                  </p>
+                  <p>
+                    PAMI cubre a gran parte de las personas jubiladas. Para
+                    citar un indicador, conviene usar el último anuario del
+                    Ministerio de Salud (natalidad, vacunación o mortalidad).
+                  </p>
+                </div>
+                <figure class="shot" data-img="sociedad-salud.jpg" data-alt="Hospital o centro de salud">
+                  <figcaption>Hospital público o centro de salud.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section class="sec-paso" id="situacion">
+            <span class="sec-paso-num" aria-hidden="true">04</span>
+            <div>
+              <h2>Situación actual</h2>
+              <div class="sec-destacado">
+                <div>
+                  <p>
+                    Hacia 2026, Argentina sigue siendo un país urbano, con un
+                    mercado de trabajo que combina empleo registrado e informal,
+                    y con una red amplia de escuelas y hospitales públicos.
+                  </p>
+                  <p>
+                    El Censo 2022 contó 45.892.285 personas. Cualquier cifra de
+                    pobreza, empleo o precios debe llevar la fecha del informe
+                    del INDEC, porque cambia rápido.
+                  </p>
+                </div>
+                <figure class="shot" data-img="sociedad-ciudad.jpg" data-alt="Ciudad argentina">
+                  <figcaption>La mayoría de la población vive en ciudades.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <section class="sec-paso" id="desafios">
+            <span class="sec-paso-num" aria-hidden="true">05</span>
+            <div>
+              <h2>Principales desafíos</h2>
+              <ul class="sec-lista">
+                <li>
+                  <strong>Pobreza e inflación</strong>
+                  <small>Se miden en informes periódicos del INDEC. No se presentan aquí como consigna política, sino como problemas documentados.</small>
+                </li>
+                <li>
+                  <strong>Empleo informal</strong>
+                  <small>Una parte de quienes trabajan no tiene obra social ni aportes. Eso afecta ingresos y cobertura de salud.</small>
+                </li>
+                <li>
+                  <strong>Desigualdad territorial</strong>
+                  <small>El acceso a escuela, hospital e internet no es igual en todas las provincias.</small>
+                </li>
+                <li>
+                  <strong>Calidad educativa</strong>
+                  <small>Las pruebas nacionales e internacionales se usan para discutir aprendizajes, no solo la asistencia.</small>
+                </li>
+              </ul>
+              <aside class="sec-dato">
+                <strong>Cómo citar en la feria</strong>
+                <p>
+                  Elegí un indicador, anotá el año y contrastá al menos dos
+                  fuentes (por ejemplo INDEC y CEPAL o el ministerio
+                  correspondiente).
+                </p>
+              </aside>
+            </div>
+          </section>
+        </div>
+
+        <section class="sec-bloque" id="trivia">
+          <h2>¿Cuánto aprendiste?</h2>
+          <p class="sec-bajada">Tres preguntas cortas sobre la sociedad argentina.</p>
+          <div id="mini-trivia"></div>
+        </section>
+
+        <div class="sources sec-fuentes">
+          <details>
+            <summary><strong>Ver fuentes (4)</strong></summary>
+            <ul>
+              <li>
+                <a href="https://www.indec.gob.ar" target="_blank" rel="noopener noreferrer">INDEC — Censo 2022 y estadísticas sociales</a>
+              </li>
+              <li>
+                <a href="https://www.argentina.gob.ar/educacion" target="_blank" rel="noopener noreferrer">Ministerio de Educación de la Nación</a>
+              </li>
+              <li>
+                <a href="https://www.argentina.gob.ar/salud" target="_blank" rel="noopener noreferrer">Ministerio de Salud de la Nación</a>
+              </li>
+              <li>
+                <a href="https://www.cepal.org" target="_blank" rel="noopener noreferrer">CEPAL — indicadores sociales comparables</a>
+              </li>
+            </ul>
+          </details>
         </div>
       </article>
     </main>
     <footer class="site-footer" id="site-footer"></footer>
     <script src="../js/config.js"></script>
     <script src="../js/nav.js"></script>
+    <script>
+      window.MINI_TRIVIA = {
+        preguntas: [
+          {
+            pregunta: "¿Cómo se organiza políticamente Argentina?",
+            opciones: [
+              "Como un Estado unitario con departamentos",
+              "Como un Estado federal: 23 provincias y CABA",
+              "Como una confederación de ciudades",
+              "Como un reino constitucional"
+            ],
+            correcta: 1,
+            explicacion:
+              "La Constitución organiza un Estado federal con 23 provincias y la Ciudad Autónoma de Buenos Aires."
+          },
+          {
+            pregunta: "¿Desde qué nivel es obligatoria la educación, según la Ley de Educación Nacional?",
+            opciones: [
+              "Solo la primaria",
+              "Desde sala de 4 años hasta el secundario",
+              "Solo la universidad",
+              "Únicamente el jardín de infantes"
+            ],
+            correcta: 1,
+            explicacion:
+              "La Ley 26.206 fija la obligatoriedad desde sala de 4 años hasta el nivel secundario."
+          },
+          {
+            pregunta: "¿Qué rasgo describe mejor a la población argentina, según el Censo 2022?",
+            opciones: [
+              "Es mayoritariamente rural",
+              "Es mayoritariamente urbana",
+              "Vive sobre todo en la Antártida",
+              "Se reparte por igual entre campo y ciudad"
+            ],
+            correcta: 1,
+            explicacion:
+              "Alrededor del 92 % de la población vive en áreas urbanas. El AMBA concentra una parte muy grande."
+          }
+        ]
+      };
+    </script>
+    <script src="../js/mini-trivia.js"></script>
   </body>
 </html>

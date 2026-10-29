@@ -15,14 +15,14 @@ window.DATOS_IMPACTANTES = [
     fuente: "UNESCO Patrimonio inmaterial",
   },
   {
-    titulo: "Un país con 23 provincias y una ciudad autónoma",
-    dato: "El territorio se organiza en 23 provincias y la Ciudad Autónoma de Buenos Aires.",
-    fuente: "Constitución Nacional y organización federal argentina",
+    titulo: "Más de 45 millones de habitantes",
+    dato: "El Censo 2022 contó 45.892.285 personas. El INDEC estimó 46.234.830 al 1 de julio de 2022.",
+    fuente: "INDEC — Censo Nacional de Población 2022",
   },
   {
-    titulo: "Ciencia pública con CONICET",
-    dato: "El CONICET es el principal organismo de promoción de la ciencia y la tecnología en el país, con institutos en todo el territorio.",
-    fuente: "CONICET",
+    titulo: "El octavo país más extenso del mundo",
+    dato: "El territorio continental americano cubre 2.780.400 km², según el Instituto Geográfico Nacional.",
+    fuente: "Instituto Geográfico Nacional (IGN)",
   },
   {
     titulo: "Argentina tiene programa espacial propio",

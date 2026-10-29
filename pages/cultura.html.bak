@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Cultura argentina: tradiciones, música, gastronomía, vestimenta, patrimonio y lugares destacados."
+    />
+    <title>Cultura · Argentina 2026</title>
+    <link rel="icon" href="../assets/icons/sol.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/secciones.css" />
+  </head>
+  <body data-base="../">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header" id="site-header"></header>
+    <main class="wrap" id="contenido">
+      <article class="prose">
+        <div
+          class="page-hero"
+          data-img="cultura.jpg"
+          data-hint="Imagen de la cultura argentina"
+        >
+          <p class="section-kicker">Sección C</p>
+          <h1>Cultura</h1>
+          <p>
+            Tradiciones, música, sabores, vestimenta, patrimonio y paisajes que
+            identifican a Argentina.
+          </p>
+        </div>
+
+        <div class="sec-intro">
+          <p>Elegí un apartado para explorarlo y, al final, poné a prueba lo que aprendiste.</p>
+        </div>
+
+        <div data-pestanas="Apartados de Cultura">
+          <!-- 01 TRADICIONES -->
+          <section class="sec-panel" id="tradiciones" data-titulo="Tradiciones">
+            <h2>Tradiciones y costumbres</h2>
+
+            <div class="sec-destacado">
+              <div>
+                <h3>El mate: la infusión nacional</h3>
+                <p>
+                  Desde 2013, la ley 26.871 lo reconoce como «Infusión Nacional
+                  Argentina». Se prepara con yerba mate, una planta nativa de las
+                  cuencas de los ríos Paraná, Paraguay y Uruguay que se produce
+                  sobre todo en Misiones y Corrientes, y se comparte en ronda.
+                </p>
+              </div>
+              <figure class="shot" data-img="cultura-mate.jpg" data-alt="Mate con bombilla">
+                <figcaption>El mate, una costumbre que se comparte.</figcaption>
+              </figure>
+            </div>
+
+            <div class="sec-tarjetas">
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="tradiciones-dia-tradicion.jpg" role="img" aria-label="Desfile gaucho en el Día de la Tradición"></span>Día de la Tradición</summary>
+                <div class="sec-detalle">
+                  <p>
+                    Cada 10 de noviembre, natalicio del poeta José Hernández
+                    (1834-1886), autor de <em>Martín Fierro</em>, que retrata la
+                    vida del gaucho.
+                  </p>
+                  <p>
+                    San Antonio de Areco es la sede permanente de la tradición en
+                    la provincia de Buenos Aires.
+                  </p>
+                </div>
+              </details>
+
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="tradiciones-fiestas.jpg" role="img" aria-label="Fiesta tradicional argentina"></span>Fiestas regionales</summary>
+                <div class="sec-detalle">
+                  <p>
+                    En Mendoza se celebra la Fiesta Nacional de la Vendimia, en
+                    torno a la cosecha de la uva. En la Quebrada de Humahuaca
+                    (Jujuy), el Carnaval tiene ritos de raíz andina.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- 02 MÚSICA Y ARTE -->
+          <section class="sec-panel" id="musica" data-titulo="Música y arte">
+            <h2>Música y expresiones artísticas</h2>
+
+            <div class="sec-destacado sec-destacado--inverso">
+              <div>
+                <h3>Tango: patrimonio de la humanidad</h3>
+                <p>
+                  Nació a fines del siglo XIX en los barrios populares de Buenos
+                  Aires y Montevideo, y combina música, baile y poesía. El 30 de
+                  septiembre de 2009, la UNESCO lo declaró Patrimonio Cultural
+                  Inmaterial de la Humanidad.
+                </p>
+              </div>
+              <figure class="shot" data-img="cultura-tango.jpg" data-alt="Tango">
+                <figcaption>El tango, música y baile del Río de la Plata.</figcaption>
+              </figure>
+            </div>
+
+            <div class="sec-tarjetas">
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="patrimonio-chamame.jpg" role="img" aria-label="Músicos de chamamé"></span>Chamamé</summary>
+                <div class="sec-detalle">
+                  <p>
+                    Música y baile del nordeste, con epicentro en Corrientes. Su
+                    nombre es de origen guaraní. La UNESCO lo declaró Patrimonio
+                    Cultural Inmaterial el 16 de diciembre de 2020.
+                  </p>
+                </div>
+              </details>
+
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="musica-folklore-cosquin.jpg" role="img" aria-label="Festival de folklore de Cosquín"></span>Folklore y rock nacional</summary>
+                <div class="sec-detalle">
+                  <p>
+                    La zamba y la chacarera, en el norte, y la cueca cuyana, en
+                    Cuyo, son danzas muy difundidas. El Festival de Cosquín
+                    (Córdoba) se realiza cada enero.
+                  </p>
+                  <p>
+                    En los años 60 surgió el rock en español, con Los Gatos y su
+                    tema «La balsa» (1967).
+                  </p>
+                </div>
+              </details>
+
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="arte-filete-porteno.jpg" role="img" aria-label="Fileteado porteño"></span>Filete porteño</summary>
+                <div class="sec-detalle">
+                  <p>
+                    Técnica pictórica tradicional de Buenos Aires, de colores vivos
+                    y letras decorativas. La UNESCO la inscribió en 2015 en la Lista
+                    Representativa del Patrimonio Cultural Inmaterial.
+                  </p>
+                </div>
+              </details>
+
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="cultura-libros.jpg" role="img" aria-label="Libros de literatura argentina"></span>Literatura y artes visuales</summary>
+                <div class="sec-detalle">
+                  <p>
+                    Jorge Luis Borges, Julio Cortázar, Alfonsina Storni y María
+                    Elena Walsh son autores habituales en las escuelas. En la
+                    pintura destacan Xul Solar y Antonio Berni.
+                  </p>
+                </div>
+              </details>
+            </div>
+
+            <aside class="sec-dato">
+              <strong>¿Sabías que?</strong>
+              <p>
+                Argentina y Uruguay presentaron juntos el tango ante la UNESCO, en
+                nombre de Buenos Aires y Montevideo.
+              </p>
+            </aside>
+          </section>
+
+          <!-- 03 GASTRONOMÍA -->
+          <section class="sec-panel" id="gastronomia" data-titulo="Gastronomía">
+            <h2>Gastronomía</h2>
+
+            <div class="sec-destacado">
+              <div>
+                <h3>Sabores que reúnen</h3>
+                <p>
+                  La cocina argentina combina la herencia indígena, la española y
+                  la de las inmigraciones, sobre todo la italiana. Los platos
+                  típicos se comparten en familia y en las fechas patrias.
+                </p>
+                <div class="sec-acciones">
+                  <a class="btn btn-primary" href="gastronomia.html">Conocer el arte culinario</a>
+                </div>
+              </div>
+              <figure class="shot" data-img="gastronomia.jpg" data-alt="Comidas típicas argentinas">
+                <figcaption>Sabores de la cocina argentina.</figcaption>
+              </figure>
+            </div>
+
+            <div class="sec-tarjetas">
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="gastronomia-asado.jpg" role="img" aria-label="Asado en la parrilla"></span>Asado</summary>
+                <div class="sec-detalle">
+                  <p>
+                    Carne cocinada lentamente en la parrilla, sobre brasas. Suele
+                    ser una comida de reunión familiar.
+                  </p>
+                </div>
+              </details>
+
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="gastronomia-empanadas.jpg" role="img" aria-label="Empanadas criollas"></span>Empanadas</summary>
+                <div class="sec-detalle">
+                  <p>
+                    Masa rellena, al horno o frita. Cada provincia tiene su receta;
+                    las tucumanas y las salteñas son de las más conocidas.
+                  </p>
+                </div>
+              </details>
+
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="gastronomia-alfajores.jpg" role="img" aria-label="Alfajores con dulce de leche"></span>Alfajores</summary>
+                <div class="sec-detalle">
+                  <p>
+                    En la
+                    merienda, no faltan el dulce de leche y los alfajores.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- 04 VESTIMENTA -->
+          <section class="sec-panel" id="vestimenta" data-titulo="Vestimenta">
+            <h2>Vestimenta tradicional</h2>
+
+            <div class="sec-destacado sec-destacado--inverso">
+              <div>
+                <h3>La vestimenta del gaucho</h3>
+                <p>
+                  La ropa criolla nació del trabajo en el campo. El gaucho vestía
+                  bombacha de campo, poncho, boina o sombrero y pañuelo al cuello.
+                  Completaban el conjunto la faja, la rastra (un cinturón ancho con
+                  adornos metálicos), las botas y el facón.
+                </p>
+              </div>
+              <figure
+                class="shot shot-alto"
+                data-img="cultura-gaucho.jpg"
+                data-alt="Persona con vestimenta tradicional de gaucho"
+              >
+                <figcaption>Vestimenta tradicional del gaucho argentino.</figcaption>
+              </figure>
+            </div>
+
+            <div class="sec-tarjetas">
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="vestimenta-poncho-salteno.jpg" role="img" aria-label="Poncho salteño rojo y negro"></span>Ponchos del norte</summary>
+                <div class="sec-detalle">
+                  <p>
+                    El poncho salteño, rojo y negro, se asocia con Martín Miguel de
+                    Güemes y los gauchos que defendieron el norte durante las
+                    guerras de independencia.
+                  </p>
+                </div>
+              </details>
+
+              <details class="sec-tarjeta">
+                <summary>Ropa para bailar</summary>
+                <div class="sec-detalle">
+                  <p>
+                    En el folklore se usan trajes gauchos y vestidos largos de falda
+                    amplia. En el tango, el traje oscuro y los zapatos de baile
+                    marcan el estilo de las milongas.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- 05 PATRIMONIO -->
+          <section class="sec-panel" id="patrimonio" data-titulo="Patrimonio">
+            <h2>Patrimonio cultural</h2>
+            <h3>Tesoros reconocidos por la UNESCO</h3>
+            <p>
+              Argentina tiene al menos 12 sitios en la Lista del Patrimonio
+              Mundial (7 culturales y 5 naturales) y al menos tres expresiones del
+              Patrimonio Cultural Inmaterial. Estos son los sitios culturales y las
+              expresiones inmateriales.
+            </p>
+
+            <h3 class="sec-subtitulo">Sitios del Patrimonio Mundial</h3>
+            <ul class="pat-grid">
+              <li class="pat-card">
+                <figure class="shot" data-img="patrimonio-misiones-jesuiticas.jpg" data-alt="Ruinas jesuíticas de San Ignacio Miní">
+                  <figcaption>Falta la foto: patrimonio-misiones-jesuiticas.jpg</figcaption>
+                </figure>
+                <div class="pat-cuerpo">
+                  <span class="anio">1984</span>
+                  <strong>Misiones jesuítico-guaraníes</strong>
+                  <small>Misiones</small>
+                  <span class="sec-etiqueta ">Compartido con Brasil</span>
+                </div>
+              </li>
+              <li class="pat-card">
+                <figure class="shot" data-img="patrimonio-cueva-de-las-manos.jpg" data-alt="Manos pintadas en la Cueva de las Manos">
+                  <figcaption>Falta la foto: patrimonio-cueva-de-las-manos.jpg</figcaption>
+                </figure>
+                <div class="pat-cuerpo">
+                  <span class="anio">1999</span>
+                  <strong>Cueva de las Manos</strong>
+                  <small>Santa Cruz</small>
+                </div>
+              </li>
+              <li class="pat-card">
+                <figure class="shot" data-img="patrimonio-manzana-jesuitica.jpg" data-alt="Manzana Jesuítica de Córdoba">
+                  <figcaption>Falta la foto: patrimonio-manzana-jesuitica.jpg</figcaption>
+                </figure>
+                <div class="pat-cuerpo">
+                  <span class="anio">2000</span>
+                  <strong>Manzana Jesuítica y estancias</strong>
+                  <small>Córdoba</small>
+                </div>
+              </li>
+              <li class="pat-card">
+                <figure class="shot" data-img="patrimonio-quebrada-humahuaca.jpg" data-alt="Quebrada de Humahuaca">
+                  <figcaption>Falta la foto: patrimonio-quebrada-humahuaca.jpg</figcaption>
+                </figure>
+                <div class="pat-cuerpo">
+                  <span class="anio">2003</span>
+                  <strong>Quebrada de Humahuaca</strong>
+                  <small>Jujuy</small>
+                </div>
+              </li>
+              <li class="pat-card">
+                <figure class="shot" data-img="patrimonio-qhapaq-nan.jpg" data-alt="Tramo del Qhapaq Ñan">
+                  <figcaption>Falta la foto: patrimonio-qhapaq-nan.jpg</figcaption>
+                </figure>
+                <div class="pat-cuerpo">
+                  <span class="anio">2014</span>
+                  <strong>Qhapaq Ñan</strong>
+                  <small>Varias provincias</small>
+                  <span class="sec-etiqueta sec-etiqueta--bolivia">Compartido con Bolivia y otros 4 países</span>
+                </div>
+              </li>
+              <li class="pat-card">
+                <figure class="shot" data-img="patrimonio-casa-curutchet.jpg" data-alt="Casa Curutchet, en La Plata">
+                  <figcaption>Falta la foto: patrimonio-casa-curutchet.jpg</figcaption>
+                </figure>
+                <div class="pat-cuerpo">
+                  <span class="anio">2016</span>
+                  <strong>Obra de Le Corbusier (Casa Curutchet)</strong>
+                  <small>La Plata</small>
+                  <span class="sec-etiqueta ">Compartido con otros países</span>
+                </div>
+              </li>
+              <li class="pat-card">
+                <figure class="shot" data-img="patrimonio-esma.jpg" data-alt="Edificio de la ESMA">
+                  <figcaption>Falta la foto: patrimonio-esma.jpg</figcaption>
+                </figure>
+                <div class="pat-cuerpo">
+                  <span class="anio">2023</span>
+                  <strong>ESMA, Museo y Sitio de Memoria</strong>
+                  <small>Ciudad de Buenos Aires</small>
+                </div>
+              </li>
+            </ul>
+
+            <h3 class="sec-subtitulo">Patrimonio inmaterial</h3>
+            <ul class="pat-grid">
+              <li class="pat-card">
+                <figure class="shot" data-img="cultura-tango.jpg" data-alt="Pareja bailando tango">
+                  <figcaption>Falta la foto: cultura-tango.jpg</figcaption>
+                </figure>
+                <div class="pat-cuerpo">
+                  <span class="anio">2009</span>
+                  <strong>El tango</strong>
+                  <span class="sec-etiqueta ">Compartido con Uruguay</span>
+                </div>
+              </li>
+              <li class="pat-card">
+                <figure class="shot" data-img="arte-filete-porteno.jpg" data-alt="Fileteado porteño">
+                  <figcaption>Falta la foto: arte-filete-porteno.jpg</figcaption>
+                </figure>
+                <div class="pat-cuerpo">
+                  <span class="anio">2015</span>
+                  <strong>El filete porteño</strong>
+                  <small>Buenos Aires</small>
+                </div>
+              </li>
+              <li class="pat-card">
+                <figure class="shot" data-img="patrimonio-chamame.jpg" data-alt="Músicos de chamamé">
+                  <figcaption>Falta la foto: patrimonio-chamame.jpg</figcaption>
+                </figure>
+                <div class="pat-cuerpo">
+                  <span class="anio">2020</span>
+                  <strong>El chamamé</strong>
+                  <small>Corrientes y provincias vecinas</small>
+                </div>
+              </li>
+            </ul>
+
+            <aside class="sec-dato">
+              <strong>Una huella compartida con Bolivia</strong>
+              <p>
+                El Qhapaq Ñan, el gran sistema de caminos del Imperio inca,
+                atraviesa territorios de Bolivia y Argentina.
+              </p>
+            </aside>
+          </section>
+
+          <!-- 06 LUGARES -->
+          <section class="sec-panel" id="lugares" data-titulo="Lugares">
+            <h2>Lugares turísticos y naturales</h2>
+
+            <div class="sec-destacado">
+              <div>
+                <h3>Naturaleza para recorrer</h3>
+                <p>
+                  Cinco áreas naturales argentinas son Patrimonio Mundial de la
+                  UNESCO. Estos son cuatro lugares emblemáticos (Aconcagua no integra la lista); el resto, en el
+                  mapa.
+                </p>
+                <div class="sec-acciones">
+                  <a class="btn btn-primary" href="mapa.html">Verlos en el mapa</a>
+                </div>
+              </div>
+              <figure class="shot" data-img="cultura-lugares.jpg" data-alt="Glaciar Perito Moreno">
+                <figcaption>Glaciar Perito Moreno, en Santa Cruz.</figcaption>
+              </figure>
+            </div>
+
+            <div class="sec-tarjetas">
+              <details class="sec-tarjeta">
+                <summary>Glaciar Perito Moreno</summary>
+                <div class="sec-detalle">
+                  <p>
+                    Parque Nacional Los Glaciares, en Santa Cruz. Reconocido por la
+                    UNESCO en 1981.
+                  </p>
+                </div>
+              </details>
+
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="lugares-iguazu.jpg" role="img" aria-label="Cataratas del Iguazú"></span>Cataratas del Iguazú</summary>
+                <div class="sec-detalle">
+                  <p>
+                    Parque Nacional Iguazú, en Misiones, en la frontera con Brasil.
+                    Reconocido en 1984. La Garganta del Diablo es su caída más
+                    impresionante.
+                  </p>
+                </div>
+              </details>
+
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="lugares-peninsula-valdes.jpg" role="img" aria-label="Ballena franca en Península Valdés"></span>Península Valdés</summary>
+                <div class="sec-detalle">
+                  <p>
+                    En Chubut, reconocida en 1999. Es un refugio de fauna marina
+                    donde se pueden observar ballenas francas australes.
+                  </p>
+                </div>
+              </details>
+
+              <details class="sec-tarjeta">
+                <summary><span class="sec-thumb" data-img="lugares-aconcagua.jpg" role="img" aria-label="Cerro Aconcagua"></span>Aconcagua</summary>
+                <div class="sec-detalle">
+                  <p>
+                    En Mendoza, con unos 6.960 m es la cima más alta de América.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </section>
+        </div>
+
+        <!-- TRIVIA -->
+        <section class="sec-bloque" id="trivia">
+          <h2>¿Cuánto aprendiste?</h2>
+          <p class="sec-bajada">
+            Cuatro preguntas rápidas. Después de cada una verás la respuesta y una
+            explicación.
+          </p>
+          <div id="mini-trivia"></div>
+          <noscript>
+            <p class="sec-dato">Para jugar la trivia, habilitá JavaScript en tu navegador.</p>
+          </noscript>
+        </section>
+
+        <!-- FUENTES -->
+        <div class="sources sec-fuentes">
+          <details>
+            <summary><strong>Ver fuentes (6)</strong></summary>
+            <ul>
+              <li>
+                <a href="https://whc.unesco.org/en/statesparties/ar" target="_blank" rel="noopener noreferrer">UNESCO — Patrimonio Mundial: Argentina</a>
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/List_of_World_Heritage_Sites_in_Argentina" target="_blank" rel="noopener noreferrer">Lista de sitios del Patrimonio Mundial en Argentina</a>
+              </li>
+              <li>
+                <a href="https://www.lagaceta.com.ar/nota/346218/informacion-general/unesco-zanjo-disputa-tango-todos.html" target="_blank" rel="noopener noreferrer">La Gaceta — La UNESCO declaró al tango patrimonio (2009)</a>
+              </li>
+              <li>
+                <a href="https://www.argentina.gob.ar/node/441472" target="_blank" rel="noopener noreferrer">Argentina.gob.ar — El chamamé, Patrimonio Cultural Inmaterial</a>
+              </li>
+              <li>
+                <a href="https://billiken.lat/interesante/sabias-que-el-mate-es-la-infusion-nacional-argentina/" target="_blank" rel="noopener noreferrer">Billiken — El mate, Infusión Nacional Argentina</a>
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/D%C3%ADa_de_la_Tradici%C3%B3n" target="_blank" rel="noopener noreferrer">Día de la Tradición</a>
+              </li>
+            </ul>
+          </details>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer" id="site-footer"></footer>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/pestanas.js"></script>
+    <script>
+      window.MINI_TRIVIA = {
+        preguntas: [
+          {
+            pregunta: "¿Qué dos países presentaron juntos la candidatura del tango a la UNESCO?",
+            opciones: [
+              "Argentina y Uruguay",
+              "Argentina y Chile",
+              "Argentina y Brasil",
+              "Argentina y Paraguay"
+            ],
+            correcta: 0,
+            explicacion:
+              "Argentina y Uruguay lo presentaron en conjunto, en nombre de Buenos Aires y Montevideo. La UNESCO lo declaró Patrimonio Cultural Inmaterial el 30 de septiembre de 2009."
+          },
+          {
+            pregunta: "¿Qué día se celebra el Día de la Tradición en Argentina?",
+            opciones: [
+              "El 25 de mayo",
+              "El 9 de julio",
+              "El 10 de noviembre",
+              "El 20 de junio"
+            ],
+            correcta: 2,
+            explicacion:
+              "Se celebra el 10 de noviembre, natalicio de José Hernández, autor del poema Martín Fierro."
+          },
+          {
+            pregunta: "¿Qué provincia es el epicentro del chamamé?",
+            opciones: ["Mendoza", "Corrientes", "Salta", "Chubut"],
+            correcta: 1,
+            explicacion:
+              "Corrientes es el epicentro del chamamé, que la UNESCO declaró Patrimonio Cultural Inmaterial en diciembre de 2020."
+          },
+          {
+            pregunta: "¿Qué sitio del Patrimonio Mundial comparte Argentina con Bolivia, entre otros países?",
+            opciones: [
+              "Cueva de las Manos",
+              "Península Valdés",
+              "Cataratas del Iguazú",
+              "Qhapaq Ñan"
+            ],
+            correcta: 3,
+            explicacion:
+              "El Qhapaq Ñan, el sistema de caminos andinos del Imperio inca, se comparte con Bolivia, Chile, Colombia, Ecuador y Perú."
+          }
+        ]
+      };
+    </script>
+    <script src="../js/mini-trivia.js"></script>
+  </body>
+</html>

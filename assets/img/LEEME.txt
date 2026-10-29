@@ -1,40 +1,51 @@
 Guardá acá las fotos con ESTOS nombres (jpg o jpeg; si usás png, renombrala a .jpg).
 Tamaño cómodo: 1600 px de ancho, archivo de menos de 800 KB.
+Buscá en Wikimedia Commons o Unsplash con licencia libre.
 
-INICIO
-- historia.jpg     Casa Histórica de Tucumán, Congreso o jura de la independencia
-- mapa.jpg         Paisaje amplio de Argentina o un mapa impreso/atractivo
-- trivia.jpg       Bandera, aula o chicos en la feria (sin caras si no hay permiso)
-- identidad.jpg    Bandera argentina o Casa Rosada
-- cultura.jpg      Tango, Caminito o mate
-- sociedad.jpg     Escuela pública, plaza o ciudad
-- legislacion.jpg  Congreso de la Nación o una escuela
-- deportes.jpg     Selección, cancha o copa (uso educativo)
-- ciencia.jpg      Laboratorio, satélite o edificio CONICET
-- economia.jpg     Campo, sojera, Vaca Muerta o puerto
-- gastronomia.jpg  Asado, empanadas o alfajores
+==================================================
+FALTAN (descargar ahora)
+==================================================
+datos.jpg                 Infografía o paisaje impactante (Aconcagua, Iguazú o glaciar)
+sociedad-ciudad.jpg       Skyline, plaza o transporte urbano
+sociedad-salud.jpg        Hospital público, sala de espera o centro de salud
+deportes-messi.jpg        Lionel Messi con la camiseta argentina (uso educativo)
+deportes-maradona.jpg     Diego Maradona (uso educativo)
+deportes-aymar.jpg        Luciana Aymar o Las Leonas
+deportes-ginobili.jpg     Emanuel Ginóbili o la selección de básquet 2004
+deportes-pato.jpg         (opcional) Juego de pato a caballo
+region-pampeana.jpg       (opcional) Reemplaza economia-campo.jpg en Identidad
+region-patagonia.jpg      (opcional) Reemplaza cultura-lugares.jpg en Identidad
 
-DENTRO DE CADA SECCIÓN (además de la de cabecera)
-identidad-bandera.jpg
-identidad-geografia.jpg     Andes, pampa, Iguazú o glaciar
-historia-origenes.jpg       Pueblos originarios o virreinato (museo)
-historia-independencia.jpg  San Martín, cruce de los Andes o Tucumán
-cultura-tango.jpg
-cultura-mate.jpg
-sociedad-escuela.jpg
-sociedad-ciudad.jpg
-legislacion-congreso.jpg
-legislacion-aula.jpg
-deportes-futbol.jpg
-deportes-otros.jpg          Leonas, Pumas, básquet o polo
-ciencia-conicet.jpg
-ciencia-satelite.jpg
-economia-campo.jpg
-economia-energia.jpg
-gastronomia-asado.jpg
-gastronomia-empanadas.jpg
-datos.jpg                   Infografía o paisaje impactante
-conclusion.jpg              Bandera al viento o grupo del curso (con permiso)
+==================================================
+YA ESTÁN EN LA CARPETA
+==================================================
+INICIO / CABECERAS
+historia.jpg, mapa.jpg, trivia.jpg, identidad.jpg, cultura.jpg,
+sociedad.jpg, legislacion.jpg, deportes.jpg, ciencia.jpg,
+economia.jpg, gastronomia.jpg, conclusion.jpg
 
-Buscá en Wikimedia Commons o Unsplash con licencia libre y descargá vos.
-No hace falta subtitular el archivo: el sitio muestra un recuadro celeste hasta que la foto exista.
+IDENTIDAD
+identidad-bandera.jpg, identidad-geografia.jpg, identidad-mapa.jpg,
+region-noroeste.jpg, region-cuyo.jpg
+
+HISTORIA
+historia-origenes.jpg, historia-independencia.jpg, historia-mayo-1810.jpg,
+historia-invasiones.jpg, historia-constitucion.jpg, historia-democracia-1983.jpg,
+historia-ciudades.jpg, san-martin.jpg, manuel-belgrano.jpg,
+juana-azurduy.jpg, eva-peron.jpg
+
+CULTURA
+cultura-tango.jpg, cultura-mate.jpg, cultura-gaucho.jpg, cultura-libros.jpg,
+cultura-lugares.jpg, tradiciones-dia-tradicion.jpg, tradiciones-fiestas.jpg,
+musica-folklore-cosquin.jpg, arte-filete-porteno.jpg,
+vestimenta-poncho-salteno.jpg, vestimenta-ropa-para-bailar.jpg,
+patrimonio-*.jpg, lugares-*.jpg
+
+OTRAS
+sociedad-escuela.jpg, legislacion-congreso.jpg, legislacion-aula.jpg,
+deportes-futbol.jpg, deportes-otros.jpg, ciencia-conicet.jpg,
+ciencia-satelite.jpg, economia-campo.jpg, economia-energia.jpg,
+gastronomia-asado.jpg, gastronomia-empanadas.jpg, gastronomia-alfajores.jpg
+
+El sitio muestra un recuadro celeste hasta que la foto exista.
+No hace falta subtitular el archivo.
