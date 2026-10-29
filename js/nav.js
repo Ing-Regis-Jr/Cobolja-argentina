@@ -193,6 +193,7 @@
 
   const imgBase = (document.body.dataset.base || "") + "assets/img/";
   document.querySelectorAll("[data-img]").forEach((el) => {
+    if (el.id === "fecha-imagen") return;
     const src = imgBase + el.dataset.img;
     const probe = new Image();
     probe.onload = () => {
