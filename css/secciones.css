@@ -700,3 +700,81 @@
     flex: 0 0 auto;
   }
 }
+
+/* ---- Tarjetas con foto (Cultura) ---- */
+.sec-thumb {
+  display: block;
+  height: 150px;
+  margin: -1rem -1rem 0.8rem;
+  background-color: #d9eaf7;
+  background-position: center 35%;
+  background-size: cover;
+}
+
+.sec-thumb.is-empty {
+  display: none;
+}
+
+.pat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pat-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+}
+
+.pat-card .shot {
+  margin: 0;
+  min-height: 0;
+  border-radius: 0;
+}
+
+.pat-card .shot img {
+  aspect-ratio: 16 / 10;
+}
+
+.pat-card .shot.is-empty {
+  min-height: 130px;
+  border: 0;
+  border-bottom: 2px dashed #9fc0dc;
+}
+
+.pat-card .shot.has-photo figcaption {
+  display: none;
+}
+
+.pat-cuerpo {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.8rem 0.95rem 1rem;
+}
+
+.pat-cuerpo .anio {
+  color: var(--celeste-oscuro);
+  font-weight: 800;
+}
+
+.pat-cuerpo strong {
+  color: var(--azul);
+  line-height: 1.3;
+}
+
+.pat-cuerpo small {
+  color: var(--muted);
+}
+
+.pat-cuerpo .sec-etiqueta {
+  justify-self: start;
+  border-radius: 12px;
+}
