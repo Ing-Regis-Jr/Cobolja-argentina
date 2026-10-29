@@ -1,10 +1,11 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Explorá la historia argentina: sus orígenes, acontecimientos importantes y personajes históricos.">
+  <meta name="description"
+    content="Explorá la historia argentina: sus orígenes, acontecimientos importantes y personajes históricos.">
   <title>Historia · Argentina 2026</title>
 
   <link rel="icon" href="../assets/icons/sol.svg" type="image/svg+xml">
@@ -72,7 +73,7 @@
       scroll-margin-top: 1.5rem;
     }
 
-    .historia-seccion > h2 {
+    .historia-seccion>h2 {
       margin-bottom: .4rem;
     }
 
@@ -118,8 +119,8 @@
       margin: 1.2rem 0;
     }
 
-    .origen-destacado > div,
-    .personajes-portada > div {
+    .origen-destacado>div,
+    .personajes-portada>div {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -292,7 +293,7 @@
       margin-bottom: 1.5rem;
     }
 
-    .personajes-portada > div {
+    .personajes-portada>div {
       padding: 1.2rem;
       background: #f4f8fc;
       border: 1px solid var(--line);
@@ -387,7 +388,7 @@
       text-align: center;
     }
 
-    .personaje > p {
+    .personaje>p {
       align-self: stretch;
       margin-bottom: .7rem;
       font-size: .94rem;
@@ -570,8 +571,8 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .origen-destacado > div,
-      .personajes-portada > div {
+      .origen-destacado>div,
+      .personajes-portada>div {
         padding: 1rem;
       }
 
@@ -646,6 +647,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .historia-indice a,
       .fecha-btn,
       .trivia-opcion {
@@ -664,11 +666,7 @@
     <article class="prose">
 
       <!-- PORTADA -->
-      <div
-        class="page-hero"
-        data-img="historia.jpg"
-        data-hint="Imagen de la historia argentina"
-      >
+      <div class="page-hero" data-img="historia.jpg" data-hint="Imagen de la historia argentina">
         <p class="section-kicker">Sección B</p>
         <h1>Historia</h1>
         <p>
@@ -732,11 +730,8 @@
             </p>
           </div>
 
-          <figure
-            class="shot"
-            data-img="historia-origenes.jpg"
-            data-alt="Paisaje relacionado con los pueblos originarios de Argentina"
-          >
+          <figure class="shot" data-img="historia-origenes.jpg"
+            data-alt="Paisaje relacionado con los pueblos originarios de Argentina">
             <figcaption>
               Territorios y culturas anteriores a la Argentina actual.
             </figcaption>
@@ -804,11 +799,7 @@
           importante. No necesitás recorrerlas en orden.
         </p>
 
-        <div
-          class="linea-tiempo"
-          role="group"
-          aria-label="Elegir un acontecimiento histórico"
-        >
+        <div class="linea-tiempo" role="group" aria-label="Elegir un acontecimiento histórico">
           <button class="fecha-btn" type="button" data-fecha="1806" aria-pressed="false">
             1806–1807
             <small>Invasiones británicas</small>
@@ -835,12 +826,7 @@
           </button>
         </div>
 
-        <div
-          class="fecha-detalle"
-          id="fecha-detalle"
-          aria-live="polite"
-          aria-atomic="true"
-        >
+        <div class="fecha-detalle" id="fecha-detalle" aria-live="polite" aria-atomic="true">
           <div>
             <span class="fecha-grande" id="fecha-anio">25 DE MAYO DE 1810</span>
             <h3 id="fecha-titulo">La Revolución de Mayo</h3>
@@ -860,11 +846,7 @@
           </div>
 
           <!-- Esta imagen la administra cambiarFecha(), no nav.js. -->
-          <figure
-            class="shot"
-            id="fecha-imagen"
-            data-alt="Representación de la Revolución de Mayo"
-          >
+          <figure class="shot" id="fecha-imagen" data-alt="Representación de la Revolución de Mayo">
             <figcaption id="fecha-pie">
               La Revolución de Mayo inició una etapa de cambios políticos.
             </figcaption>
@@ -885,17 +867,13 @@
         <h2>Personajes históricos</h2>
 
         <p class="historia-bajada">
-          La historia argentina fue construida por muchas personas y comunidades. Conocé cuatro figuras y descubrí por qué se las recuerda.</p>
+          La historia argentina fue construida por muchas personas y comunidades.
+          Conocé cuatro figuras y descubrí por qué se las recuerda.
+        </p>
 
-        
-        </div>
         <div class="personajes-grid">
           <article class="personaje">
-            <figure
-              class="shot personaje-foto"
-              data-img="san-martin.jpg"
-              data-alt="Retrato de José de San Martín"
-            >
+            <figure class="shot personaje-foto" data-img="san-martin.jpg" data-alt="Retrato de José de San Martín">
               <figcaption>José de San Martín</figcaption>
             </figure>
 
@@ -923,11 +901,7 @@
           </article>
 
           <article class="personaje">
-            <figure
-              class="shot personaje-foto"
-              data-img="manuel-belgrano.jpg"
-              data-alt="Retrato de Manuel Belgrano"
-            >
+            <figure class="shot personaje-foto" data-img="manuel-belgrano.jpg" data-alt="Retrato de Manuel Belgrano">
               <figcaption>Manuel Belgrano</figcaption>
             </figure>
 
@@ -954,11 +928,8 @@
           </article>
 
           <article class="personaje">
-            <figure
-              class="shot personaje-foto"
-              data-img="juana-azurduy.jpg"
-              data-alt="Retrato o representación de Juana Azurduy"
-            >
+            <figure class="shot personaje-foto" data-img="juana-azurduy.jpg"
+              data-alt="Retrato o representación de Juana Azurduy">
               <figcaption>Juana Azurduy</figcaption>
             </figure>
 
@@ -986,11 +957,7 @@
           </article>
 
           <article class="personaje">
-            <figure
-              class="shot personaje-foto"
-              data-img="eva-peron.jpg"
-              data-alt="Retrato de Eva Perón"
-            >
+            <figure class="shot personaje-foto" data-img="eva-peron.jpg" data-alt="Retrato de Eva Perón">
               <figcaption>Eva Perón</figcaption>
             </figure>
 
@@ -1028,25 +995,27 @@
             sociales que contribuyeron a transformar el país.
           </p>
         </aside>
+
         <div class="personajes-portada">
           <div>
-            <h3>Distintas vidas, distintas contribuciones</h3>
+            <h3>Las ciudades también cuentan la historia</h3>
             <p>
-              Algunas personas participaron en las luchas por la independencia;
-              otras contribuyeron a la educación, la política o los derechos
-              sociales. Conocer sus aportes también permite comprender los
-              debates y desafíos de cada época.
+              Los edificios, plazas y monumentos de las ciudades argentinas
+              guardan huellas de distintas épocas: construcciones coloniales,
+              edificios de la etapa de la inmigración masiva y arquitectura
+              moderna. Recorrerlos permite imaginar cómo vivieron las personas
+              que protagonizaron cada momento histórico.
             </p>
           </div>
 
-          <figure
-            class="shot"
-            data-img="historia-personajes.jpg"
-            data-alt="sociedad argentina"
-          >
+          <figure class="shot" data-img="historia-ciudades.jpg" data-alt="Edificios de una ciudad argentina">
+            <figcaption>
+              Edificios de una ciudad argentina, testigos de distintas épocas.
+            </figcaption>
           </figure>
+        </div>
       </section>
-      
+
 
       <!-- TRIVIA -->
       <section class="historia-seccion" id="trivia">
@@ -1058,7 +1027,6 @@
           opciones. Después de responder, conocerás la respuesta correcta y
           una explicación. Al final podrás ver tu puntuación.
         </p>
-
         <div class="trivia" id="trivia-historia">
           <p class="trivia-progreso" id="trivia-progreso">
             Pregunta 1 de 3
@@ -1074,48 +1042,24 @@
             </fieldset>
 
             <div class="trivia-acciones">
-              <button
-                class="btn btn-primary"
-                type="submit"
-                id="trivia-comprobar"
-              >
+              <button class="btn btn-primary" type="submit" id="trivia-comprobar">
                 Comprobar respuesta
               </button>
 
-              <button
-                class="btn btn-ghost"
-                type="button"
-                id="trivia-siguiente"
-                hidden
-              >
+              <button class="btn btn-ghost" type="button" id="trivia-siguiente" hidden>
                 Siguiente pregunta
               </button>
 
-              <button
-                class="btn btn-primary"
-                type="button"
-                id="trivia-finalizar"
-                hidden
-              >
+              <button class="btn btn-primary" type="button" id="trivia-finalizar" hidden>
                 Ver resultado final
               </button>
 
-              <button
-                class="btn btn-ghost"
-                type="button"
-                id="trivia-reiniciar"
-                hidden
-              >
+              <button class="btn btn-ghost" type="button" id="trivia-reiniciar" hidden>
                 Volver a jugar
               </button>
             </div>
 
-            <p
-              class="trivia-resultado"
-              id="trivia-resultado"
-              role="status"
-              aria-live="polite"
-            ></p>
+            <p class="trivia-resultado" id="trivia-resultado" role="status" aria-live="polite"></p>
 
             <div class="trivia-resumen" id="trivia-resumen" hidden>
               <h3 id="trivia-resumen-titulo">Tu resultado</h3>
@@ -1142,32 +1086,29 @@
 
         <ul>
           <li>
-            <a href="https://www.argentina.gob.ar/interior/archivo-general-de-la-nacion"
-               target="_blank" rel="noopener noreferrer">
+            <a href="https://www.argentina.gob.ar/interior/archivo-general-de-la-nacion" target="_blank"
+              rel="noopener noreferrer">
               Archivo General de la Nación
             </a>
             — documentos y materiales históricos.
           </li>
 
           <li>
-            <a href="https://casadelaindependencia.cultura.gob.ar/"
-               target="_blank" rel="noopener noreferrer">
+            <a href="https://casadelaindependencia.cultura.gob.ar/" target="_blank" rel="noopener noreferrer">
               Casa Histórica de la Independencia
             </a>
             — historia de la independencia de 1816.
           </li>
 
           <li>
-            <a href="https://www.educ.ar/"
-               target="_blank" rel="noopener noreferrer">
+            <a href="https://www.educ.ar/" target="_blank" rel="noopener noreferrer">
               Educ.ar
             </a>
             — recursos educativos sobre la historia argentina.
           </li>
 
           <li>
-            <a href="https://www.argentina.gob.ar/"
-               target="_blank" rel="noopener noreferrer">
+            <a href="https://www.argentina.gob.ar/" target="_blank" rel="noopener noreferrer">
               Argentina.gob.ar
             </a>
             — información institucional y efemérides nacionales.
@@ -1572,4 +1513,5 @@
     })();
   </script>
 </body>
+
 </html>
