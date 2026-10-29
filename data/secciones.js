@@ -15,7 +15,7 @@ window.SECCIONES = [
     id: "cultura",
     title: "Cultura",
     href: "pages/cultura.html",
-    summary: "Tradiciones, música, arte, vestimenta y patrimonio.",
+    summary: "Tradiciones, música, gastronomía, vestimenta, patrimonio y lugares destacados.",
   },
   {
     id: "sociedad",

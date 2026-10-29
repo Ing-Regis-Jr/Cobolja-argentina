@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/layout.css">
   <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/secciones.css">
 
   <style>
     .historia-intro {
@@ -416,118 +417,6 @@
 
     .biografia-ampliada p {
       margin: 0;
-    }
-
-    /* TRIVIA */
-
-    .trivia {
-      padding: 1.2rem;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      box-shadow: var(--sombra);
-    }
-
-    .trivia-progreso {
-      margin-bottom: .8rem;
-      color: var(--muted);
-      font-size: .85rem;
-      font-weight: 700;
-    }
-
-    .trivia-pregunta {
-      min-width: 0;
-      margin: 0 0 1rem;
-      padding: 0;
-      border: 0;
-    }
-
-    .trivia-pregunta legend {
-      width: 100%;
-      margin-bottom: .8rem;
-      padding: 0;
-      color: var(--azul);
-      font-size: 1.08rem;
-      font-weight: 800;
-      line-height: 1.5;
-    }
-
-    .trivia-opciones {
-      display: grid;
-      gap: .55rem;
-    }
-
-    .trivia-opcion {
-      display: flex;
-      align-items: flex-start;
-      gap: .6rem;
-      padding: .85rem;
-      cursor: pointer;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      transition: background .2s, border-color .2s;
-    }
-
-    .trivia-opcion:hover {
-      background: #f4f8fc;
-    }
-
-    .trivia-opcion input {
-      flex-shrink: 0;
-      margin-top: .3rem;
-      accent-color: var(--azul-medio);
-    }
-
-    .trivia-opcion:has(input:checked) {
-      background: #eaf4fc;
-      border-color: var(--celeste-oscuro);
-    }
-
-    .trivia-opcion:has(input:disabled) {
-      cursor: default;
-    }
-
-    .trivia-acciones {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: .6rem;
-      margin-top: 1rem;
-    }
-
-    .trivia-resultado {
-      min-height: 1.5rem;
-      margin: .8rem 0 0;
-      line-height: 1.6;
-    }
-
-    .trivia-resultado.correcto {
-      color: var(--ok);
-    }
-
-    .trivia-resultado.incorrecto {
-      color: var(--error);
-    }
-
-    .trivia-resumen {
-      margin-top: 1rem;
-      padding: 1.2rem;
-      background: #eaf4fc;
-      border-radius: 14px;
-    }
-
-    .trivia-resumen h3 {
-      margin-bottom: .5rem;
-      color: var(--azul);
-    }
-
-    .trivia-resumen p:last-child {
-      margin-bottom: 0;
-    }
-
-    .trivia-resumen[hidden] {
-      display: none;
     }
 
     /* CIERRE Y FUENTES */
@@ -1023,51 +912,11 @@
         <h2>¿Cuánto aprendiste?</h2>
 
         <p class="historia-bajada">
-          Respondé tres preguntas de historia argentina. Cada una tiene cuatro
+          Respondé cuatro preguntas de historia argentina. Cada una tiene cuatro
           opciones. Después de responder, conocerás la respuesta correcta y
           una explicación. Al final podrás ver tu puntuación.
         </p>
-        <div class="trivia" id="trivia-historia">
-          <p class="trivia-progreso" id="trivia-progreso">
-            Pregunta 1 de 3
-          </p>
-
-          <form id="trivia-form">
-            <fieldset class="trivia-pregunta" id="trivia-fieldset">
-              <legend id="trivia-pregunta-texto">
-                ¿En qué año se declaró la independencia de las Provincias Unidas?
-              </legend>
-
-              <div class="trivia-opciones" id="trivia-opciones"></div>
-            </fieldset>
-
-            <div class="trivia-acciones">
-              <button class="btn btn-primary" type="submit" id="trivia-comprobar">
-                Comprobar respuesta
-              </button>
-
-              <button class="btn btn-ghost" type="button" id="trivia-siguiente" hidden>
-                Siguiente pregunta
-              </button>
-
-              <button class="btn btn-primary" type="button" id="trivia-finalizar" hidden>
-                Ver resultado final
-              </button>
-
-              <button class="btn btn-ghost" type="button" id="trivia-reiniciar" hidden>
-                Volver a jugar
-              </button>
-            </div>
-
-            <p class="trivia-resultado" id="trivia-resultado" role="status" aria-live="polite"></p>
-
-            <div class="trivia-resumen" id="trivia-resumen" hidden>
-              <h3 id="trivia-resumen-titulo">Tu resultado</h3>
-              <p id="trivia-resumen-puntaje"></p>
-              <p id="trivia-resumen-mensaje"></p>
-            </div>
-          </form>
-        </div>
+        <div id="mini-trivia"></div>
       </section>
 
       <!-- CIERRE -->
@@ -1285,16 +1134,13 @@
 
       cambiarFecha("1810");
 
-      /* ========================================
-         TRIVIA DE HISTORIA ARGENTINA
-      ======================================== */
-
-      const preguntas = [
+    })();
+  </script>
+  <script>
+    window.MINI_TRIVIA = {
+      preguntas: [
         {
-          pregunta:
-            "¿En qué año se declaró la independencia de las Provincias Unidas en Sud América?",
-          contexto:
-            "La declaración se realizó durante un congreso reunido en San Miguel de Tucumán, en plena guerra por la independencia.",
+          pregunta: "¿En qué año se declaró la independencia de las Provincias Unidas en Sud América?",
           opciones: [
             "En 1806, durante las invasiones británicas",
             "En 1810, durante la Revolución de Mayo",
@@ -1303,13 +1149,10 @@
           ],
           correcta: 2,
           explicacion:
-            "La independencia fue declarada el 9 de julio de 1816 por el Congreso reunido en Tucumán. La Revolución de Mayo de 1810 había iniciado un proceso de autogobierno, pero todavía no era la declaración formal de independencia."
+            "La independencia fue declarada el 9 de julio de 1816 por el Congreso reunido en Tucumán. La Revolución de Mayo de 1810 había iniciado un proceso de autogobierno, pero todavía no era la declaración formal."
         },
         {
-          pregunta:
-            "¿Qué decisión se tomó el 25 de mayo de 1810 en Buenos Aires?",
-          contexto:
-            "La crisis de la monarquía española provocó debates sobre quién debía gobernar los territorios del Río de la Plata.",
+          pregunta: "¿Qué decisión se tomó el 25 de mayo de 1810 en Buenos Aires?",
           opciones: [
             "Se sancionó la Constitución Nacional",
             "Se declaró formalmente la independencia",
@@ -1318,13 +1161,10 @@
           ],
           correcta: 2,
           explicacion:
-            "El 25 de mayo de 1810 se formó la Primera Junta de gobierno en Buenos Aires. Fue un paso importante en el proceso revolucionario, aunque la declaración formal de independencia se produjo en 1816."
+            "El 25 de mayo de 1810 se formó la Primera Junta de gobierno en Buenos Aires. Fue un paso importante del proceso revolucionario, aunque la independencia formal llegó en 1816."
         },
         {
-          pregunta:
-            "¿Qué acontecimiento importante ocurrió en Argentina en 1983?",
-          contexto:
-            "Ese año se celebraron elecciones presidenciales después de la última dictadura militar que gobernó el país.",
+          pregunta: "¿Qué acontecimiento importante ocurrió en Argentina en 1983?",
           opciones: [
             "Se creó la bandera celeste y blanca",
             "Se produjo el retorno a la democracia",
@@ -1333,185 +1173,19 @@
           ],
           correcta: 1,
           explicacion:
-            "El 10 de diciembre de 1983, Raúl Alfonsín asumió la presidencia después de las elecciones de octubre. El retorno democrático marcó el inicio de una etapa de continuidad institucional basada en elecciones."
+            "El 10 de diciembre de 1983, Raúl Alfonsín asumió la presidencia después de las elecciones de octubre. Comenzó una etapa de continuidad democrática."
+        },
+        {
+          pregunta: "¿En qué año se sancionó la ley que reconoció los derechos políticos de las mujeres argentinas?",
+          opciones: ["1912", "1947", "1951", "1983"],
+          correcta: 1,
+          explicacion:
+            "En 1947 se sancionó la Ley 13.010. Las mujeres votaron por primera vez a nivel nacional en las elecciones de 1951."
         }
-      ];
-
-      const formulario = document.getElementById("trivia-form");
-      const progreso = document.getElementById("trivia-progreso");
-      const preguntaTexto = document.getElementById("trivia-pregunta-texto");
-      const opcionesContenedor = document.getElementById("trivia-opciones");
-      const resultado = document.getElementById("trivia-resultado");
-      const comprobar = document.getElementById("trivia-comprobar");
-      const siguiente = document.getElementById("trivia-siguiente");
-      const finalizar = document.getElementById("trivia-finalizar");
-      const reiniciar = document.getElementById("trivia-reiniciar");
-      const resumen = document.getElementById("trivia-resumen");
-      const resumenTitulo = document.getElementById("trivia-resumen-titulo");
-      const resumenPuntaje = document.getElementById("trivia-resumen-puntaje");
-      const resumenMensaje = document.getElementById("trivia-resumen-mensaje");
-
-      let preguntaActual = 0;
-      let puntuacion = 0;
-      let respondida = false;
-      let triviaTerminada = false;
-
-      function mostrarPregunta() {
-        const pregunta = preguntas[preguntaActual];
-
-        respondida = false;
-        triviaTerminada = false;
-
-        progreso.textContent =
-          "Pregunta " + (preguntaActual + 1) + " de " + preguntas.length;
-
-        preguntaTexto.textContent = pregunta.pregunta;
-        resultado.textContent = pregunta.contexto;
-        resultado.className = "trivia-resultado";
-
-        opcionesContenedor.replaceChildren();
-
-        pregunta.opciones.forEach(function (opcion, indice) {
-          const label = document.createElement("label");
-          label.className = "trivia-opcion";
-
-          const input = document.createElement("input");
-          input.type = "radio";
-          input.name = "respuesta";
-          input.value = String(indice);
-          input.required = true;
-
-          const texto = document.createElement("span");
-          texto.textContent = opcion;
-
-          label.append(input, texto);
-          opcionesContenedor.appendChild(label);
-        });
-
-        comprobar.hidden = false;
-        siguiente.hidden = true;
-        finalizar.hidden = true;
-        reiniciar.hidden = true;
-        resumen.hidden = true;
-      }
-
-      formulario.addEventListener("submit", function (evento) {
-        evento.preventDefault();
-
-        if (respondida || triviaTerminada) return;
-
-        const seleccionada = formulario.querySelector(
-          'input[name="respuesta"]:checked'
-        );
-
-        if (!seleccionada) {
-          resultado.textContent =
-            "Elegí una de las cuatro opciones antes de comprobar tu respuesta.";
-          resultado.className = "trivia-resultado incorrecto";
-          return;
-        }
-
-        const pregunta = preguntas[preguntaActual];
-        const esCorrecta =
-          Number(seleccionada.value) === pregunta.correcta;
-
-        respondida = true;
-
-        formulario
-          .querySelectorAll('input[name="respuesta"]')
-          .forEach(function (input) {
-            input.disabled = true;
-          });
-
-        if (esCorrecta) {
-          puntuacion++;
-
-          resultado.textContent =
-            "¡Muy bien! " + pregunta.explicacion;
-
-          resultado.className = "trivia-resultado correcto";
-        } else {
-          resultado.textContent =
-            "Esta vez no. La respuesta correcta era: «" +
-            pregunta.opciones[pregunta.correcta] +
-            "». " +
-            pregunta.explicacion;
-
-          resultado.className = "trivia-resultado incorrecto";
-        }
-
-        comprobar.hidden = true;
-
-        if (preguntaActual < preguntas.length - 1) {
-          siguiente.hidden = false;
-        } else {
-          progreso.textContent = "¡Respondiste las tres preguntas!";
-          finalizar.hidden = false;
-        }
-      });
-
-      siguiente.addEventListener("click", function () {
-        if (!respondida || preguntaActual >= preguntas.length - 1) return;
-
-        preguntaActual++;
-        mostrarPregunta();
-      });
-
-      finalizar.addEventListener("click", function () {
-        if (!respondida || preguntaActual !== preguntas.length - 1) return;
-
-        triviaTerminada = true;
-
-        const porcentaje = Math.round(
-          (puntuacion / preguntas.length) * 100
-        );
-
-        progreso.textContent = "Trivia completada";
-        finalizar.hidden = true;
-        siguiente.hidden = true;
-        reiniciar.hidden = false;
-
-        resumenTitulo.textContent = "¡Este es tu resultado!";
-        resumenPuntaje.textContent =
-          "Obtuviste " +
-          puntuacion +
-          " de " +
-          preguntas.length +
-          " respuestas correctas (" +
-          porcentaje +
-          "%).";
-
-        if (puntuacion === 3) {
-          resumenMensaje.textContent =
-            "¡Excelente! Contestaste todas correctamente. Tenés una muy buena comprensión de estos acontecimientos históricos.";
-        } else if (puntuacion === 2) {
-          resumenMensaje.textContent =
-            "¡Buen trabajo! Ya reconocés varios acontecimientos importantes. Podés repasar las explicaciones e intentarlo otra vez.";
-        } else if (puntuacion === 1) {
-          resumenMensaje.textContent =
-            "¡Es un buen comienzo! Repasá las fechas y las explicaciones de la trivia para seguir aprendiendo.";
-        } else {
-          resumenMensaje.textContent =
-            "¡Seguí aprendiendo! Volvé a explorar la línea del tiempo y las biografías, y después intentá nuevamente.";
-        }
-
-        resumen.hidden = false;
-        resultado.textContent =
-          "Terminaste la trivia. Podés revisar tu puntuación y volver a jugar cuando quieras.";
-        resultado.className = "trivia-resultado";
-      });
-
-      reiniciar.addEventListener("click", function () {
-        preguntaActual = 0;
-        puntuacion = 0;
-        respondida = false;
-        triviaTerminada = false;
-        mostrarPregunta();
-      });
-
-      mostrarPregunta();
-    })();
+      ]
+    };
   </script>
+  <script src="../js/mini-trivia.js"></script>
 </body>
 
 </html>
