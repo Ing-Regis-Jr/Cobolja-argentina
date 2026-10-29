@@ -1,6 +1,6 @@
 # Argentina 2026 · COBOLJA
 
-Plataforma educativa estática sobre Argentina para la Feria Digital del Colegio Boliviano Japonés 3 (Mundial de Saberes Americanos 2026).
+Plataforma educativa estática sobre Argentina para la Feria Digital del Colegio Boliviano Japonés (Mundial de Saberes Americanos 2026).
 
 Sitio de varias páginas, con mapa Leaflet, trivia, desafío de datos y ranking por apodo. No usa cuentas ni servidor propio.
 

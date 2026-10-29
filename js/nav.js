@@ -173,7 +173,7 @@
     footer.innerHTML = `
       <div class="footer-grid">
         <div>
-          <h2>Colegio Boliviano Japonés 3</h2>
+          <h2>Colegio Boliviano Japonés</h2>
           <p>Plataforma educativa sobre Argentina para la Feria Digital · Mundial de Saberes Americanos 2026.</p>
         </div>
         <div>
