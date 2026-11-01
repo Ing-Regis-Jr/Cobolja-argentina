@@ -202,6 +202,12 @@
           </div>
         </div>
 
+        <section class="sec-bloque" id="trivia">
+          <h2>¿Cuánto aprendiste?</h2>
+          <p class="sec-bajada">Tres preguntas sobre la identidad nacional.</p>
+          <div id="mini-trivia"></div>
+        </section>
+
         <div class="sources sec-fuentes">
           <details>
             <summary><strong>Ver fuentes (4)</strong></summary>
@@ -218,5 +224,35 @@
     <footer class="site-footer" id="site-footer"></footer>
     <script src="../js/config.js"></script>
     <script src="../js/nav.js"></script>
+    <script>
+      window.MINI_TRIVIA = {
+        preguntas: [
+          {
+            pregunta: "¿Cómo es la bandera argentina?",
+            opciones: [
+              "Tres franjas horizontales: celeste, blanca y celeste",
+              "Dos franjas verticales: roja y blanca",
+              "Tres franjas horizontales: azul, blanca y roja",
+              "Cuatro franjas: celeste, blanca, celeste y blanca"
+            ],
+            correcta: 0,
+            explicacion: "Tiene tres franjas horizontales: celeste, blanca y celeste, con el Sol de Mayo en el centro de la franja blanca."
+          },
+          {
+            pregunta: "¿Quién izó por primera vez la bandera, el 27 de febrero de 1812 en Rosario?",
+            opciones: ["Manuel Belgrano", "José de San Martín", "Juana Azurduy", "Bernardino Rivadavia"],
+            correcta: 0,
+            explicacion: "Manuel Belgrano la izó por primera vez en Rosario. Cada 20 de junio se celebra el Día de la Bandera."
+          },
+          {
+            pregunta: "¿Cuál es la flor nacional de Argentina?",
+            opciones: ["El ceibo", "La rosa", "El girasol", "La margarita"],
+            correcta: 0,
+            explicacion: "El ceibo es la flor nacional desde el Decreto 13.847 del 22 de diciembre de 1942."
+          }
+        ]
+      };
+    </script>
+    <script src="../js/mini-trivia.js"></script>
   </body>
 </html>

@@ -14,7 +14,7 @@
     return;
   }
 
-  const preguntas = datos.preguntas;
+  const preguntas = datos.preguntas.slice(0, 3);
   let indice = 0;
   let puntos = 0;
 
