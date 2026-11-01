@@ -1063,3 +1063,83 @@
   }
 }
 
+
+/* Legislación: debate a favor / en contra */
+.deb-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.2rem 0 1rem;
+}
+
+.deb-boton {
+  flex: 1 1 180px;
+  padding: 0.8rem 1rem;
+  color: var(--azul);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  background: #fff;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.deb-boton:hover {
+  border-color: var(--celeste-oscuro);
+}
+
+.deb-boton[data-lado="favor"][aria-pressed="true"] {
+  color: #fff;
+  background: var(--azul);
+  border-color: var(--azul);
+}
+
+.deb-boton[data-lado="contra"][aria-pressed="true"] {
+  color: var(--azul);
+  background: var(--sol);
+  border-color: var(--sol);
+}
+
+.deb-boton:focus-visible {
+  outline: 3px solid var(--celeste);
+  outline-offset: 2px;
+}
+
+.deb-panel {
+  padding: 1.1rem 1.2rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.deb-panel[hidden] {
+  display: none;
+}
+
+.deb-panel--favor {
+  border-top: 4px solid var(--celeste-oscuro);
+}
+
+.deb-panel--contra {
+  border-top: 4px solid var(--sol);
+}
+
+.deb-panel h3 {
+  margin-top: 0;
+}
+
+.deb-panel ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.deb-panel li + li {
+  margin-top: 0.5rem;
+}
+
+.deb-nota {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
