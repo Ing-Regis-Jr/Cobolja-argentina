@@ -848,3 +848,218 @@
   background-repeat: no-repeat;
 }
 
+/* ---- Deportes: franja, fútbol, línea de tiempo, fichas cortas ---- */
+.sec-franja {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0.4rem 0 2.2rem;
+  padding: 1.1rem;
+  color: #fff;
+  background: var(--azul);
+  border-radius: 20px;
+}
+
+.sec-franja-item {
+  padding: 0.7rem 0.5rem;
+  text-align: center;
+}
+
+.sec-franja-item strong {
+  display: block;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.sec-franja-item span {
+  display: block;
+  margin-top: 0.45rem;
+  color: #cfe6f7;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.sec-relato h3 {
+  margin: 1.1rem 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.sec-relato h3:first-child {
+  margin-top: 0;
+}
+
+.sec-otras-marcas {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sec-otras-marcas li {
+  padding: 0.75rem 0.95rem;
+  background: #fff;
+  border-left: 4px solid var(--celeste);
+  border-radius: 0 12px 12px 0;
+}
+
+.sec-otras-marcas strong {
+  color: var(--azul);
+}
+
+.sec-linea {
+  position: relative;
+  margin: 1.2rem 0 0;
+  padding: 0 0 0 1.15rem;
+  list-style: none;
+}
+
+.sec-linea::before {
+  position: absolute;
+  top: 0.4rem;
+  bottom: 0.4rem;
+  left: 0.35rem;
+  width: 2px;
+  content: "";
+  background: #c5dced;
+}
+
+.sec-linea li {
+  position: relative;
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem 0.9rem 1.4rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.sec-linea li::before {
+  position: absolute;
+  top: 1.15rem;
+  left: -1.02rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  content: "";
+  background: var(--celeste-oscuro);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--celeste);
+}
+
+.sec-linea time {
+  display: block;
+  color: var(--celeste-oscuro);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.sec-linea strong {
+  display: block;
+  margin: 0.15rem 0 0.2rem;
+  color: var(--azul);
+}
+
+.sec-linea p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.sec-atleta .dato {
+  margin-top: 0.55rem;
+  padding-top: 0.55rem;
+  color: var(--azul);
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-top: 1px dashed var(--line);
+}
+
+.sec-nombres {
+  display: grid;
+  gap: 0.45rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sec-nombres li {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.9fr) minmax(6rem, 0.5fr) minmax(0, 1.4fr);
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+  padding: 0.7rem 0.95rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.sec-nombres strong {
+  color: var(--azul);
+}
+
+.sec-nombres .disciplina {
+  color: var(--celeste-oscuro);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.sec-nombres span:last-child {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.sec-federaciones {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 0;
+}
+
+.sec-federacion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.05rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.sec-federacion h3 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.sec-federacion p {
+  margin: 0;
+  flex: 1;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.sec-federacion .btn {
+  align-self: flex-start;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 800px) {
+  .sec-franja,
+  .sec-federaciones {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sec-nombres li {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sec-franja,
+  .sec-federaciones {
+    grid-template-columns: 1fr;
+  }
+}
+
