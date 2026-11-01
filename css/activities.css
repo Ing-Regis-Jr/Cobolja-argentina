@@ -308,3 +308,44 @@
     height: 52vh;
   }
 }
+
+.pin-core span {
+  color: #0b1b2b;
+  font-weight: 700;
+}
+
+.route-actions {
+  margin: 0 0 0.8rem;
+}
+
+.panel-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.map-offline {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--muted);
+}
+
+.place-rail li {
+  position: relative;
+}
+
+.rail-num {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #0b1b2b;
+  border: 2px solid #fff;
+}

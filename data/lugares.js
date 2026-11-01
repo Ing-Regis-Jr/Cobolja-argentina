@@ -8,8 +8,9 @@ window.LUGARES = [
     lng: -58.3703,
     emoji: "🏛️",
     imagen: "assets/lugares/casa-rosada.svg",
+    foto: "assets/img/lugares-casa-rosada.jpg",
     fotoIdeal: "Fachada rosa de la Casa Rosada desde Plaza de Mayo, de día.",
-    dato: "El color rosa se asocia a una mezcla histórica de pigmentos y a una identidad visual única en el mundo.",
+    dato: "Su color rosa la distingue de otras casas de gobierno del mundo.",
     descripcion:
       "Sede del Poder Ejecutivo Nacional. Es un símbolo político e histórico del país y punto habitual en recorridos educativos por la capital.",
   },
@@ -22,6 +23,7 @@ window.LUGARES = [
     lng: -65.2105,
     emoji: "📜",
     imagen: "assets/lugares/tucuman.svg",
+    foto: "assets/img/lugares-casa-historica-tucuman.jpg",
     fotoIdeal: "Patio y frente blanco de la Casa Histórica, con la bandera argentina.",
     dato: "El 9 de julio de 1816 el Congreso declaró la independencia en esta casa.",
     descripcion:
@@ -36,10 +38,11 @@ window.LUGARES = [
     lng: -58.3633,
     emoji: "🎨",
     imagen: "assets/lugares/tango.svg",
+    foto: "assets/img/lugares-la-boca-caminito.jpg",
     fotoIdeal: "Casas de chapa de colores en Caminito, con gente y arte callejero.",
-    dato: "Los colores vienen de la pintura sobrante de los barcos del puerto.",
+    dato: "Según cuenta la tradición, los colores vienen de la pintura sobrante de los barcos del puerto.",
     descripcion:
-      "Zona portuaria asociada al tango, al arte popular y a las conventillos de chapa de colores. Es un paisaje cultural muy visitado.",
+      "Zona portuaria asociada al tango, al arte popular y a los conventillos de chapa de colores. Es un paisaje cultural muy visitado.",
   },
   {
     id: "teatro-colon",
@@ -50,6 +53,7 @@ window.LUGARES = [
     lng: -58.3832,
     emoji: "🎭",
     imagen: "assets/lugares/teatro-colon.svg",
+    foto: "assets/img/lugares-teatro-colon.jpg",
     fotoIdeal: "Sala o fachada del Teatro Colón, con columnas y cúpula.",
     dato: "Su acústica está entre las más elogiadas de los teatros de ópera del mundo.",
     descripcion:
@@ -64,8 +68,9 @@ window.LUGARES = [
     lng: -54.4367,
     emoji: "🌊",
     imagen: "assets/lugares/iguazu.svg",
+    foto: "assets/img/lugares-iguazu.jpg",
     fotoIdeal: "Garganta del Diablo o una pasarela con la caída de agua.",
-    dato: "El conjunto tiene cientos de saltos; el más famoso es la Garganta del Diablo.",
+    dato: "El conjunto tiene unos 275 saltos; el más famoso es la Garganta del Diablo.",
     descripcion:
       "Conjunto de saltos sobre el río Iguazú, compartido con Brasil. El Parque Nacional Iguazú es Patrimonio de la Humanidad.",
   },
@@ -78,7 +83,8 @@ window.LUGARES = [
     lng: -73.1377,
     emoji: "🧊",
     imagen: "assets/lugares/perito.svg",
-    fotoIdeal: "Frente del glaciar calving sobre el lago Argentino.",
+    foto: "assets/img/lugares-glaciar-perito-moreno.jpg",
+    fotoIdeal: "Frente del glaciar sobre el lago Argentino.",
     dato: "A veces se rompe el arco de hielo y el desprendimiento se vuelve un espectáculo natural.",
     descripcion:
       "Glaciar del Parque Nacional Los Glaciares. Es uno de los pocos de la región que durante décadas mantuvo un frente relativamente estable.",
@@ -92,6 +98,7 @@ window.LUGARES = [
     lng: -70.0109,
     emoji: "⛰️",
     imagen: "assets/lugares/aconcagua.svg",
+    foto: "assets/img/lugares-aconcagua.jpg",
     fotoIdeal: "Cumbre nevada del Aconcagua desde el Valle de Horcones.",
     dato: "Con 6.960 m es la montaña más alta de América.",
     descripcion:
@@ -106,6 +113,7 @@ window.LUGARES = [
     lng: -68.303,
     emoji: "🐧",
     imagen: "assets/lugares/ushuaia.svg",
+    foto: "assets/img/lugares-ushuaia.jpg",
     fotoIdeal: "Puerto de Ushuaia con montañas y el canal Beagle.",
     dato: "Se presenta como la ciudad más austral del mundo y puerta a la Antártida.",
     descripcion:
@@ -120,6 +128,7 @@ window.LUGARES = [
     lng: -65.95,
     emoji: "🧂",
     imagen: "assets/lugares/salinas.svg",
+    foto: "assets/img/lugares-salinas-grandes.jpg",
     fotoIdeal: "Espejo blanco de sal con cerros de colores al fondo.",
     dato: "El blanco de la sal contrasta con la paleta mineral de la Puna.",
     descripcion:
@@ -134,6 +143,7 @@ window.LUGARES = [
     lng: -60.6305,
     emoji: "🚩",
     imagen: "assets/lugares/rosario.svg",
+    foto: "assets/img/lugares-monumento-bandera-rosario.jpg",
     fotoIdeal: "Torre del monumento junto al río Paraná.",
     dato: "Recuerda la jura de la bandera de Belgrano en 1812.",
     descripcion:

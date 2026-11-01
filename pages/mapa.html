@@ -24,21 +24,16 @@
         <p class="section-kicker">Actividad 1</p>
         <h1>Mapa real de Argentina</h1>
         <p>
-          Filtrá por tema, abrí un marcador o lanzá el recorrido guiado. Cada punto tiene
-          ilustración, dato curioso y una ficha. Si más adelante cargan fotos reales, van en
-          <code>assets/lugares/</code>.
+          Elegí un recorrido y seguí la ruta por Argentina. Cada parada tiene foto,
+          un dato curioso y una ficha para contar en la feria.
         </p>
       </div>
       <section class="map-layout">
         <div class="map-shell">
-          <div class="filter-row" role="group" aria-label="Filtrar por categoría">
-            <button type="button" class="is-active" data-filter="todas">Todas</button>
-            <button type="button" data-filter="historia">Historia</button>
-            <button type="button" data-filter="cultura">Cultura</button>
-            <button type="button" data-filter="turismo">Turismo</button>
-            <button type="button" data-filter="naturaleza">Naturaleza</button>
+          <div class="filter-row" id="route-row" role="group" aria-label="Elegir recorrido"></div>
+          <p class="route-actions">
             <button type="button" class="btn btn-primary" id="tour-btn">Recorrido guiado</button>
-          </div>
+          </p>
           <div id="map" role="application" aria-label="Mapa de Argentina con marcadores"></div>
         </div>
         <aside class="place-panel" id="place-panel" aria-live="polite"></aside>
@@ -54,6 +49,8 @@
       crossorigin=""
     ></script>
     <script src="../data/lugares.js"></script>
+    <script src="../data/lugares-extra.js"></script>
+    <script src="../data/recorridos.js"></script>
     <script src="../js/map.js"></script>
   </body>
 </html>

@@ -57,7 +57,7 @@ window.SECCIONES = [
     id: "gastronomia",
     title: "Arte culinario",
     href: "pages/gastronomia.html",
-    summary: "Asado, empanadas y el producto gourmet de la feria.",
+    summary: "Empanadas tucumanas: el producto de la feria.",
   },
   {
     id: "conclusion",
