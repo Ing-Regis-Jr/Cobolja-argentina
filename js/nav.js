@@ -26,21 +26,26 @@
       '<svg viewBox="0 0 24 24"><path d="M5 19V5l7 3 7-3v14l-7 3z"/><path d="M9 12l2.1 2L15 10"/></svg>',
     temas:
       '<svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h14"/></svg>',
+    anterior: '<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>',
+    siguiente: '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>',
   };
 
-  const temas = [
-    { href: "pages/identidad.html", label: "Identidad", icon: "identidad" },
-    { href: "pages/historia.html", label: "Historia", icon: "historia" },
-    { href: "pages/cultura.html", label: "Cultura", icon: "cultura" },
-    { href: "pages/sociedad.html", label: "Sociedad", icon: "sociedad" },
-    { href: "pages/legislacion.html", label: "Legislación", icon: "legislacion" },
-    { href: "pages/deportes.html", label: "Deportes", icon: "deportes" },
-    { href: "pages/ciencia-tecnologia.html", label: "Ciencia", icon: "ciencia" },
-    { href: "pages/economia.html", label: "Economía", icon: "economia" },
+  // Secciones en el orden oficial A-K.
+  const secciones = [
+    { letra: "A", href: "pages/identidad.html", label: "Identidad" },
+    { letra: "B", href: "pages/historia.html", label: "Historia" },
+    { letra: "C", href: "pages/cultura.html", label: "Cultura" },
+    { letra: "D", href: "pages/sociedad.html", label: "Sociedad" },
+    { letra: "E", href: "pages/legislacion.html", label: "Legislación" },
+    { letra: "F", href: "pages/deportes.html", label: "Deportes" },
+    { letra: "G", href: "pages/ciencia-tecnologia.html", label: "Ciencia y tecnología" },
+    { letra: "H", href: "pages/economia.html", label: "Economía" },
+    { letra: "I", href: "pages/datos-impactantes.html", label: "Cifras del país", sub: "10 datos impactantes" },
+    { letra: "J", href: "pages/gastronomia.html", label: "Arte culinario" },
+    { letra: "K", href: "pages/conclusion.html", label: "Conclusión" },
   ];
 
   const base = document.body.dataset.base || "";
-  const temaFiles = temas.map((item) => item.href.split("/").pop());
 
   function resolve(href) {
     if (!base) {
@@ -77,18 +82,37 @@
     document.head.append(pre, pre2, link);
   }
 
-  function itemHtml(href, label, icon, file, currentFiles) {
-    const resolved = resolve(href);
-    const target = resolved.split("/").pop();
-    const on = currentFiles ? currentFiles.includes(file) : target === file;
-    const current = on ? ' aria-current="page"' : "";
-    return `<a class="nav-item" href="${resolved}"${current}>${icons[icon]}<span>${label}</span></a>`;
+  function esActual(href, file) {
+    return resolve(href).split("/").pop() === file;
+  }
+
+  // Botón de la barra inferior (celular).
+  function itemHtml(href, label, icon, file) {
+    const current = esActual(href, file) ? ' aria-current="page"' : "";
+    return `<a class="nav-item" href="${resolve(href)}"${current}>${icons[icon]}<span>${label}</span></a>`;
+  }
+
+  // Fila de la barra lateral (computador).
+  function sideHtml(item, file) {
+    const current = esActual(item.href, file) ? ' aria-current="page"' : "";
+    const sub = item.sub ? `<small>${item.sub}</small>` : "";
+    return `<a class="side-item" href="${resolve(item.href)}"${current}><span class="side-letter" aria-hidden="true">${item.letra}</span><span class="side-text">${item.label}${sub}</span></a>`;
+  }
+
+  // Fila de la lista que se abre en el celular.
+  function sheetHtml(item, file) {
+    const current = esActual(item.href, file) ? ' aria-current="page"' : "";
+    return `<a href="${resolve(item.href)}"${current}><span class="side-letter" aria-hidden="true">${item.letra}</span><span>${item.label}</span></a>`;
   }
 
   injectFonts();
   const file = currentFile();
   const home = resolve("index.html");
-  const inTemas = temaFiles.includes(file);
+
+  const orden = [{ href: "index.html", label: "Inicio" }].concat(secciones);
+  const idx = orden.findIndex((item) => esActual(item.href, file));
+  const anterior = idx > 0 ? orden[idx - 1] : null;
+  const siguiente = idx >= 0 && idx < orden.length - 1 ? orden[idx + 1] : null;
 
   const header = document.getElementById("site-header");
   if (header) {
@@ -102,20 +126,17 @@
     `;
   }
 
-  const navFive = `
-    ${itemHtml("index.html", "Inicio", "inicio", file)}
-    <button class="nav-item" type="button" id="temas-btn" aria-expanded="false"${inTemas ? ' aria-current="true"' : ""}>${icons.temas}<span>Temas</span></button>
-    ${itemHtml("pages/datos-impactantes.html", "Datos", "datos", file)}
-    ${itemHtml("pages/gastronomia.html", "Cocina", "gastronomia", file)}
-    ${itemHtml("pages/conclusion.html", "Cierre", "conclusion", file)}
-  `;
-
   const sidebar = document.createElement("aside");
   sidebar.className = "sidebar";
-  sidebar.setAttribute("aria-label", "Navegación");
+  sidebar.setAttribute("aria-label", "Navegación por secciones");
   sidebar.innerHTML = `
-    <a class="sidebar-brand" href="${home}" title="Inicio"><span class="brand-mark" aria-hidden="true"></span></a>
-    ${navFive}
+    <a class="sidebar-brand" href="${home}" title="Inicio">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="sidebar-title">Argentina 2026<small>COBOLJA · Mundial de Saberes</small></span>
+    </a>
+    <a class="side-item" href="${home}"${file === "index.html" ? ' aria-current="page"' : ""}><span class="side-letter" aria-hidden="true">${icons.inicio}</span><span class="side-text">Inicio</span></a>
+    <p class="side-heading">Secciones</p>
+    ${secciones.map((item) => sideHtml(item, file)).join("")}
   `;
   const skip = document.querySelector(".skip-link");
   if (skip) {
@@ -124,44 +145,45 @@
     document.body.prepend(sidebar);
   }
 
+  function pasoHtml(item, label, icon) {
+    if (!item) {
+      return `<span class="nav-item is-disabled" aria-hidden="true">${icons[icon]}<span>${label}</span></span>`;
+    }
+    return `<a class="nav-item" href="${resolve(item.href)}" aria-label="${label}: ${item.label}">${icons[icon]}<span>${label}</span></a>`;
+  }
+
   const dock = document.createElement("nav");
   dock.className = "dock";
   dock.setAttribute("aria-label", "Navegación móvil");
-  dock.innerHTML = navFive.replace("temas-btn", "temas-btn-dock");
+  dock.innerHTML = `
+    ${itemHtml("index.html", "Inicio", "inicio", file)}
+    ${pasoHtml(anterior, "Anterior", "anterior")}
+    <button class="nav-item" type="button" id="secciones-btn" aria-expanded="false"${idx > 0 ? ' aria-current="true"' : ""}>${icons.temas}<span>Secciones</span></button>
+    ${pasoHtml(siguiente, "Siguiente", "siguiente")}
+  `;
   document.body.appendChild(dock);
 
   const sheet = document.createElement("div");
   sheet.className = "sheet";
-  sheet.id = "temas-sheet";
-  sheet.innerHTML = `<h2>Temas de investigación</h2>${temas
-    .map((item) => itemHtml(item.href, item.label, item.icon, file))
-    .join("")}`;
+  sheet.id = "secciones-sheet";
+  sheet.innerHTML = `<h2>Secciones</h2>${secciones.map((item) => sheetHtml(item, file)).join("")}`;
   document.body.appendChild(sheet);
 
-  function toggleSheet(btn) {
-    const open = sheet.classList.toggle("is-open");
-    document.querySelectorAll("#temas-btn, #temas-btn-dock").forEach((el) => {
-      el.setAttribute("aria-expanded", String(open));
-    });
-    if (btn) {
-      btn.setAttribute("aria-expanded", String(open));
-    }
-  }
+  const seccionesBtn = document.getElementById("secciones-btn");
 
-  document.querySelectorAll("#temas-btn, #temas-btn-dock").forEach((btn) => {
-    btn.addEventListener("click", () => toggleSheet(btn));
+  seccionesBtn.addEventListener("click", () => {
+    const open = sheet.classList.toggle("is-open");
+    seccionesBtn.setAttribute("aria-expanded", String(open));
   });
 
   document.addEventListener("click", (event) => {
     if (!sheet.classList.contains("is-open")) {
       return;
     }
-    const inside =
-      sheet.contains(event.target) ||
-      event.target.closest("#temas-btn") ||
-      event.target.closest("#temas-btn-dock");
+    const inside = sheet.contains(event.target) || event.target.closest("#secciones-btn");
     if (!inside) {
       sheet.classList.remove("is-open");
+      seccionesBtn.setAttribute("aria-expanded", "false");
     }
   });
 
