@@ -198,10 +198,11 @@
           <h2>Colegio Boliviano Japonés</h2>
           <p>Plataforma educativa sobre Argentina para la Feria Digital · Mundial de Saberes Americanos 2026.</p>
         </div>
-        <div>
+                <div>
           <h2>Créditos y mapa</h2>
           <p>Mapa: <a href="https://leafletjs.com" rel="noopener">Leaflet</a> y
           <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>.</p>
+          <p><a href="${(document.body.dataset.base || "") + "pages/creditos.html"}">Ver créditos completos</a></p>
         </div>
         <div>
           <h2>Código QR</h2>

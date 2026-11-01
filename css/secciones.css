@@ -1195,3 +1195,26 @@
     order: 0;
   }
 }
+
+.cred-scroll {
+  overflow-x: auto;
+  margin: 0.8rem 0;
+}
+
+.cred-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.cred-tabla th,
+.cred-tabla td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.cred-tabla th {
+  background: var(--gris);
+}
