@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Sociedad argentina: organización, educación, salud, situación actual y desafíos."
+      content="Sociedad argentina: organización, educación, salud, situación actual y desafíos, con datos del Censo 2022 y de 2026."
     />
     <title>Sociedad · Argentina 2026</title>
     <link rel="icon" href="../assets/icons/sol.svg" type="image/svg+xml" />
@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/secciones.css" />
+    <link rel="stylesheet" href="../css/sociedad.css" />
   </head>
   <body data-base="../">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -41,20 +42,20 @@
 
         <div class="sec-cifras">
           <div class="sec-cifra">
-            <strong>92&nbsp;%</strong>
-            <span>Población urbana (Censo 2022)</span>
+            <strong>23 + CABA</strong>
+            <span>Provincias y ciudad autónoma</span>
           </div>
           <div class="sec-cifra">
-            <strong>~76 años</strong>
-            <span>Esperanza de vida al nacer</span>
+            <strong>9 de cada 10</strong>
+            <span>Personas que viven en ciudades</span>
           </div>
           <div class="sec-cifra">
             <strong>14 años</strong>
-            <span>Escolaridad obligatoria</span>
+            <span>Escolaridad obligatoria (de sala de 4 a fin del secundario)</span>
           </div>
           <div class="sec-cifra">
-            <strong>23 + CABA</strong>
-            <span>Provincias y ciudad autónoma</span>
+            <strong>35,8&nbsp;%</strong>
+            <span>Depende solo del sistema público de salud (Censo 2022)</span>
           </div>
         </div>
 
@@ -71,10 +72,27 @@
                 Tucumán.
               </p>
               <p>
-                Conviven comunidades indígenas —reconocidas en la Constitución—
-                con una historia de inmigración europea, latinoamericana y, en
-                menor medida, de otros continentes.
+                Conviven pueblos indígenas —reconocidos en la Constitución— con
+                una historia de inmigración europea, latinoamericana y, en menor
+                medida, de otros continentes. Algunos pueblos se concentran en
+                pocas provincias: casi 8 de cada 10 personas kollas viven en
+                Jujuy y Salta, y casi 8 de cada 10 wichí, en Salta y Formosa.
               </p>
+              <div class="soc-datos">
+                <div class="soc-dato">
+                  <strong>1.306.730</strong>
+                  <span>personas se reconocen indígenas o descendientes de pueblos indígenas (2,9&nbsp;% de la población en viviendas particulares)</span>
+                </div>
+                <div class="soc-dato">
+                  <strong>58 pueblos</strong>
+                  <span>y 53 lenguas ancestrales registrados por el Censo 2022</span>
+                </div>
+                <div class="soc-dato soc-dato--sol">
+                  <strong>Más de 1 de cada 3</strong>
+                  <span>personas vive en la Región Metropolitana de Buenos Aires</span>
+                </div>
+              </div>
+              <p class="soc-fuente">Fuente: INDEC, Censo Nacional de Población, Hogares y Viviendas 2022.</p>
             </div>
           </section>
 
@@ -85,11 +103,12 @@
               <div class="sec-destacado">
                 <div>
                   <p>
-                    La educación inicial (sala de 4), primaria y secundaria es
-                    obligatoria. El sistema es de gestión estatal y privada. Las
-                    universidades nacionales públicas —como la UBA, la UNC o la
-                    UNLP— son un rasgo distintivo: el grado, en muchas de ellas,
-                    no cobra arancel.
+                    La educación es obligatoria desde la sala de 4 hasta el final
+                    del secundario (Ley de Educación Nacional 26.206, modificada
+                    por la Ley 27.045). El sistema es de gestión estatal y
+                    privada. Las universidades nacionales públicas —como la UBA,
+                    la UNC o la UNLP— son un rasgo distintivo: el grado, en
+                    muchas de ellas, no cobra arancel.
                   </p>
                   <p>
                     Los debates escolares suelen hablar de calidad, deserción y
@@ -100,6 +119,22 @@
                   <figcaption>La escuela pública es parte de la vida cotidiana.</figcaption>
                 </figure>
               </div>
+              <h3 class="soc-sub">Aprender 2025 · 6.º grado de primaria</h3>
+              <div class="soc-datos">
+                <div class="soc-dato">
+                  <strong>76,9&nbsp;%</strong>
+                  <span>alcanzó nivel satisfactorio o avanzado en Lengua (66,4&nbsp;% en 2023)</span>
+                </div>
+                <div class="soc-dato">
+                  <strong>55&nbsp;%</strong>
+                  <span>lo alcanzó en Matemática (51,5&nbsp;% en 2023)</span>
+                </div>
+                <div class="soc-dato soc-dato--sol">
+                  <strong>88,1&nbsp;% · 63,9&nbsp;%</strong>
+                  <span>Lengua: Ciudad de Buenos Aires (la más alta) y Chaco (la más baja)</span>
+                </div>
+              </div>
+              <p class="soc-fuente">Fuente: Ministerio de Capital Humano, resultados de Aprender 2025 (julio de 2026).</p>
             </div>
           </section>
 
@@ -117,15 +152,40 @@
                     paraje rural.
                   </p>
                   <p>
-                    PAMI cubre a gran parte de las personas jubiladas. Para
-                    citar un indicador, conviene usar el último anuario del
-                    Ministerio de Salud (natalidad, vacunación o mortalidad).
+                    PAMI cubre a gran parte de las personas jubiladas y está
+                    incluido en la categoría de obra social del Censo.
                   </p>
                 </div>
                 <figure class="shot" data-img="sociedad-salud.jpg" data-alt="Hospital o centro de salud">
                   <figcaption>Hospital público o centro de salud.</figcaption>
                 </figure>
               </div>
+              <h3 class="soc-sub">¿Qué cobertura de salud tiene la población? (Censo 2022)</h3>
+              <div
+                class="soc-barra"
+                role="img"
+                aria-label="60,9 % con obra social o prepaga, 3,3 % con planes estatales y 35,8 % solo con el sistema público"
+              >
+                <i class="soc-a" style="--w: 60.9%">60,9&nbsp;%</i>
+                <i class="soc-b" style="--w: 3.3%"></i>
+                <i class="soc-c" style="--w: 35.8%">35,8&nbsp;%</i>
+              </div>
+              <ul class="soc-leyenda">
+                <li style="--c: var(--azul)"><b>60,9&nbsp;%</b> obra social o prepaga, incluye PAMI (27.787.124 personas)</li>
+                <li style="--c: var(--sol)"><b>3,3&nbsp;%</b> programas o planes estatales de salud</li>
+                <li style="--c: var(--celeste-oscuro)"><b>35,8&nbsp;%</b> solo sistema público</li>
+              </ul>
+              <div class="soc-datos">
+                <div class="soc-dato">
+                  <strong>8,5&nbsp;‰</strong>
+                  <span>mortalidad infantil en 2024, por cada 1.000 nacidos vivos (8,0 en 2023)</span>
+                </div>
+                <div class="soc-dato soc-dato--sol">
+                  <strong>≈ 77 años</strong>
+                  <span>esperanza de vida al nacer: es una estimación y cambia según la fuente</span>
+                </div>
+              </div>
+              <p class="soc-fuente">Fuentes: INDEC, Censo 2022 (resultados definitivos); Ministerio de Salud, Estadísticas Vitales (DEIS), dato 2024.</p>
             </div>
           </section>
 
@@ -136,20 +196,54 @@
               <div class="sec-destacado">
                 <div>
                   <p>
-                    Hacia 2026, Argentina sigue siendo un país urbano, con un
-                    mercado de trabajo que combina empleo registrado e informal,
-                    y con una red amplia de escuelas y hospitales públicos.
+                    Hacia fines de 2026, Argentina sigue siendo un país urbano,
+                    con un mercado de trabajo que combina empleo registrado e
+                    informal, y con una red amplia de escuelas y hospitales
+                    públicos.
                   </p>
                   <p>
-                    El Censo 2022 contó 45.892.285 personas. Cualquier cifra de
-                    pobreza, empleo o precios debe llevar la fecha del informe
-                    del INDEC, porque cambia rápido.
+                    El Censo 2022 contó 45.892.285 personas (el INDEC estimó
+                    46.234.830 a mitad de ese año). Los indicadores del tablero
+                    cambian cada trimestre o cada mes, por eso llevan su fecha.
                   </p>
                 </div>
                 <figure class="shot" data-img="sociedad-ciudad.jpg" data-alt="Ciudad argentina">
                   <figcaption>La mayoría de la población vive en ciudades.</figcaption>
                 </figure>
               </div>
+              <div class="soc-tablero">
+                <div class="soc-kpi">
+                  <strong>7,9&nbsp;%</strong>
+                  <span>Desocupación</span>
+                  <small>2.º trimestre de 2026 · INDEC</small>
+                </div>
+                <div class="soc-kpi">
+                  <strong>45&nbsp;%</strong>
+                  <span>Empleo informal</span>
+                  <small>de las personas ocupadas · 2.º trimestre de 2026</small>
+                </div>
+                <div class="soc-kpi">
+                  <strong>32,3&nbsp;%</strong>
+                  <span>Personas bajo la línea de pobreza</span>
+                  <small>1.er semestre de 2026 · 9.729.000 personas</small>
+                </div>
+                <div class="soc-kpi">
+                  <strong>33,4&nbsp;%</strong>
+                  <span>Inflación interanual</span>
+                  <small>septiembre de 2026 · 1,9&nbsp;% en el mes</small>
+                </div>
+              </div>
+              <h3 class="soc-sub">Pobreza: personas bajo la línea, por semestre</h3>
+              <ul class="soc-serie">
+                <li><span>1.er sem. 2024</span><i style="--w: 52.9%"></i><b>52,9&nbsp;%</b></li>
+                <li><span>1.er sem. 2025</span><i style="--w: 31.6%"></i><b>31,6&nbsp;%</b></li>
+                <li><span>2.º sem. 2025</span><i style="--w: 28.2%"></i><b>28,2&nbsp;%</b></li>
+                <li><span>1.er sem. 2026</span><i style="--w: 32.3%"></i><b>32,3&nbsp;%</b></li>
+              </ul>
+              <p class="soc-fuente">
+                Fuentes: INDEC (EPH, 31 aglomerados urbanos): mercado de trabajo, 17/9/2026; pobreza, 24/9/2026; IPC, 13/10/2026.
+                La EPH mide ciudades grandes y medianas, no todo el país.
+              </p>
             </div>
           </section>
 
@@ -160,19 +254,19 @@
               <ul class="sec-lista">
                 <li>
                   <strong>Pobreza e inflación</strong>
-                  <small>Se miden en informes periódicos del INDEC. No se presentan aquí como consigna política, sino como problemas documentados.</small>
+                  <small>En el 1.er semestre de 2026, el 44,5&nbsp;% de las niñas y niños de 0 a 14 años vivía en hogares bajo la línea de pobreza, frente al 14,8&nbsp;% de las personas de 65 años o más. La inflación interanual de septiembre fue del 33,4&nbsp;%. Son problemas documentados por el INDEC, no una consigna política.</small>
                 </li>
                 <li>
                   <strong>Empleo informal</strong>
-                  <small>Una parte de quienes trabajan no tiene obra social ni aportes. Eso afecta ingresos y cobertura de salud.</small>
+                  <small>El 45&nbsp;% de las personas ocupadas no tiene empleo registrado. Entre quienes son asalariados, el 37,9&nbsp;% no tiene descuento jubilatorio. Eso afecta ingresos, obra social y jubilación futura.</small>
                 </li>
                 <li>
                   <strong>Desigualdad territorial</strong>
-                  <small>El acceso a escuela, hospital e internet no es igual en todas las provincias.</small>
+                  <small>Entre los aglomerados, Concordia (56,2&nbsp;%) y Gran Resistencia (48,6&nbsp;%) tuvieron la pobreza más alta del 1.er semestre de 2026; entre las regiones, la Patagonia tuvo la más baja (28,4&nbsp;%). En Aprender 2025, Lengua va de 88,1&nbsp;% en CABA a 63,9&nbsp;% en Chaco.</small>
                 </li>
                 <li>
                   <strong>Calidad educativa</strong>
-                  <small>Las pruebas nacionales e internacionales se usan para discutir aprendizajes, no solo la asistencia.</small>
+                  <small>Lengua mejoró en 6.º grado, pero Matemática sigue siendo la deuda: 55&nbsp;% alcanza el nivel esperado. Entre el estudiantado de nivel socioeconómico bajo es 43&nbsp;%, y entre el de nivel alto, 73&nbsp;%.</small>
                 </li>
               </ul>
               <aside class="sec-dato">
@@ -189,22 +283,28 @@
 
         <section class="sec-bloque" id="trivia">
           <h2>¿Cuánto aprendiste?</h2>
-          <p class="sec-bajada">Tres preguntas cortas sobre la sociedad argentina.</p>
+          <p class="sec-bajada">Cuatro preguntas cortas sobre la sociedad argentina.</p>
           <div id="mini-trivia"></div>
         </section>
 
         <div class="sources sec-fuentes">
           <details>
-            <summary><strong>Ver fuentes (4)</strong></summary>
+            <summary><strong>Ver fuentes (6)</strong></summary>
             <ul>
               <li>
-                <a href="https://www.indec.gob.ar" target="_blank" rel="noopener noreferrer">INDEC — Censo 2022 y estadísticas sociales</a>
+                <a href="https://www.indec.gob.ar" target="_blank" rel="noopener noreferrer">INDEC — Censo 2022 (resultados definitivos: población, pueblos indígenas, cobertura de salud)</a>
               </li>
               <li>
-                <a href="https://www.argentina.gob.ar/educacion" target="_blank" rel="noopener noreferrer">Ministerio de Educación de la Nación</a>
+                <a href="https://www.indec.gob.ar" target="_blank" rel="noopener noreferrer">INDEC — Pobreza e indigencia, 1.er semestre de 2026 (24/9/2026)</a>
               </li>
               <li>
-                <a href="https://www.argentina.gob.ar/salud" target="_blank" rel="noopener noreferrer">Ministerio de Salud de la Nación</a>
+                <a href="https://www.indec.gob.ar" target="_blank" rel="noopener noreferrer">INDEC — Mercado de trabajo 2.º trimestre de 2026 (17/9/2026) e IPC de septiembre (13/10/2026)</a>
+              </li>
+              <li>
+                <a href="https://www.argentina.gob.ar/educacion" target="_blank" rel="noopener noreferrer">Ministerio de Educación / Capital Humano — Aprender 2025 y Ley 27.045</a>
+              </li>
+              <li>
+                <a href="https://www.argentina.gob.ar/salud" target="_blank" rel="noopener noreferrer">Ministerio de Salud de la Nación — Estadísticas Vitales (DEIS)</a>
               </li>
               <li>
                 <a href="https://www.cepal.org" target="_blank" rel="noopener noreferrer">CEPAL — indicadores sociales comparables</a>
@@ -233,19 +333,19 @@
               "La Constitución organiza un Estado federal con 23 provincias y la Ciudad Autónoma de Buenos Aires."
           },
           {
-            pregunta: "¿Desde qué nivel es obligatoria la educación, según la Ley de Educación Nacional?",
+            pregunta: "¿Desde qué edad es obligatoria la escuela, según la Ley de Educación Nacional?",
             opciones: [
-              "Solo la primaria",
-              "Desde sala de 4 años hasta el secundario",
-              "Solo la universidad",
-              "Únicamente el jardín de infantes"
+              "Desde los 6 años",
+              "Desde sala de 4 años hasta el final del secundario",
+              "Solo en la primaria",
+              "Únicamente hasta los 12 años"
             ],
             correcta: 1,
             explicacion:
-              "La Ley 26.206 fija la obligatoriedad desde sala de 4 años hasta el nivel secundario."
+              "La Ley 27.045 modificó la Ley 26.206 y extendió la obligatoriedad desde los 4 años hasta terminar el secundario."
           },
           {
-            pregunta: "¿Qué rasgo describe mejor a la población argentina, según el Censo 2022?",
+            pregunta: "¿Qué rasgo describe mejor a la población argentina?",
             opciones: [
               "Es mayoritariamente rural",
               "Es mayoritariamente urbana",
@@ -254,7 +354,19 @@
             ],
             correcta: 1,
             explicacion:
-              "Alrededor del 92 % de la población vive en áreas urbanas. El AMBA concentra una parte muy grande."
+              "Cerca de 9 de cada 10 personas viven en áreas urbanas. Más de 1 de cada 3 vive en la Región Metropolitana de Buenos Aires."
+          },
+          {
+            pregunta: "Según el Censo 2022, ¿qué porcentaje de la población depende solo del sistema público de salud?",
+            opciones: [
+              "5,0 %",
+              "15,0 %",
+              "35,8 %",
+              "60,9 %"
+            ],
+            correcta: 2,
+            explicacion:
+              "El 35,8 % solo cuenta con el sistema público. El 60,9 % tiene obra social o prepaga (incluye PAMI) y el 3,3 %, planes estatales."
           }
         ]
       };

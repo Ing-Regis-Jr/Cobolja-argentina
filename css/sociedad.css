@@ -1,0 +1,167 @@
+/* Sociedad: recuadros de datos, barra de cobertura, tablero y serie */
+
+.soc-sub {
+  margin: 1.4rem 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.soc-datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 0.8rem;
+  margin: 0.8rem 0 0.4rem;
+}
+
+.soc-dato {
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--celeste-oscuro);
+  border-radius: 14px;
+}
+
+.soc-dato--sol {
+  border-top-color: var(--sol);
+}
+
+.soc-dato strong {
+  display: block;
+  color: var(--azul);
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+
+.soc-dato span {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.soc-fuente {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Barra apilada de cobertura de salud */
+.soc-barra {
+  display: flex;
+  height: 2.6rem;
+  margin: 0.8rem 0 0.6rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.soc-barra i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--w);
+  color: #fff;
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.soc-a { background: var(--azul); }
+.soc-b { background: var(--sol); }
+.soc-c { background: var(--celeste-oscuro); }
+
+.soc-leyenda {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0 0 0.8rem;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  list-style: none;
+}
+
+.soc-leyenda li::before {
+  content: "";
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.5rem;
+  background: var(--c);
+  border-radius: 3px;
+}
+
+.soc-leyenda b {
+  color: var(--azul);
+}
+
+/* Tablero oscuro de indicadores */
+.soc-tablero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 0.4rem;
+  padding: 1.1rem;
+  color: #fff;
+  background: var(--azul);
+  border-radius: var(--radio);
+}
+
+.soc-kpi strong {
+  display: block;
+  color: var(--sol);
+  font-size: 1.9rem;
+  line-height: 1.1;
+}
+
+.soc-kpi span {
+  display: block;
+  margin-top: 0.2rem;
+  font-weight: 700;
+}
+
+.soc-kpi small {
+  display: block;
+  margin-top: 0.2rem;
+  color: #c9d9ea;
+  line-height: 1.35;
+}
+
+/* Serie de pobreza en barras */
+.soc-serie {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.6rem 0 0.3rem;
+  padding: 0;
+  list-style: none;
+}
+
+.soc-serie li {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr) 3.6rem;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.92rem;
+}
+
+.soc-serie span {
+  color: var(--muted);
+}
+
+.soc-serie i {
+  display: block;
+  width: var(--w);
+  height: 0.9rem;
+  background: var(--celeste-oscuro);
+  border-radius: 999px;
+}
+
+.soc-serie b {
+  color: var(--azul);
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .soc-serie li {
+    grid-template-columns: 6rem minmax(0, 1fr) 3.4rem;
+  }
+}
