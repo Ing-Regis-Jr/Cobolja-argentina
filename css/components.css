@@ -448,7 +448,7 @@
 
 /* ---- Encabezado de sección: foto menos recortada ---- */
 .page-hero.has-photo {
-  min-height: clamp(260px, 34vw, 380px);
+  min-height: var(--alto, clamp(260px, 34vw, 380px));
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center var(--foco, 30%);
@@ -468,3 +468,29 @@
     background-position: center var(--foco, 25%);
   }
 }
+
+/* ---- Portadas de sección: mismo alto y recorte controlado ---- */
+.page-hero.has-photo {
+  height: clamp(260px, 30vw, 340px);
+  min-height: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center var(--foco, 40%);
+}
+
+@media (max-width: 600px) {
+  .page-hero.has-photo {
+    height: auto;
+    min-height: 300px;
+  }
+}
+
+/* Enfoque vertical por foto (cambia el % si quieres subir o bajar el encuadre) */
+.page-hero[data-img="identidad.jpg"]  { --foco: 15%; }
+.page-hero[data-img="historia.jpg"]   { --foco: 35%; }
+.page-hero[data-img="cultura.jpg"]    { --foco: 40%; }
+.page-hero[data-img="sociedad.jpg"]   { --foco: 60%; }
+.page-hero[data-img="deportes.jpg"]   { --foco: 45%; }
+.page-hero[data-img="economia.jpg"]   { --foco: 25%; }
+.page-hero[data-img="mapa.jpg"]       { --foco: 50%; }
+.page-hero[data-img="trivia.jpg"]     { --foco: 45%; }
