@@ -330,6 +330,35 @@
   border-radius: 14px;
   padding: 1rem;
 }
+.simbolo {
+  overflow: hidden;
+}
+
+.simbolo .shot {
+  margin: -1rem -1rem 0.9rem;
+  border-radius: 0;
+  min-height: 0;
+}
+
+.simbolo .shot img {
+  aspect-ratio: 16 / 10;
+}
+
+.simbolo .shot-contain {
+  background: #fff;
+}
+
+.simbolo .shot-contain img {
+  object-fit: contain;
+  padding: 0.6rem;
+}
+
+
+
+.simbolo .shot.is-empty,
+.simbolo .shot figcaption {
+  display: none;
+}
 
 .simbolo-icon {
   font-size: 1.8rem;
@@ -415,4 +444,27 @@
   margin: 0;
   padding: 0.3rem 1rem 1rem;
   font-size: 0.95rem;
+}
+
+/* ---- Encabezado de sección: foto menos recortada ---- */
+.page-hero.has-photo {
+  min-height: clamp(260px, 34vw, 380px);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center var(--foco, 30%);
+}
+
+.page-hero.has-photo::after {
+  background: linear-gradient(
+    180deg,
+    rgba(18, 51, 84, 0) 35%,
+    rgba(18, 51, 84, 0.85) 100%
+  );
+}
+
+@media (max-width: 600px) {
+  .page-hero.has-photo {
+    min-height: 320px;
+    background-position: center var(--foco, 25%);
+  }
 }

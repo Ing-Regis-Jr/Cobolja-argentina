@@ -120,7 +120,7 @@
       <div class="header-inner">
         <a class="brand" href="${home}">
           <span class="brand-mark" aria-hidden="true"></span>
-          <span>Argentina 2026<small>COBOLJA · Mundial de Saberes</small></span>
+          <span>Argentina<small>COBOLJA · Mundial de Saberes</small></span>
         </a>
       </div>
     `;
@@ -130,10 +130,7 @@
   sidebar.className = "sidebar";
   sidebar.setAttribute("aria-label", "Navegación por secciones");
   sidebar.innerHTML = `
-    <a class="sidebar-brand" href="${home}" title="Inicio">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="sidebar-title">Argentina 2026<small>COBOLJA · Mundial de Saberes</small></span>
-    </a>
+    
     <a class="side-item" href="${home}"${file === "index.html" ? ' aria-current="page"' : ""}><span class="side-letter" aria-hidden="true">${icons.inicio}</span><span class="side-text">Inicio</span></a>
     <p class="side-heading">Secciones</p>
     ${secciones.map((item) => sideHtml(item, file)).join("")}

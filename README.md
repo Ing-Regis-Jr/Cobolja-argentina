@@ -1,4 +1,4 @@
-# Argentina 2026 · COBOLJA
+# Argentina  · COBOLJA
 
 Plataforma educativa estática sobre Argentina para la Feria Digital del Colegio Boliviano Japonés (Mundial de Saberes Americanos 2026).
 

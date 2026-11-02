@@ -31,5 +31,5 @@ Editar `js/config.js`:
 ```bash
 git init
 git add .
-git commit -m "Sitio educativo Argentina 2026 COBOLJA"
+git commit -m "Sitio educativo Argentina COBOLJA"
 ```
