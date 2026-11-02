@@ -16,9 +16,9 @@
 
   <style>
     .historia-intro {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto 1.8rem;
-      text-align: center;
+      text-align: left;
     }
 
     .historia-intro p,
@@ -71,7 +71,7 @@
 
     .historia-seccion {
       margin: 2.8rem 0;
-      scroll-margin-top: 1.5rem;
+      scroll-margin-top: 6rem;
     }
 
     .historia-seccion>h2 {
@@ -81,6 +81,30 @@
     .historia-bajada {
       max-width: 760px;
       margin-bottom: 1.2rem;
+    }
+
+    /* ESCALA DE TEXTO
+       Títulos, subtítulos y descripciones iguales en todos los apartados.
+       Solo las tarjetas (fechas, personajes, etc.) pueden tener su propio tamaño. */
+
+    .historia-intro h2,
+    .historia-seccion>h2,
+    .historia-cierre h2 {
+      font-size: 1.6rem;
+    }
+
+    .historia-seccion>h3,
+    .origen-destacado h3,
+    .ciudades-bloque h3 {
+      margin-bottom: .6rem;
+      font-size: 1.25rem;
+      line-height: 1.35;
+    }
+
+    .historia-bajada,
+    .origen-destacado p,
+    .ciudades-bloque p {
+      font-size: 1.05rem;
     }
 
     /* IMÁGENES */
@@ -112,7 +136,7 @@
     }
 
     .origen-destacado,
-    .personajes-portada {
+    .ciudades-bloque {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: 1.5rem;
@@ -121,7 +145,7 @@
     }
 
     .origen-destacado>div,
-    .personajes-portada>div {
+    .ciudades-bloque>div {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -287,47 +311,6 @@
 
     /* PERSONAJES HISTÓRICOS */
 
-    .personajes-portada {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 1.8rem;
-      align-items: stretch;
-      margin-bottom: 1.5rem;
-    }
-
-    .personajes-portada>div {
-      padding: 1.2rem;
-      background: #f4f8fc;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-    }
-
-    .personajes-portada h3 {
-      margin-bottom: .7rem;
-      font-size: 1.3rem;
-      line-height: 1.35;
-    }
-
-    .personajes-portada p:last-child {
-      margin-bottom: 0;
-    }
-
-    .personajes-portada .shot {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      min-height: 300px;
-    }
-
-    .personajes-portada .shot img {
-      flex: 1;
-      width: 100%;
-      height: 100%;
-      min-height: 260px;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      object-position: center 25%;
-    }
-
     .personajes-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -363,18 +346,6 @@
       object-position: center top;
     }
 
-    .personaje-numero {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      margin-bottom: .65rem;
-      color: var(--azul);
-      font-weight: 800;
-      background: #eaf4fc;
-      border-radius: 12px;
-    }
-
     .personaje h3 {
       margin-bottom: .3rem;
       font-size: 1.05rem;
@@ -393,6 +364,7 @@
       align-self: stretch;
       margin-bottom: .7rem;
       font-size: .94rem;
+      text-align: center;
     }
 
     .personaje details {
@@ -400,6 +372,7 @@
       margin-top: auto;
       padding-top: .7rem;
       border-top: 1px solid var(--line);
+      text-align: center;
     }
 
     .personaje summary {
@@ -407,6 +380,7 @@
       font-size: .9rem;
       font-weight: 800;
       cursor: pointer;
+      list-style-position: inside;
     }
 
     .biografia-ampliada {
@@ -417,6 +391,41 @@
 
     .biografia-ampliada p {
       margin: 0;
+    }
+
+    /* BLOQUE DE CIUDADES */
+
+    .ciudades-bloque {
+      gap: 1.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .ciudades-bloque>div {
+      padding: 1.2rem;
+      background: #f4f8fc;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+    }
+
+    .ciudades-bloque p:last-child {
+      margin-bottom: 0;
+    }
+
+    .ciudades-bloque .shot {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 300px;
+    }
+
+    .ciudades-bloque .shot img {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center 25%;
     }
 
     /* CIERRE Y FUENTES */
@@ -456,12 +465,12 @@
 
       .origen-destacado,
       .fecha-detalle,
-      .personajes-portada {
+      .ciudades-bloque {
         grid-template-columns: minmax(0, 1fr);
       }
 
       .origen-destacado>div,
-      .personajes-portada>div {
+      .ciudades-bloque>div {
         padding: 1rem;
       }
 
@@ -486,11 +495,11 @@
         max-width: 100%;
       }
 
-      .personajes-portada .shot {
+      .ciudades-bloque .shot {
         min-height: 0;
       }
 
-      .personajes-portada .shot img {
+      .ciudades-bloque .shot img {
         height: auto;
         min-height: 0;
         aspect-ratio: 16 / 10;
@@ -529,8 +538,7 @@
         grid-template-columns: 1fr;
       }
 
-      .fecha-detalle,
-      .trivia {
+      .fecha-detalle {
         padding: .9rem;
       }
     }
@@ -538,10 +546,25 @@
     @media (prefers-reduced-motion: reduce) {
 
       .historia-indice a,
-      .fecha-btn,
-      .trivia-opcion {
+      .fecha-btn {
         transition: none;
       }
+    }
+
+    /* INTRO alineada con el resto de la página */
+    .historia-intro {
+      max-width: none;
+      margin: 0 0 1.8rem;
+      text-align: left;
+    }
+
+    .historia-intro h2,
+    .historia-intro p {
+      text-align: left;
+    }
+
+    .historia-intro p {
+      max-width: 760px;
     }
   </style>
 </head>
@@ -559,16 +582,18 @@
         <p class="section-kicker">Sección B</p>
         <h1>Historia</h1>
         <p>
-          Descubrí cómo se formó Argentina, qué acontecimientos la transformaron
-          y quiénes dejaron su huella en el país.
+          Conocé los orígenes de la Argentina, los acontecimientos 
+          que marcaron su desarrollo y los personajes que tuvieron un 
+          papel destacado en su historia.
         </p>
       </div>
 
       <div class="historia-intro">
         <h2>Explorá a tu ritmo</h2>
         <p>
-          Elegí un tema, abrí las tarjetas que te interesen y recorré las fechas
-          importantes. Al final podrás poner a prueba lo que aprendiste.
+          Seleccioná un tema para conocer los principales procesos 
+          históricos, consultar fechas relevantes y ampliar la 
+          información sobre sus protagonistas.
         </p>
       </div>
 
@@ -599,8 +624,9 @@
         <h2>Origen de Argentina</h2>
 
         <p class="historia-bajada">
-          El territorio argentino tiene una historia mucho más antigua que
-          el nacimiento del país. Explorá tres momentos de ese proceso.
+          La historia del territorio argentino comenzó mucho 
+          antes de la formación del país. Conocé las principales 
+          etapas y los procesos que dieron origen a la Argentina actual.
         </p>
 
         <div class="origen-destacado">
@@ -676,6 +702,25 @@
             independencia.
           </p>
         </aside>
+
+        <div class="ciudades-bloque">
+          <div>
+            <h3>Las ciudades también cuentan la historia</h3>
+            <p>
+              Los edificios, plazas y monumentos de las ciudades argentinas
+              guardan huellas de distintas épocas: construcciones coloniales,
+              edificios de la etapa de la inmigración masiva y arquitectura
+              moderna. Recorrerlos permite imaginar cómo vivieron las personas
+              que protagonizaron cada momento histórico.
+            </p>
+          </div>
+
+          <figure class="shot" data-img="historia-ciudades.jpg" data-alt="Edificios de una ciudad argentina">
+            <figcaption>
+              Edificios de una ciudad argentina, testigos de distintas épocas.
+            </figcaption>
+          </figure>
+        </div>
       </section>
 
       <!-- 2. ACONTECIMIENTOS -->
@@ -684,8 +729,9 @@
         <h2>Acontecimientos importantes</h2>
 
         <p class="historia-bajada">
-          Seleccioná una fecha para descubrir qué ocurrió y por qué fue
-          importante. No necesitás recorrerlas en orden.
+          Consultá los acontecimientos más relevantes de la historia 
+          argentina y conocé las circunstancias en las que ocurrieron, 
+          así como su importancia para el desarrollo del país.
         </p>
 
         <div class="linea-tiempo" role="group" aria-label="Elegir un acontecimiento histórico">
@@ -756,17 +802,14 @@
         <h2>Personajes históricos</h2>
 
         <p class="historia-bajada">
-          La historia argentina fue construida por muchas personas y comunidades.
-          Conocé cuatro figuras y descubrí por qué se las recuerda.
+          A lo largo de la historia argentina, distintas figuras tuvieron
+          un papel destacado en la vida política, social y cultural del país. Conocé sus trayectorias y sus principales aportes.
         </p>
 
         <div class="personajes-grid">
           <article class="personaje">
-            <figure class="shot personaje-foto" data-img="san-martin.jpg" data-alt="Retrato de José de San Martín">
-              <figcaption>José de San Martín</figcaption>
-            </figure>
+            <figure class="shot personaje-foto" data-img="san-martin.jpg" data-alt="Retrato de José de San Martín"></figure>
 
-            <span class="personaje-numero" aria-hidden="true">01</span>
             <h3>José de San Martín</h3>
             <span class="epoca">1778–1850 · Independencia</span>
 
@@ -790,11 +833,8 @@
           </article>
 
           <article class="personaje">
-            <figure class="shot personaje-foto" data-img="manuel-belgrano.jpg" data-alt="Retrato de Manuel Belgrano">
-              <figcaption>Manuel Belgrano</figcaption>
-            </figure>
+            <figure class="shot personaje-foto" data-img="manuel-belgrano.jpg" data-alt="Retrato de Manuel Belgrano"></figure>
 
-            <span class="personaje-numero" aria-hidden="true">02</span>
             <h3>Manuel Belgrano</h3>
             <span class="epoca">1770–1820 · Revolución y bandera</span>
 
@@ -818,11 +858,8 @@
 
           <article class="personaje">
             <figure class="shot personaje-foto" data-img="juana-azurduy.jpg"
-              data-alt="Retrato o representación de Juana Azurduy">
-              <figcaption>Juana Azurduy</figcaption>
-            </figure>
+              data-alt="Retrato o representación de Juana Azurduy"></figure>
 
-            <span class="personaje-numero" aria-hidden="true">03</span>
             <h3>Juana Azurduy</h3>
             <span class="epoca">1780–1862 · Luchas independentistas</span>
 
@@ -846,11 +883,8 @@
           </article>
 
           <article class="personaje">
-            <figure class="shot personaje-foto" data-img="eva-peron.jpg" data-alt="Retrato de Eva Perón">
-              <figcaption>Eva Perón</figcaption>
-            </figure>
+            <figure class="shot personaje-foto" data-img="eva-peron.jpg" data-alt="Retrato de Eva Perón"></figure>
 
-            <span class="personaje-numero" aria-hidden="true">04</span>
             <h3>Eva Perón</h3>
             <span class="epoca">1919–1952 · Política y sociedad</span>
 
@@ -884,25 +918,6 @@
             sociales que contribuyeron a transformar el país.
           </p>
         </aside>
-
-        <div class="personajes-portada">
-          <div>
-            <h3>Las ciudades también cuentan la historia</h3>
-            <p>
-              Los edificios, plazas y monumentos de las ciudades argentinas
-              guardan huellas de distintas épocas: construcciones coloniales,
-              edificios de la etapa de la inmigración masiva y arquitectura
-              moderna. Recorrerlos permite imaginar cómo vivieron las personas
-              que protagonizaron cada momento histórico.
-            </p>
-          </div>
-
-          <figure class="shot" data-img="historia-ciudades.jpg" data-alt="Edificios de una ciudad argentina">
-            <figcaption>
-              Edificios de una ciudad argentina, testigos de distintas épocas.
-            </figcaption>
-          </figure>
-        </div>
       </section>
 
 
@@ -921,11 +936,11 @@
 
       <!-- CIERRE -->
       <div class="historia-cierre">
-        <h2>La historia sigue construyéndose</h2>
+        <h2>El pasado y su influencia en el presente</h2>
         <p>
-          Comprender el pasado nos ayuda a entender cómo se formó Argentina,
-          por qué existen sus instituciones y cómo las decisiones de distintas
-          generaciones influyeron en el presente.
+          Comprender los procesos históricos permite conocer 
+          cómo se formó la Argentina, cómo evolucionaron sus instituciones 
+          y de qué manera los acontecimientos del pasado influyen en la sociedad actual.
         </p>
       </div>
 
@@ -1063,6 +1078,12 @@
 
       let versionImagen = 0;
 
+      function quitarImagenes() {
+        fechaImagen.querySelectorAll("img").forEach(function (img) {
+          img.remove();
+        });
+      }
+
       function cambiarFecha(anio) {
         const dato = acontecimientos[anio];
 
@@ -1077,10 +1098,7 @@
 
         const versionActual = ++versionImagen;
 
-        fechaImagen.querySelectorAll("img").forEach(function (imgAnterior) {
-          imgAnterior.remove();
-        });
-
+        quitarImagenes();
         fechaImagen.classList.remove("is-empty", "has-photo");
 
         fechaBotones.forEach(function (boton) {
@@ -1094,17 +1112,12 @@
         const ruta = "../assets/img/" + dato.imagen;
 
         imagen.alt = dato.alt;
-        imagen.loading = "eager";
         imagen.decoding = "async";
-        imagen.classList.add("imagen-historia");
 
         imagen.onload = function () {
           if (versionActual !== versionImagen) return;
 
-          fechaImagen.querySelectorAll("img").forEach(function (imgAnterior) {
-            imgAnterior.remove();
-          });
-
+          quitarImagenes();
           fechaImagen.prepend(imagen);
           fechaImagen.classList.add("has-photo");
           fechaImagen.classList.remove("is-empty");
@@ -1113,10 +1126,7 @@
         imagen.onerror = function () {
           if (versionActual !== versionImagen) return;
 
-          fechaImagen.querySelectorAll("img").forEach(function (imgAnterior) {
-            imgAnterior.remove();
-          });
-
+          quitarImagenes();
           fechaImagen.classList.add("is-empty");
           fechaImagen.classList.remove("has-photo");
 
@@ -1150,18 +1160,6 @@
           correcta: 2,
           explicacion:
             "La independencia fue declarada el 9 de julio de 1816 por el Congreso reunido en Tucumán. La Revolución de Mayo de 1810 había iniciado un proceso de autogobierno, pero todavía no era la declaración formal."
-        },
-        {
-          pregunta: "¿Qué decisión se tomó el 25 de mayo de 1810 en Buenos Aires?",
-          opciones: [
-            "Se sancionó la Constitución Nacional",
-            "Se declaró formalmente la independencia",
-            "Se formó la Primera Junta de gobierno",
-            "Se recuperó la democracia después de la dictadura"
-          ],
-          correcta: 2,
-          explicacion:
-            "El 25 de mayo de 1810 se formó la Primera Junta de gobierno en Buenos Aires. Fue un paso importante del proceso revolucionario, aunque la independencia formal llegó en 1816."
         },
         {
           pregunta: "¿Qué acontecimiento importante ocurrió en Argentina en 1983?",
