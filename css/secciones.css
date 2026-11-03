@@ -1288,3 +1288,75 @@
   aspect-ratio: 960 / 1283;
   object-fit: cover;
 }
+
+/* ===== Cultura: tarjetas ordenadas, sin tarjetas sueltas ===== */
+/* Tradiciones (6 tarjetas): 3 + 3 */
+@media (min-width: 900px) {
+  #tradiciones .sec-tarjetas {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Música, Gastronomía, Vestimenta y Lugares (grupos de 4): 2 + 2 en tablet, una línea de 4 en PC */
+@media (min-width: 560px) {
+  #musica .sec-tarjetas,
+  #gastronomia .sec-tarjetas,
+  #vestimenta .sec-tarjetas,
+  #lugares .sec-tarjetas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  #musica .sec-tarjetas,
+  #gastronomia .sec-tarjetas,
+  #vestimenta .sec-tarjetas,
+  #lugares .sec-tarjetas {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Lugares: separación entre los dos grupos de tarjetas */
+#lugares .sec-subtitulo {
+  margin-top: 1.6rem;
+}
+
+#lugares .sec-detalle .sec-etiqueta {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+/* Patrimonio: tarjetas centradas (la última fila no queda corrida a la izquierda) */
+.pat-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pat-grid > .pat-card {
+  flex: 0 0 100%;
+}
+
+@media (min-width: 560px) {
+  .pat-grid > .pat-card {
+    flex-basis: calc((100% - 1rem) / 2);
+  }
+}
+
+@media (min-width: 1000px) {
+  .pat-grid > .pat-card {
+    flex-basis: calc((100% - 3rem) / 4);
+  }
+}
+
+/* Patrimonio: descripción corta debajo del nombre */
+.pat-cuerpo .pat-desc {
+  margin: 0.35rem 0 0.2rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+/* Patrimonio: año en verde para los sitios naturales */
+.pat-card--natural .anio {
+  color: #2f7d4f;
+}
