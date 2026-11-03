@@ -1269,19 +1269,12 @@
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
 }
 
-/* Recuadro "¿Sabías que?" al costado de las 2 tarjetas (llena el espacio vacío) */
+/* Recuadro "¿Sabías que?" a todo el ancho, debajo de las tarjetas */
 #tradiciones .sec-tarjetas .sec-dato,
 #vestimenta .sec-tarjetas .sec-dato {
   grid-column: 1 / -1;
-  margin-top: 0;
+  margin-top: 0.4rem;
   align-self: start;
-}
-
-@media (min-width: 1000px) {
-  #tradiciones .sec-tarjetas .sec-dato,
-  #vestimenta .sec-tarjetas .sec-dato {
-    grid-column: span 2;
-  }
 }
 
 /* Vestimenta: foto principal del gaucho completa (sin recortar) */
