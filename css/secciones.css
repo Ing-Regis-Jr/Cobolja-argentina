@@ -1218,3 +1218,80 @@
 .cred-tabla th {
   background: var(--gris);
 }
+/* Miniaturas de Cultura: ancho completo (cover) con encuadre ajustado por foto */
+.sec-thumb[data-img="tradiciones-dia-tradicion.jpg"] {
+  background-position: center 22%;
+}
+
+.sec-thumb[data-img="tradiciones-fiestas.jpg"] {
+  background-position: center 50%;
+}
+
+.sec-thumb[data-img="vestimenta-poncho-salteno.jpg"] {
+  background-position: center 75%;
+}
+
+.sec-thumb[data-img="vestimenta-ropa-para-bailar.jpg"] {
+  background-position: center 20%;
+}
+
+/* Tradiciones y Vestimenta tienen solo 2 tarjetas: con auto-fill mantienen el mismo ancho que en las demás pestañas */
+#tradiciones .sec-tarjetas,
+#vestimenta .sec-tarjetas {
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+/* Cultura: miniaturas a ancho completo (cover) y tarjetas del mismo ancho que en las demás pestañas */
+#tradiciones .sec-thumb,
+#vestimenta .sec-thumb {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#tradiciones .sec-thumb[data-img="tradiciones-dia-tradicion.jpg"] {
+  background-position: center 22%;
+}
+
+#tradiciones .sec-thumb[data-img="tradiciones-fiestas.jpg"] {
+  background-position: center 50%;
+}
+
+#vestimenta .sec-thumb[data-img="vestimenta-poncho-salteno.jpg"] {
+  background-position: center 75%;
+}
+
+#vestimenta .sec-thumb[data-img="vestimenta-ropa-para-bailar.jpg"] {
+  background-position: center 20%;
+}
+
+#tradiciones .sec-tarjetas,
+#vestimenta .sec-tarjetas {
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+}
+
+/* Recuadro "¿Sabías que?" al costado de las 2 tarjetas (llena el espacio vacío) */
+#tradiciones .sec-tarjetas .sec-dato,
+#vestimenta .sec-tarjetas .sec-dato {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  align-self: start;
+}
+
+@media (min-width: 1000px) {
+  #tradiciones .sec-tarjetas .sec-dato,
+  #vestimenta .sec-tarjetas .sec-dato {
+    grid-column: span 2;
+  }
+}
+
+/* Vestimenta: foto principal del gaucho completa (sin recortar) */
+#vestimenta .shot-alto {
+  max-width: 400px;
+  justify-self: center;
+}
+
+#vestimenta .shot-alto img {
+  height: auto;
+  aspect-ratio: 960 / 1283;
+  object-fit: cover;
+}
