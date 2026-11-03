@@ -7,8 +7,8 @@ window.LUGARES.push(
     lat: -42.5,
     lng: -64.0,
     emoji: "🐋",
-    imagen: "assets/img/lugares-peninsula-valdes.jpg",
-    foto: "assets/img/lugares-peninsula-valdes.jpg",
+    imagen: "assets/img/patrimonio-peninsula-valdes.jpg",
+    foto: "assets/img/patrimonio-peninsula-valdes.jpg",
     dato: "Cada año llegan ballenas francas australes a sus golfos para reproducirse.",
     descripcion:
       "Reserva natural de la costa patagónica, Patrimonio Natural de la Humanidad. Es famosa por su fauna marina y el avistaje de ballenas.",

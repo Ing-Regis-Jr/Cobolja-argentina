@@ -23,7 +23,7 @@ window.LUGARES = [
     lng: -65.2105,
     emoji: "📜",
     imagen: "assets/lugares/tucuman.svg",
-    foto: "assets/img/lugares-casa-historica-tucuman.jpg",
+    foto: "assets/img/lugares-casa-tucuman.jpg",
     fotoIdeal: "Patio y frente blanco de la Casa Histórica, con la bandera argentina.",
     dato: "El 9 de julio de 1816 el Congreso declaró la independencia en esta casa.",
     descripcion:
@@ -38,7 +38,7 @@ window.LUGARES = [
     lng: -58.3633,
     emoji: "🎨",
     imagen: "assets/lugares/tango.svg",
-    foto: "assets/img/lugares-la-boca-caminito.jpg",
+    foto: "assets/img/lugares-caminito-boca.jpg",
     fotoIdeal: "Casas de chapa de colores en Caminito, con gente y arte callejero.",
     dato: "Según cuenta la tradición, los colores vienen de la pintura sobrante de los barcos del puerto.",
     descripcion:
@@ -143,7 +143,7 @@ window.LUGARES = [
     lng: -60.6305,
     emoji: "🚩",
     imagen: "assets/lugares/rosario.svg",
-    foto: "assets/img/lugares-monumento-bandera-rosario.jpg",
+    foto: "assets/img/lugares-monumento-bandera.jpg",
     fotoIdeal: "Torre del monumento junto al río Paraná.",
     dato: "Recuerda la jura de la bandera de Belgrano en 1812.",
     descripcion:

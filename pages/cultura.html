@@ -849,8 +849,7 @@
       <section class="sec-bloque" id="trivia">
         <h2>¿Cuánto aprendiste?</h2>
         <p class="sec-bajada">
-          Cuatro preguntas rápidas. Después de cada una vas a ver la respuesta
-          y una explicación.
+          Seis preguntas rápidas, una por cada apartado.
         </p>
         <div id="mini-trivia"></div>
         <noscript>
@@ -911,7 +910,15 @@
   <script src="../js/pestanas.js"></script>
   <script>
     window.MINI_TRIVIA = {
+      maximo: 6,
       preguntas: [
+        {
+          pregunta: "¿Qué día se celebra el Día de la Tradición en Argentina?",
+          opciones: ["El 25 de mayo", "El 9 de julio", "El 10 de noviembre", "El 20 de junio"],
+          correcta: 2,
+          explicacion:
+            "Se celebra el 10 de noviembre, natalicio de José Hernández, autor del poema Martín Fierro."
+        },
         {
           pregunta: "¿Qué dos países presentaron juntos la candidatura del tango a la UNESCO?",
           opciones: [
@@ -925,23 +932,23 @@
             "Argentina y Uruguay lo presentaron en conjunto, en nombre de Buenos Aires y Montevideo. La UNESCO lo declaró Patrimonio Cultural Inmaterial el 30 de septiembre de 2009."
         },
         {
-          pregunta: "¿Qué día se celebra el Día de la Tradición en Argentina?",
-          opciones: [
-            "El 25 de mayo",
-            "El 9 de julio",
-            "El 10 de noviembre",
-            "El 20 de junio"
-          ],
-          correcta: 2,
+          pregunta: "¿Qué plato de raíz andina es el protagonista de las fechas patrias, como el 25 de mayo y el 9 de julio?",
+          opciones: ["Locro", "Milanesa a la napolitana", "Choripán", "Medialunas"],
+          correcta: 0,
           explicacion:
-            "Se celebra el 10 de noviembre, natalicio de José Hernández, autor del poema Martín Fierro."
+            "El locro es un guiso espeso de maíz, porotos, zapallo y carne. Se come en las fechas patrias, sobre todo en los días fríos."
         },
         {
-          pregunta: "¿Qué provincia es el epicentro del chamamé?",
-          opciones: ["Mendoza", "Corrientes", "Salta", "Chubut"],
-          correcta: 1,
+          pregunta: "¿Con qué figura histórica se asocia el poncho salteño, rojo y negro?",
+          opciones: [
+            "Martín Miguel de Güemes",
+            "José de San Martín",
+            "Manuel Belgrano",
+            "Juan Manuel de Rosas"
+          ],
+          correcta: 0,
           explicacion:
-            "Corrientes es el epicentro del chamamé, que la UNESCO declaró Patrimonio Cultural Inmaterial en diciembre de 2020."
+            "Se asocia con Güemes y con los gauchos que defendieron el norte durante las guerras de independencia."
         },
         {
           pregunta: "¿Qué sitio del Patrimonio Mundial comparte Argentina con Bolivia, entre otros países?",
@@ -954,6 +961,13 @@
           correcta: 3,
           explicacion:
             "El Qhapaq Ñan, el sistema de caminos andinos del Imperio inca, se comparte con Bolivia, Chile, Colombia, Ecuador y Perú."
+        },
+        {
+          pregunta: "¿Cómo se llama la caída en forma de U, de unos 80 metros, que es la más impresionante de las Cataratas del Iguazú?",
+          opciones: ["Garganta del Diablo", "Salto San Martín", "Salto Dos Hermanas", "Salto Bossetti"],
+          correcta: 0,
+          explicacion:
+            "La Garganta del Diablo está en Misiones, en la frontera con Brasil. Las Cataratas del Iguazú son Patrimonio Mundial desde 1984."
         }
       ]
     };
