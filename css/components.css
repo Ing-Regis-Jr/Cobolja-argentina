@@ -326,7 +326,6 @@
 .simbolo {
   background: #fff;
   border: 1px solid var(--line);
-  border-top: 4px solid var(--celeste);
   border-radius: 14px;
   padding: 1rem;
 }
@@ -413,7 +412,6 @@
 .region {
   background: #fff;
   border: 1px solid var(--line);
-  border-top: 4px solid var(--celeste);
   border-radius: 14px;
   overflow: hidden;
 }
@@ -494,3 +492,21 @@
 .page-hero[data-img="economia.jpg"]   { --foco: 25%; }
 .page-hero[data-img="mapa.jpg"]       { --foco: 50%; }
 .page-hero[data-img="trivia.jpg"]     { --foco: 45%; }
+
+/* Tarjetas de regiones y símbolos: línea celeste entre la foto y el texto */
+.region .shot,
+.simbolo .shot {
+  border-bottom: 3px solid var(--celeste);
+}
+
+/* Foto que se muestra completa (partitura del himno) */
+.simbolo .shot-completa {
+  background: #fff;
+}
+
+.simbolo .shot-completa img {
+  aspect-ratio: auto;
+  max-height: 340px;
+  object-fit: contain;
+  padding: 0.6rem;
+}
