@@ -318,7 +318,7 @@
 
 .simbolos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   margin: 1rem 0 1.5rem;
 }
@@ -402,11 +402,38 @@
   margin-top: 0;
 }
 
+/* Regiones: 3 arriba y 2 centradas abajo (PC); 2, 2 y 1 centrada (móvil) */
 .regiones {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 1rem;
   margin: 1rem 0 1.5rem;
+}
+
+.regiones .region {
+  grid-column: span 2;
+}
+
+.regiones .region:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.regiones .region:nth-child(5) {
+  grid-column: 4 / span 2;
+}
+
+@media (max-width: 600px) {
+  .regiones {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .regiones .region:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  .regiones .region:nth-child(5) {
+    grid-column: 2 / span 2;
+  }
 }
 
 .region {
@@ -467,10 +494,10 @@
   }
 }
 
-/* ---- Portadas de sección: mismo alto y recorte controlado ---- */
+/* ---- Portadas de sección: el alto crece con el texto y se ve más foto ---- */
 .page-hero.has-photo {
-  height: clamp(260px, 30vw, 340px);
-  min-height: 0;
+  height: auto;
+  min-height: clamp(300px, 36vw, 420px);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center var(--foco, 40%);
@@ -478,8 +505,7 @@
 
 @media (max-width: 600px) {
   .page-hero.has-photo {
-    height: auto;
-    min-height: 300px;
+    min-height: 320px;
   }
 }
 
@@ -493,10 +519,10 @@
 .page-hero[data-img="mapa.jpg"]       { --foco: 50%; }
 .page-hero[data-img="trivia.jpg"]     { --foco: 45%; }
 
-/* Tarjetas de regiones y símbolos: línea celeste entre la foto y el texto */
+/* Tarjetas de regiones y símbolos: sin línea de color bajo la foto */
 .region .shot,
 .simbolo .shot {
-  border-bottom: 3px solid var(--celeste);
+  border-bottom: 0;
 }
 
 /* Foto que se muestra completa (partitura del himno) */
@@ -505,8 +531,36 @@
 }
 
 .simbolo .shot-completa img {
-  aspect-ratio: auto;
-  max-height: 340px;
+  aspect-ratio: 16 / 10;
   object-fit: contain;
   padding: 0.6rem;
+}
+
+/* ---- Móvil: tarjetas de 2 columnas con textos un poco más chicos ---- */
+@media (max-width: 600px) {
+  .region h3 {
+    padding: 0.6rem 0.7rem 0;
+    font-size: 1rem;
+  }
+
+  .region p {
+    padding: 0.25rem 0.7rem 0.8rem;
+    font-size: 0.86rem;
+  }
+
+  .simbolo {
+    padding: 0.7rem;
+  }
+
+  .simbolo .shot {
+    margin: -0.7rem -0.7rem 0.7rem;
+  }
+
+  .simbolo h3 {
+    font-size: 1rem;
+  }
+
+  .simbolo p {
+    font-size: 0.86rem;
+  }
 }
