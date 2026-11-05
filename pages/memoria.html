@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Memoria · Argentina</title>
+    <link rel="icon" href="../assets/icons/sol.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/activities.css" />
+    <link rel="stylesheet" href="../css/juegos.css" />
+</head>
+
+<body data-base="../">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header" id="site-header"></header>
+    <main class="wrap" id="contenido">
+        <div class="act-head">
+            <a class="act-back" href="juegos.html">← Juegos</a>
+            <h1>Memoria de lugares</h1>
+        </div>
+
+        <section class="game-shell game-split" aria-labelledby="memoria-titulo">
+            <h2 id="memoria-titulo" class="visually-hidden">Juego de memoria</h2>
+
+            <div class="game-top">
+                <div class="game-levels" role="group" aria-label="Dificultad">
+                    <button type="button" class="is-active" data-pares="6">Fácil</button>
+                    <button type="button" data-pares="8">Difícil</button>
+                </div>
+                <button type="button" class="game-restart" id="memoria-reiniciar">Reiniciar</button>
+                <ul class="game-stats">
+                    <li>Movimientos: <strong id="memoria-movs">0</strong></li>
+                    <li>Parejas: <strong id="memoria-aciertos">0</strong> / <strong id="memoria-total">6</strong></li>
+                    <li>Tiempo: <strong id="memoria-tiempo">0:00</strong></li>
+                </ul>
+            </div>
+
+            <div class="game-stage">
+                <div class="memory-board" id="memoria-tablero" role="group" aria-label="Tablero de cartas"></div>
+            </div>
+
+            <p class="memory-dato" id="memoria-dato" aria-live="polite"></p>
+        </section>
+
+        <div class="game-win" id="memoria-victoria" hidden>
+            <div class="game-win-card" role="dialog" aria-modal="true" aria-labelledby="memoria-win-titulo">
+                <h2 id="memoria-win-titulo">¡Completaste el tablero!</h2>
+                <p id="memoria-win-texto"></p>
+                <button type="button" id="memoria-otra">Jugar otra vez</button>
+            </div>
+        </div>
+    </main>
+    <footer class="site-footer" id="site-footer"></footer>
+    <script src="../js/config.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../data/lugares.js"></script>
+    <script src="../data/lugares-extra.js"></script>
+    <script src="../js/memoria.js"></script>
+</body>
+
+</html>

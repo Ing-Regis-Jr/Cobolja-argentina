@@ -24,9 +24,13 @@
       '<svg viewBox="0 0 24 24"><path d="M8 3v8M6 3v5a2 2 0 0 0 4 0V3M10 11v10M16 3c0 4 3 5 3 9v9M16 3v9"/></svg>',
     conclusion:
       '<svg viewBox="0 0 24 24"><path d="M5 19V5l7 3 7-3v14l-7 3z"/><path d="M9 12l2.1 2L15 10"/></svg>',
-    temas:
-      '<svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h14"/></svg>',
+    temas: '<svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h14"/></svg>',
     anterior: '<svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>',
+    mapa: '<svg viewBox="0 0 24 24"><path d="M12 21s-6-5.2-6-10a6 6 0 0 1 12 0c0 4.8-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>',
+    trivia:
+      '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7"/><path d="M12 17h.01"/></svg>',
+    juegos:
+      '<svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4"/><path d="M15.5 12h.01M17.5 14h.01"/></svg>',
     siguiente: '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>',
   };
 
@@ -38,13 +42,32 @@
     { letra: "D", href: "pages/sociedad.html", label: "Sociedad" },
     { letra: "E", href: "pages/legislacion.html", label: "Legislación" },
     { letra: "F", href: "pages/deportes.html", label: "Deportes" },
-    { letra: "G", href: "pages/ciencia-tecnologia.html", label: "Ciencia y tecnología" },
+    {
+      letra: "G",
+      href: "pages/ciencia-tecnologia.html",
+      label: "Ciencia y tecnología",
+    },
     { letra: "H", href: "pages/economia.html", label: "Economía" },
-    { letra: "I", href: "pages/datos-impactantes.html", label: "Cifras del país", sub: "10 datos impactantes" },
+    {
+      letra: "I",
+      href: "pages/datos-impactantes.html",
+      label: "Cifras del país",
+      sub: "10 datos impactantes",
+    },
     { letra: "J", href: "pages/gastronomia.html", label: "Arte culinario" },
     { letra: "K", href: "pages/conclusion.html", label: "Conclusión" },
   ];
-
+  // Actividades interactivas (no son secciones informativas A-K).
+  const actividades = [
+    { icon: "mapa", href: "pages/mapa.html", label: "Mapa interactivo" },
+    { icon: "trivia", href: "pages/trivia.html", label: "Trivia" },
+    {
+      icon: "juegos",
+      href: "pages/juegos.html",
+      label: "Juegos",
+      tambien: ["memoria.html", "rompecabezas.html", "atrapa.html"],
+    },
+  ];
   const base = document.body.dataset.base || "";
 
   function resolve(href) {
@@ -82,8 +105,8 @@
     document.head.append(pre, pre2, link);
   }
 
-  function esActual(href, file) {
-    return resolve(href).split("/").pop() === file;
+    function esActual(href, file, tambien) {
+    return resolve(href).split("/").pop() === file || (tambien || []).includes(file);
   }
 
   // Botón de la barra inferior (celular).
@@ -93,16 +116,18 @@
   }
 
   // Fila de la barra lateral (computador).
-  function sideHtml(item, file) {
-    const current = esActual(item.href, file) ? ' aria-current="page"' : "";
+    function sideHtml(item, file) {
+    const current = esActual(item.href, file, item.tambien) ? ' aria-current="page"' : "";
     const sub = item.sub ? `<small>${item.sub}</small>` : "";
-    return `<a class="side-item" href="${resolve(item.href)}"${current}><span class="side-letter" aria-hidden="true">${item.letra}</span><span class="side-text">${item.label}${sub}</span></a>`;
+    const marca = item.letra || icons[item.icon];
+    return `<a class="side-item" href="${resolve(item.href)}"${current}><span class="side-letter" aria-hidden="true">${marca}</span><span class="side-text">${item.label}${sub}</span></a>`;
   }
 
   // Fila de la lista que se abre en el celular.
-  function sheetHtml(item, file) {
-    const current = esActual(item.href, file) ? ' aria-current="page"' : "";
-    return `<a href="${resolve(item.href)}"${current}><span class="side-letter" aria-hidden="true">${item.letra}</span><span>${item.label}</span></a>`;
+    function sheetHtml(item, file) {
+    const current = esActual(item.href, file, item.tambien) ? ' aria-current="page"' : "";
+    const marca = item.letra || icons[item.icon];
+    return `<a href="${resolve(item.href)}"${current}><span class="side-letter" aria-hidden="true">${marca}</span><span>${item.label}</span></a>`;
   }
 
   injectFonts();
@@ -134,6 +159,8 @@
     <a class="side-item" href="${home}"${file === "index.html" ? ' aria-current="page"' : ""}><span class="side-letter" aria-hidden="true">${icons.inicio}</span><span class="side-text">Inicio</span></a>
     <p class="side-heading">Secciones</p>
     ${secciones.map((item) => sideHtml(item, file)).join("")}
+        <p class="side-heading">Actividades</p>
+    ${actividades.map((item) => sideHtml(item, file)).join("")}
   `;
   const skip = document.querySelector(".skip-link");
   if (skip) {
@@ -163,7 +190,7 @@
   const sheet = document.createElement("div");
   sheet.className = "sheet";
   sheet.id = "secciones-sheet";
-  sheet.innerHTML = `<h2>Secciones</h2>${secciones.map((item) => sheetHtml(item, file)).join("")}`;
+  sheet.innerHTML = `<h2>Secciones</h2>${secciones.map((item) => sheetHtml(item, file)).join("")}<h2 class="sheet-sub">Actividades</h2>${actividades.map((item) => sheetHtml(item, file)).join("")}`;
   document.body.appendChild(sheet);
 
   const seccionesBtn = document.getElementById("secciones-btn");
@@ -177,7 +204,8 @@
     if (!sheet.classList.contains("is-open")) {
       return;
     }
-    const inside = sheet.contains(event.target) || event.target.closest("#secciones-btn");
+    const inside =
+      sheet.contains(event.target) || event.target.closest("#secciones-btn");
     if (!inside) {
       sheet.classList.remove("is-open");
       seccionesBtn.setAttribute("aria-expanded", "false");
@@ -185,7 +213,8 @@
   });
 
   const siteUrl =
-    (window.SITE_CONFIG && window.SITE_CONFIG.publicUrl) || window.location.href.split("#")[0];
+    (window.SITE_CONFIG && window.SITE_CONFIG.publicUrl) ||
+    window.location.href.split("#")[0];
   const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(siteUrl)}`;
   const footer = document.getElementById("site-footer");
   if (footer) {

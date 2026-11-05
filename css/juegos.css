@@ -1,0 +1,423 @@
+/* ===== Juegos: estilos comunes ===== */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ----- Cabecera compacta de las actividades ----- */
+
+.act-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.2rem 1rem;
+  margin: 0.2rem 0 1rem;
+}
+
+.act-head h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: var(--azul);
+}
+
+.act-back {
+  color: var(--azul-medio);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.act-back:hover {
+  text-decoration: underline;
+}
+
+.act-intro {
+  margin: 0 0 1.2rem;
+  color: var(--muted);
+}
+
+.sheet-sub {
+  margin-top: 1.2rem;
+}
+
+/* ----- Caja del juego ----- */
+
+.game-shell {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 0.9rem;
+  margin-bottom: 1.5rem;
+  scroll-margin-top: 84px;
+}
+
+/* Celular y tablet: panel arriba, tablero en el medio, dato abajo */
+.game-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "top"
+    "stage"
+    "dato";
+  gap: 0.8rem;
+}
+
+.game-top {
+  grid-area: top;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "levels restart"
+    "stats stats";
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.game-stage {
+  grid-area: stage;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.game-levels {
+  grid-area: levels;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.game-restart {
+  grid-area: restart;
+}
+
+.game-stats {
+  grid-area: stats;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.2rem;
+  margin: 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.game-stats strong {
+  color: var(--azul);
+}
+
+.game-levels button,
+.game-restart,
+.game-win-card button {
+  font: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--gris);
+  color: var(--azul);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.game-levels button:hover,
+.game-restart:hover {
+  background: #dfeaf5;
+}
+
+.game-levels button.is-active,
+.game-win-card button {
+  background: var(--azul-medio);
+  border-color: var(--azul-medio);
+  color: #fff;
+}
+
+.game-levels button:focus-visible,
+.game-restart:focus-visible,
+.game-win-card button:focus-visible,
+.memory-card:focus-visible {
+  outline: 3px solid var(--sol);
+  outline-offset: 2px;
+}
+
+/* PC: tablero a la izquierda, panel a la derecha */
+@media (min-width: 901px) {
+  .game-shell {
+    padding: 1.1rem;
+  }
+
+  .game-split {
+    grid-template-columns: minmax(0, 1fr) 270px;
+    grid-template-areas:
+      "stage top"
+      "stage dato";
+    grid-template-rows: auto 1fr;
+    gap: 1rem 1.4rem;
+  }
+
+  .game-top {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "levels"
+      "stats"
+      "restart";
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .game-levels {
+    flex-direction: column;
+  }
+
+  .game-levels button,
+  .game-restart {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+  }
+
+  .game-stats {
+    flex-direction: column;
+    gap: 0.45rem;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .game-split {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 1rem;
+  }
+}
+
+/* ===== Memoria ===== */
+
+.memory-board {
+  --cols: 4;
+  --rows: 3;
+  --libre: calc(100svh - 200px);
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  width: min(
+    100%,
+    720px,
+    max(250px, calc(var(--libre) * var(--cols) / var(--rows)))
+  );
+}
+
+.memory-board[data-cartas="16"] {
+  --rows: 4;
+}
+
+.memory-card {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  perspective: 800px;
+  aspect-ratio: 1 / 1;
+  container-type: inline-size;
+}
+
+.memory-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease;
+}
+
+.memory-card.is-flipped .memory-inner,
+.memory-card.is-matched .memory-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.memory-back {
+  background: linear-gradient(135deg, var(--celeste), var(--azul-medio));
+  border: 3px solid #fff;
+  box-shadow: 0 4px 12px rgba(18, 51, 84, 0.18);
+  color: var(--sol);
+  font-size: 2rem;
+}
+
+.memory-back::before {
+  content: "\2600";
+}
+
+.memory-front {
+  transform: rotateY(180deg);
+  background: #fff;
+  border: 2px solid var(--line);
+}
+
+.memory-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.memory-name {
+  padding: 0.3rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: clamp(0.62rem, 12cqw, 1.05rem);
+  line-height: 1.25;
+  color: var(--azul);
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.memory-card.is-matched {
+  cursor: default;
+}
+
+.memory-card.is-matched .memory-front {
+  border-color: var(--ok);
+  box-shadow: 0 0 0 3px rgba(27, 127, 74, 0.25);
+}
+
+.memory-card.is-wrong {
+  animation: memory-shake 0.4s;
+}
+
+.memory-card.is-wrong .memory-front {
+  border-color: var(--error);
+}
+
+@keyframes memory-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.memory-dato {
+  grid-area: dato;
+  margin: 0;
+  min-height: 3.2rem;
+  padding: 0.7rem 0.9rem;
+  border-left: 5px solid var(--sol);
+  border-radius: 10px;
+  background: var(--gris);
+  color: var(--texto);
+  font-size: 0.92rem;
+}
+
+@media (min-width: 901px) {
+  .memory-dato {
+    align-self: start;
+    min-height: 7rem;
+    font-size: 1rem;
+  }
+}
+
+/* ===== Cuadro de victoria ===== */
+
+.game-win {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(18, 51, 84, 0.6);
+}
+
+.game-win[hidden] {
+  display: none;
+}
+
+.game-win-card {
+  max-width: 420px;
+  padding: 1.6rem;
+  border-radius: var(--radio);
+  background: #fff;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.game-win-card h2 {
+  margin-top: 0;
+  color: var(--azul);
+}
+
+/* ===== Inicio y página Juegos: tarjetas en 3 columnas ===== */
+
+.inicio-juegos {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* ===== Pantallas pequeñas ===== */
+
+@media (max-width: 900px) {
+  .memory-board {
+    --libre: calc(100svh - 390px);
+  }
+}
+
+@media (max-width: 720px) {
+  .inicio-juegos {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 620px) {
+  .memory-board {
+    gap: 0.5rem;
+  }
+
+  .memory-board[data-cartas="12"] {
+    --cols: 3;
+    --rows: 4;
+  }
+
+  .game-levels button,
+  .game-restart {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .memory-inner {
+    transition: none;
+  }
+
+  .memory-card.is-wrong {
+    animation: none;
+  }
+}
