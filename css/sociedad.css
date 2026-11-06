@@ -1,5 +1,27 @@
 /* Sociedad: recuadros de datos, barra de cobertura, tablero y serie */
 
+/* Cifras de apertura: 4 tarjetas siempre parejas.
+   Celular y tablet: 2 × 2 (evita el 3 + 1 con una tarjeta suelta). PC: 4 en fila. */
+.sec-cifras--cuatro {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sec-cifras--cuatro .sec-cifra strong {
+  text-wrap: balance;
+}
+
+@media (max-width: 480px) {
+  .sec-cifras--cuatro .sec-cifra strong {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 860px) {
+  .sec-cifras--cuatro {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .soc-sub {
   margin: 1.4rem 0 0.4rem;
   font-size: 1.05rem;

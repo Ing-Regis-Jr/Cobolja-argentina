@@ -537,23 +537,9 @@
 }
 
 .sec-paso {
-  display: grid;
-  grid-template-columns: 3.2rem minmax(0, 1fr);
-  gap: 0.9rem 1.1rem;
-  align-items: start;
   scroll-margin-top: 1.5rem;
 }
 
-.sec-paso-num {
-  display: grid;
-  place-items: center;
-  width: 3.2rem;
-  height: 3.2rem;
-  color: #fff;
-  font-weight: 800;
-  background: var(--azul);
-  border-radius: 14px;
-}
 
 .sec-paso h2 {
   margin-top: 0.2rem;
@@ -756,11 +742,7 @@
   color: var(--muted);
 }
 
-@media (max-width: 720px) {
-  .sec-paso {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
+
 
 /* ---- Tarjetas con foto (Cultura) ---- */
 .sec-thumb {
