@@ -503,15 +503,32 @@
 
     @media (max-width: 720px) {
       .historia-indice {
-        gap: .5rem;
+        grid-template-columns: minmax(0, 1fr);
+        gap: .7rem;
       }
 
       .historia-indice a {
-        padding: .75rem;
+        display: flex;
+        flex-direction: column;
+        gap: .3rem;
+        padding: .9rem 1rem;
+      }
+
+      .historia-indice .indice-numero {
+        display: block;
+        font-size: .72rem;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+      }
+
+      .historia-indice strong {
+        display: block;
+        overflow-wrap: anywhere;
       }
 
       .historia-indice small {
-        font-size: .78rem;
+        display: block;
+        font-size: .82rem;
       }
 
       .origen-destacado,
@@ -566,25 +583,6 @@
     }
 
     @media (max-width: 420px) {
-      .historia-indice {
-        grid-template-columns: 1fr;
-      }
-
-      .historia-indice a {
-        display: grid;
-        grid-template-columns: 48px minmax(0, 1fr);
-        align-items: center;
-        column-gap: .6rem;
-      }
-
-      .historia-indice .indice-numero {
-        grid-row: span 2;
-      }
-
-      .historia-indice small {
-        grid-column: 2;
-      }
-
       .personajes-grid {
         grid-template-columns: 1fr;
       }
