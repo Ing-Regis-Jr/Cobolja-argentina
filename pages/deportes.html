@@ -5,13 +5,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Deportes en Argentina: cifras, fútbol, logros en línea de tiempo, atletas y deportes tradicionales como el pato." />
-  <title>Deportes · Argentina </title>
+    content="Deportes en Argentina: cifras, fútbol, hitos y figuras con filtro por deporte, y deportes tradicionales como el pato." />
+  <title>Deportes · Argentina</title>
   <link rel="icon" href="../assets/icons/sol.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/layout.css" />
   <link rel="stylesheet" href="../css/components.css" />
   <link rel="stylesheet" href="../css/secciones.css" />
+  <style>
+    .dep-filtros {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0 0.6rem;
+    }
+
+    .dep-filtros .sec-pestana[aria-pressed="true"] {
+      color: #fff;
+      background: var(--azul);
+      border-color: var(--azul);
+    }
+
+    .dep-conteo {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    [data-dep][hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 720px) {
+      .dep-filtros {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 0.3rem;
+      }
+
+      .dep-filtros .sec-pestana {
+        flex: 0 0 auto;
+      }
+    }
+  </style>
 </head>
 
 <body data-base="../">
@@ -28,23 +64,8 @@
         </p>
       </div>
 
-      <div class="sec-intro">
-        <p>
-          En Argentina el deporte es un punto de encuentro: reúne a barrios,
-          familias y ciudades en torno a las mismas alegrías y rivalidades.
-          Del fútbol de potrero al pato a caballo, cada disciplina cuenta algo
-          de cómo el país se ve a sí mismo.
-        </p>
-        <p>
-          Una camiseta, un himno en la tribuna o un domingo de club dicen
-          quiénes somos cuando millones de personas miran el mismo partido.
-          Por eso el deporte no es solo un resultado: forma parte de la
-          identidad cotidiana.
-        </p>
-      </div>
 
       <h2>Cifras rápidas</h2>
-      <p class="sec-bajada">Cuatro marcas verificadas, para leer de un vistazo.</p>
       <div class="sec-franja" aria-label="Cifras del deporte argentino">
         <div class="sec-franja-item">
           <strong>3</strong>
@@ -67,8 +88,7 @@
       <section class="sec-bloque" id="destaca">
         <h2>Deportes en los que el país destaca</h2>
         <p class="sec-bajada">
-          El fútbol ocupa el centro. Abajo, una línea por cada otra disciplina
-          que también marca al país.
+          El fútbol ocupa el centro, pero el país también deja huella en otras disciplinas.
         </p>
 
         <div class="sec-destacado">
@@ -83,19 +103,18 @@
             <h3>Hinchadas y Superclásico</h3>
             <p>
               Cada club tiene su himno, sus colores y su barrio. El Superclásico
-              entre Boca Juniors y River Plate es el partido más seguido del
-              país: no es solo un resultado, es una rivalidad que cruza
-              generaciones.
+              entre Boca Juniors y River Plate es uno de los partidos más
+              seguidos del país: no es solo un resultado, es una rivalidad que
+              cruza generaciones.
             </p>
-            <h3>Mundial 2022</h3>
+            <h3>Los últimos Mundiales</h3>
             <p>
-              En Catar, la selección de Lionel Scaloni empató 3-3 con Francia
-              en la final y ganó 4-2 en penales. Lionel Messi levantó la Copa
-              que el país esperaba desde 1986.
+              En Catar 2022, la selección de Lionel Scaloni empató 3-3 con
+              Francia en la final y ganó 4-2 en penales. En 2026 volvió a
+              llegar a la final, en Nueva Jersey, y perdió 1-0 con España.
             </p>
           </div>
           <figure class="shot" data-img="deportes-futbol.jpg" data-alt="Fútbol argentino">
-            <figcaption>El fútbol es el deporte más seguido.</figcaption>
           </figure>
         </div>
 
@@ -122,160 +141,169 @@
           </li>
           <li>
             <strong>Polo.</strong>
-            Argentina es potencia mundial: el Abierto de Palermo es una cita
-            de referencia y hay varios títulos de la Federación Internacional.
+            Argentina es potencia mundial y el Abierto de Palermo es una cita
+            de referencia de la disciplina.
           </li>
         </ul>
 
-        <div class="sec-acciones">
-          <a class="btn btn-primary" href="https://www.afa.com.ar" target="_blank" rel="noopener noreferrer">Saber más · AFA</a>
-          <a class="btn btn-ghost" href="https://www.coa.org.ar" target="_blank" rel="noopener noreferrer">Comité Olímpico Argentino</a>
-          <a class="btn btn-ghost" href="https://www.cahockey.org.ar" target="_blank" rel="noopener noreferrer">Hockey argentino</a>
-        </div>
       </section>
 
       <section class="sec-bloque" id="logros">
-        <h2>Logros internacionales</h2>
+        <h2>Hitos y figuras</h2>
         <p class="sec-bajada">
-          Diez hitos, en orden. No es un ranking: es una línea de tiempo para
-          no repetir las cuatro cifras de arriba.
+          Elegí un deporte para ver sus hitos en orden cronológico y las figuras que los protagonizaron.
         </p>
+        <div class="dep-filtros" id="dep-filtros" role="group" aria-label="Filtrar por deporte">
+          <button type="button" class="sec-pestana" data-filtro="todos" aria-pressed="true">Todos</button>
+          <button type="button" class="sec-pestana" data-filtro="futbol" aria-pressed="false">Fútbol</button>
+          <button type="button" class="sec-pestana" data-filtro="hockey" aria-pressed="false">Hockey</button>
+          <button type="button" class="sec-pestana" data-filtro="basquet" aria-pressed="false">Básquet</button>
+          <button type="button" class="sec-pestana" data-filtro="tenis" aria-pressed="false">Tenis</button>
+          <button type="button" class="sec-pestana" data-filtro="otros" aria-pressed="false">Otros deportes</button>
+        </div>
+        <p class="dep-conteo" id="dep-conteo" aria-live="polite"></p>
+
+        <h3 class="sec-subtitulo">Hitos</h3>
         <ol class="sec-linea">
-          <li>
+          <li data-dep="futbol">
             <time datetime="1893">1893</time>
             <strong>Nace la AFA</strong>
-            <p>La Asociación del Fútbol Argentino se funda el 21 de febrero. Es una de las federaciones más antiguas del mundo.</p>
+            <p>La Asociación del Fútbol Argentino se funda el 21 de febrero. Es una de las federaciones más antiguas del
+              mundo.</p>
           </li>
-          <li>
+          <li data-dep="otros">
+            <time datetime="1951/1957">1951–1957</time>
+            <strong>Fangio, cinco títulos de Fórmula 1</strong>
+            <p>Juan Manuel Fangio gana los campeonatos de 1951, 1954, 1955, 1956 y 1957. Sigue siendo una marca del
+              automovilismo mundial.</p>
+          </li>
+          <li data-dep="otros">
             <time datetime="1953">1953</time>
             <strong>El pato, deporte nacional</strong>
-            <p>Un decreto del 16 de septiembre lo declara deporte nacional. Se juega a caballo, con un equipo de cuatro jinetes por lado.</p>
+            <p>Un decreto del 16 de septiembre lo declara deporte nacional. Se juega a caballo, con cuatro jinetes por
+              equipo.</p>
           </li>
-          <li>
-            <time datetime="1957">1951–1957</time>
-            <strong>Fangio, cinco títulos de Fórmula 1</strong>
-            <p>Juan Manuel Fangio gana los campeonatos de 1951, 1954, 1955, 1956 y 1957. Sigue siendo una marca del automovilismo mundial.</p>
-          </li>
-          <li>
+          <li data-dep="futbol">
             <time datetime="1978">1978</time>
             <strong>Primer Mundial de fútbol</strong>
             <p>Como local, la selección masculina vence 3-1 a los Países Bajos en la final.</p>
           </li>
-          <li>
+          <li data-dep="futbol">
             <time datetime="1986">1986</time>
             <strong>Segundo Mundial, en México</strong>
             <p>Argentina gana 3-2 a Alemania Federal. Diego Maradona es la figura del torneo.</p>
           </li>
-          <li>
+          <li data-dep="hockey">
+            <time datetime="2002">2002</time>
+            <strong>Primer Mundial de Las Leonas</strong>
+            <p>En Perth, la selección femenina de hockey sobre césped se consagra campeona del mundo.</p>
+          </li>
+          <li data-dep="basquet">
             <time datetime="2004">2004</time>
             <strong>Oro olímpico de básquet</strong>
-            <p>En Atenas, la Generación Dorada gana la final a Italia. El mismo año, el fútbol olímpico también consigue el oro.</p>
+            <p>En Atenas, la Generación Dorada gana la final a Italia. El mismo año, el fútbol olímpico también consigue
+              el oro.</p>
           </li>
-          <li>
+          <li data-dep="futbol">
             <time datetime="2008">2008</time>
             <strong>Segundo oro olímpico de fútbol</strong>
             <p>En Pekín, Argentina vence 1-0 a Nigeria y revalida el título de 2004.</p>
           </li>
-          <li>
+          <li data-dep="hockey">
+            <time datetime="2010">2010</time>
+            <strong>Segundo Mundial de Las Leonas</strong>
+            <p>En Rosario, Las Leonas vuelven a ser campeonas del mundo.</p>
+          </li>
+          <li data-dep="tenis">
             <time datetime="2016">2016</time>
             <strong>Copa Davis de tenis</strong>
             <p>La selección argentina gana la ensaladera de plata por primera vez, ante Croacia.</p>
           </li>
-          <li>
+          <li data-dep="futbol">
             <time datetime="2021">2021</time>
             <strong>Copa América</strong>
-            <p>En el Maracaná, la selección de Scaloni gana la Copa América a Brasil. Era el título que faltaba en la vitrina reciente.</p>
+            <p>En el Maracaná, la selección de Scaloni gana la Copa América a Brasil.</p>
           </li>
-          <li>
+          <li data-dep="futbol">
             <time datetime="2022">2022</time>
             <strong>Tercer Mundial de fútbol</strong>
             <p>En Catar, Argentina empata 3-3 con Francia y gana 4-2 en penales. Messi levanta la Copa.</p>
           </li>
+          <li data-dep="futbol">
+            <time datetime="2024">2024</time>
+            <strong>Otra Copa América</strong>
+            <p>En Miami, Argentina vence 1-0 a Colombia en la prórroga y suma su 16.ª Copa América.</p>
+          </li>
+          <li data-dep="futbol">
+            <time datetime="2026">2026</time>
+            <strong>Subcampeón del Mundial</strong>
+            <p>En Estados Unidos, la selección llega a la final y pierde 1-0 con España, el 19 de julio en Nueva Jersey.
+            </p>
+          </li>
         </ol>
-      </section>
 
-      <section class="sec-bloque" id="principales">
-        <h2>Principales atletas</h2>
-        <p class="sec-bajada">Cuatro figuras, de disciplinas distintas. Cada tarjeta cierra con un dato verificado.</p>
+        <h3 class="sec-subtitulo">Figuras</h3>
         <div class="sec-atletas">
-          <article class="sec-atleta">
+          <article class="sec-atleta" data-dep="futbol">
             <figure class="shot" data-img="deportes-messi.jpg" data-alt="Lionel Messi">
-              <figcaption>Lionel Messi</figcaption>
+
             </figure>
             <h3>Lionel Messi</h3>
             <span class="epoca">Fútbol</span>
-            <p>
-              Capitán del equipo que ganó el Mundial de 2022. También obtuvo
-              Copa América y numerosos títulos de club.
-            </p>
-            <p class="dato">Dato: Copa América 2021 (Brasil) y Mundial 2022 (Catar).</p>
+            <p>Capitán del equipo que ganó el Mundial de 2022 y finalista en 2026.</p>
+            <p class="dato">Copa América 2021 y Mundial 2022.</p>
           </article>
-          <article class="sec-atleta">
+          <article class="sec-atleta" data-dep="futbol">
             <figure class="shot" data-img="deportes-maradona.jpg" data-alt="Diego Maradona">
-              <figcaption>Diego Maradona</figcaption>
+
             </figure>
             <h3>Diego Maradona</h3>
             <span class="epoca">Fútbol</span>
-            <p>
-              Figura del Mundial de 1986. Su estilo y su popularidad cruzaron
-              el deporte y la cultura de masas.
-            </p>
-            <p class="dato">Dato: Balón de Oro de la Copa del Mundo México 1986.</p>
+            <p>Figura del Mundial de 1986. Su estilo cruzó el deporte y la cultura de masas.</p>
+            <p class="dato">Balón de Oro del Mundial de México 1986.</p>
           </article>
-          <article class="sec-atleta">
+          <article class="sec-atleta" data-dep="hockey">
             <figure class="shot" data-img="deportes-aymar.jpg" data-alt="Luciana Aymar">
-              <figcaption>Luciana Aymar</figcaption>
+
             </figure>
             <h3>Luciana Aymar</h3>
             <span class="epoca">Hockey</span>
-            <p>
-              Símbolo de Las Leonas: dos Mundiales y cuatro medallas olímpicas.
-            </p>
-            <p class="dato">Dato: ocho veces mejor jugadora del mundo (FIH); la última, en 2013.</p>
+            <p>Símbolo de Las Leonas: dos Mundiales y cuatro medallas olímpicas.</p>
+                        <p class="dato">Medallas olímpicas: plata en Sídney 2000, Atenas 2004 y Londres 2012, y bronce en Pekín 2008.</p>
           </article>
-          <article class="sec-atleta">
+          <article class="sec-atleta" data-dep="basquet">
             <figure class="shot" data-img="deportes-ginobili.jpg" data-alt="Emanuel Ginóbili">
-              <figcaption>Emanuel Ginóbili</figcaption>
+
             </figure>
             <h3>Emanuel Ginóbili</h3>
             <span class="epoca">Básquet</span>
-            <p>
-              Parte de la Generación Dorada que ganó el oro en Atenas 2004.
-              También brilló en la NBA.
-            </p>
-            <p class="dato">Dato: cuatro títulos NBA con San Antonio Spurs (2003, 2005, 2007 y 2014).</p>
+            <p>Parte de la Generación Dorada que ganó el oro en Atenas 2004. También brilló en la NBA.</p>
+            <p class="dato">Cuatro títulos NBA con San Antonio Spurs (2003, 2005, 2007 y 2014).</p>
           </article>
         </div>
-      </section>
 
-      <section class="sec-bloque" id="destacados">
-        <h2>Deportistas destacados</h2>
-        <p class="sec-bajada">
-          Un bloque corto, distinto de las tarjetas de arriba: nombre,
-          disciplina y un solo dato.
-        </p>
         <ul class="sec-nombres">
-          <li>
+          <li data-dep="tenis">
             <strong>Gabriela Sabatini</strong>
             <span class="disciplina">Tenis</span>
             <span>Ganó el US Open en 1990.</span>
           </li>
-          <li>
+          <li data-dep="tenis">
             <strong>Juan Martín del Potro</strong>
             <span class="disciplina">Tenis</span>
             <span>Ganó el US Open en 2009.</span>
           </li>
-          <li>
+          <li data-dep="otros">
             <strong>Paula Pareto</strong>
             <span class="disciplina">Judo</span>
             <span>Oro olímpico en Río 2016.</span>
           </li>
-          <li>
+          <li data-dep="otros">
             <strong>Juan Manuel Fangio</strong>
             <span class="disciplina">Automovilismo</span>
             <span>Cinco campeonatos de Fórmula 1 en los años 50.</span>
           </li>
-          <li>
+          <li data-dep="otros">
             <strong>Adolfo Cambiaso</strong>
             <span class="disciplina">Polo</span>
             <span>Figura del polo argentino y del Abierto de Palermo.</span>
@@ -285,7 +313,7 @@
 
       <section class="sec-bloque" id="tradicionales">
         <h2>Deportes tradicionales o representativos</h2>
-        <p class="sec-bajada">Tres prácticas a caballo. Cada una enlaza a su institución de referencia.</p>
+        <p class="sec-bajada">Tres prácticas a caballo, cada una con su institución de referencia.</p>
         <div class="sec-destacado sec-destacado--inverso">
           <div>
             <p>
@@ -295,8 +323,7 @@
             </p>
           </div>
           <figure class="shot" data-img="deportes-pato.jpg" data-alt="Jinetes disputando un partido de pato">
-            <figcaption>El pato, deporte nacional, se juega a caballo.</figcaption>
-          </figure>
+            </figure>
         </div>
         <div class="sec-federaciones">
           <article class="sec-federacion">
@@ -305,7 +332,7 @@
               Deporte nacional desde 1953. Se disputa a caballo, con un
               «pato» de cuero y cuatro jinetes por equipo.
             </p>
-            <a class="btn btn-ghost" href="https://pato.org.ar/" target="_blank" rel="noopener noreferrer">Federación Argentina de Pato</a>
+
           </article>
           <article class="sec-federacion">
             <h3>Jineteada</h3>
@@ -313,7 +340,7 @@
               Prueba gaucha de destreza a caballo, habitual en fiestas
               criollas. Una de las citas más conocidas es Jesús María, en Córdoba.
             </p>
-            <a class="btn btn-ghost" href="https://festival.org.ar/" target="_blank" rel="noopener noreferrer">Festival de Jesús María</a>
+
           </article>
           <article class="sec-federacion">
             <h3>Polo</h3>
@@ -321,38 +348,49 @@
               El Abierto Argentino de Palermo es una de las copas más
               prestigiosas del mundo. El país es potencia en la disciplina.
             </p>
-            <a class="btn btn-ghost" href="https://www.aapolo.com/" target="_blank" rel="noopener noreferrer">Asociación Argentina de Polo</a>
+
           </article>
         </div>
       </section>
 
       <section class="sec-bloque" id="trivia">
-        <h2>¿Sabías que?</h2>
-        <p class="sec-bajada">Tres preguntas. Las respuestas están en esta página y en las fuentes de abajo.</p>
+        <h2>¿Cuánto aprendiste?</h2>
+        <p class="sec-bajada">Tres preguntas sobre el deporte argentino.</p>
         <div id="mini-trivia"></div>
       </section>
 
       <div class="sources sec-fuentes">
         <details>
-          <summary><strong>Ver fuentes (8)</strong></summary>
+          <summary><strong>Ver fuentes (9)</strong></summary>
           <ul>
             <li>
-              <a href="https://www.fifa.com/en/tournaments/mens/worldcup/articles/teams-most-wins-titles-trophies" target="_blank" rel="noopener noreferrer">FIFA — títulos de Copa del Mundo (1978, 1986, 2022)</a>
+              <a href="https://www.fifa.com/en/tournaments/mens/worldcup/articles/teams-most-wins-titles-trophies"
+                target="_blank" rel="noopener noreferrer">FIFA — títulos de Copa del Mundo (1978, 1986, 2022)</a>
             </li>
             <li>
-              <a href="https://www.olympics.com/en/news/olympic-football-winners-list-men-women-gold-medals-champions" target="_blank" rel="noopener noreferrer">Olympics.com — oros de fútbol Atenas 2004 y Pekín 2008</a>
+              <a href="https://www.telemundo51.com/deportes/copa-mundial-fifa/final-argentina-espana-nueva-jersey-live-updates/2805799/"
+                target="_blank" rel="noopener noreferrer">Telemundo — final del Mundial 2026, España 1-0 Argentina
+                (19/7/2026)</a>
             </li>
             <li>
-              <a href="https://www.olympics.com/en/olympic-games/athens-2004" target="_blank" rel="noopener noreferrer">COI — Juegos Olímpicos de Atenas 2004</a>
+              <a href="https://www.olympics.com/en/news/olympic-football-winners-list-men-women-gold-medals-champions"
+                target="_blank" rel="noopener noreferrer">Olympics.com — oros de fútbol Atenas 2004 y Pekín 2008</a>
             </li>
             <li>
-              <a href="https://www.fih.hockey/general/news/las-leonas-win-bdo-fih-world-cup" target="_blank" rel="noopener noreferrer">FIH — Mundial de hockey femenino, Rosario 2010</a>
+              <a href="https://www.olympics.com/en/olympic-games/athens-2004" target="_blank"
+                rel="noopener noreferrer">COI — Juegos Olímpicos de Atenas 2004</a>
             </li>
             <li>
-              <a href="https://www.fih.hockey/events/nations-cup/women/2002-womens-world-cup-87" target="_blank" rel="noopener noreferrer">FIH — Mundial de hockey femenino, Perth 2002</a>
+              <a href="https://www.fih.hockey/general/news/las-leonas-win-bdo-fih-world-cup" target="_blank"
+                rel="noopener noreferrer">FIH — Mundial de hockey femenino, Rosario 2010</a>
             </li>
             <li>
-              <a href="https://www.afa.com.ar" target="_blank" rel="noopener noreferrer">Asociación del Fútbol Argentino</a>
+              <a href="https://www.fih.hockey/events/nations-cup/women/2002-womens-world-cup-87" target="_blank"
+                rel="noopener noreferrer">FIH — Mundial de hockey femenino, Perth 2002</a>
+            </li>
+            <li>
+              <a href="https://www.afa.com.ar" target="_blank" rel="noopener noreferrer">Asociación del Fútbol
+                Argentino</a>
             </li>
             <li>
               <a href="https://www.coa.org.ar" target="_blank" rel="noopener noreferrer">Comité Olímpico Argentino</a>
@@ -360,7 +398,8 @@
             <li>
               <a href="https://pato.org.ar/" target="_blank" rel="noopener noreferrer">Federación Argentina de Pato</a>
               ·
-              <a href="https://www.aapolo.com/" target="_blank" rel="noopener noreferrer">Asociación Argentina de Polo</a>
+              <a href="https://www.aapolo.com/" target="_blank" rel="noopener noreferrer">Asociación Argentina de
+                Polo</a>
             </li>
           </ul>
         </details>
@@ -370,6 +409,26 @@
   <footer class="site-footer" id="site-footer"></footer>
   <script src="../js/config.js"></script>
   <script src="../js/nav.js"></script>
+  <script>
+    (function () {
+      var botones = document.querySelectorAll("#dep-filtros .sec-pestana");
+      var items = document.querySelectorAll("#logros [data-dep]");
+      var conteo = document.getElementById("dep-conteo");
+      var nombres = { todos: "todos los deportes", futbol: "fútbol", hockey: "hockey", basquet: "básquet", tenis: "tenis", otros: "otros deportes" };
+      function filtrar(f) {
+        var hitos = 0, figuras = 0;
+        botones.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.filtro === f)); });
+        items.forEach(function (el) {
+          var visible = f === "todos" || el.dataset.dep.split(" ").indexOf(f) !== -1;
+          el.hidden = !visible;
+          if (visible) { if (el.tagName === "LI" && el.parentNode.tagName === "OL") hitos++; else figuras++; }
+        });
+        conteo.textContent = "Mostrando " + hitos + " hitos y " + figuras + " figuras de " + nombres[f] + ".";
+      }
+      botones.forEach(function (b) { b.addEventListener("click", function () { filtrar(b.dataset.filtro); }); });
+      filtrar("todos");
+    })();
+  </script>
   <script>
     window.MINI_TRIVIA = {
       preguntas: [
@@ -382,7 +441,7 @@
             "Solo en 2022"
           ],
           correcta: 0,
-          explicacion: "FIFA registra tres títulos: 1978, 1986 y 2022."
+          explicacion: "FIFA registra tres títulos: 1978, 1986 y 2022. En 2026 la selección llegó a la final, pero perdió 1-0 con España."
         },
         {
           pregunta: "¿Cuál es el deporte nacional argentino?",

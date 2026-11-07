@@ -635,8 +635,9 @@
 }
 
 .sec-atletas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   margin: 1rem 0;
 }
@@ -644,7 +645,10 @@
 .sec-atleta {
   display: flex;
   flex-direction: column;
+  flex: 0 1 240px;
+  max-width: 260px;
   padding: 0.9rem;
+  text-align: center;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -1004,6 +1008,7 @@
   flex-direction: column;
   gap: 0.45rem;
   padding: 1.05rem;
+  text-align: center;
   background: #fff;
   border: 1px solid var(--line);
   border-radius: 16px;
