@@ -1,11 +1,6 @@
 /* Ciencia y tecnología: formato de artículo + actividades interactivas.
    Columna de lectura única; solo las actividades usan paneles con borde. */
 
-.cien-columna {
-  max-width: 860px;
-  margin: 0 auto;
-}
-
 /* ---- Apertura: objetivos e índice ---- */
 .cien-apertura {
   margin-bottom: 2rem;
@@ -42,22 +37,15 @@
   break-inside: avoid;
 }
 
-.cien-indice a,
-.cien-indice-extra a {
+.cien-indice a {
   color: var(--azul);
   font-weight: 700;
   text-decoration: none;
 }
 
-.cien-indice a:hover,
-.cien-indice-extra a:hover {
+.cien-indice a:hover {
   color: var(--celeste-oscuro);
   text-decoration: underline;
-}
-
-.cien-indice-extra {
-  margin: 0.9rem 0 0;
-  font-size: 0.95rem;
 }
 
 /* ---- Los 10 puntos, como secciones de un artículo ---- */
@@ -96,10 +84,6 @@
   line-height: 1.4;
 }
 
-.cien-fig figcaption strong {
-  color: var(--azul);
-}
-
 .cien-dato {
   margin: 1rem 0 0;
   padding: 0.15rem 0 0.15rem 0.9rem;
@@ -108,23 +92,6 @@
 
 .cien-dato strong {
   color: var(--azul);
-}
-
-.cien-cita {
-  font-size: 0.72em;
-  line-height: 0;
-  vertical-align: super;
-}
-
-.cien-cita a {
-  padding: 0 0.1rem;
-  color: var(--celeste-oscuro);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.cien-cita a:hover {
-  text-decoration: underline;
 }
 
 /* ---- Bloques de actividad (los únicos con panel) ---- */
@@ -402,33 +369,6 @@
   margin: 0.1rem 0 0;
   color: var(--texto);
   font-size: 0.95rem;
-}
-
-/* ---- Fuentes numeradas ---- */
-.cien-fuentes {
-  padding: 1.7rem 0 1rem;
-  border-top: 1px solid var(--line);
-}
-
-.cien-fuentes h2 {
-  margin: 0 0 0.6rem;
-  font-size: 1.3rem;
-  color: var(--azul);
-}
-
-.cien-fuentes ol {
-  margin: 0;
-  padding-left: 1.5rem;
-  font-size: 0.93rem;
-}
-
-.cien-fuentes li {
-  margin-bottom: 0.4rem;
-  overflow-wrap: anywhere;
-}
-
-.cien-fuentes li:target {
-  background: rgba(246, 180, 14, 0.18);
 }
 
 /* ---- Pantallas chicas ---- */

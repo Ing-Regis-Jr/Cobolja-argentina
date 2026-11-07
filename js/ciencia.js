@@ -67,7 +67,7 @@
   }
 
   /* ---------- 2) Mapa de centros científicos ---------- */
-  // Datos tomados de las fuentes numeradas 5, 6, 8 y 10 de la página.
+  // Datos tomados de las fuentes citadas al final de la página.
   const LUGARES = [
     {
       id: "bariloche",
