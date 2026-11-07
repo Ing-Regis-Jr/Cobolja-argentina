@@ -1,0 +1,480 @@
+/* Ciencia y tecnología: formato de artículo + actividades interactivas.
+   Columna de lectura única; solo las actividades usan paneles con borde. */
+
+.cien-columna {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ---- Apertura: objetivos e índice ---- */
+.cien-apertura {
+  margin-bottom: 2rem;
+}
+
+.cien-apertura h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: var(--azul);
+}
+
+.cien-apertura p {
+  color: var(--muted);
+}
+
+.cien-objetivos {
+  margin: 0.4rem 0 1.6rem;
+  padding-left: 1.2rem;
+}
+
+.cien-objetivos li {
+  margin-bottom: 0.4rem;
+}
+
+.cien-indice ol {
+  margin: 0;
+  padding-left: 1.4rem;
+  columns: 2;
+  column-gap: 2rem;
+}
+
+.cien-indice li {
+  margin-bottom: 0.3rem;
+  break-inside: avoid;
+}
+
+.cien-indice a,
+.cien-indice-extra a {
+  color: var(--azul);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cien-indice a:hover,
+.cien-indice-extra a:hover {
+  color: var(--celeste-oscuro);
+  text-decoration: underline;
+}
+
+.cien-indice-extra {
+  margin: 0.9rem 0 0;
+  font-size: 0.95rem;
+}
+
+/* ---- Los 10 puntos, como secciones de un artículo ---- */
+.cien-seccion {
+  display: flow-root;
+  padding: 1.7rem 0 1.5rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 1.5rem;
+}
+
+.cien-seccion h2 {
+  margin: 0 0 0.15rem;
+  font-size: 1.5rem;
+  color: var(--azul);
+}
+
+.cien-num {
+  margin-right: 0.35rem;
+  color: var(--celeste-oscuro);
+}
+
+.cien-sub {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.cien-fig {
+  float: right;
+  width: 42%;
+  margin: 0.2rem 0 1rem 1.5rem;
+}
+
+.cien-fig figcaption {
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.cien-fig figcaption strong {
+  color: var(--azul);
+}
+
+.cien-dato {
+  margin: 1rem 0 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--sol);
+}
+
+.cien-dato strong {
+  color: var(--azul);
+}
+
+.cien-cita {
+  font-size: 0.72em;
+  line-height: 0;
+  vertical-align: super;
+}
+
+.cien-cita a {
+  padding: 0 0.1rem;
+  color: var(--celeste-oscuro);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cien-cita a:hover {
+  text-decoration: underline;
+}
+
+/* ---- Bloques de actividad (los únicos con panel) ---- */
+.cien-bloque {
+  padding: 1.7rem 0 1.6rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 1.5rem;
+}
+
+.cien-bloque > h2 {
+  margin: 0 0 0.3rem;
+  font-size: 1.5rem;
+  color: var(--azul);
+}
+
+.cien-bajada {
+  margin: 0 0 1.1rem;
+  color: var(--muted);
+}
+
+.cien-panel {
+  padding: 1.1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+}
+
+.cien-nota {
+  margin: 0.8rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---- Línea de tiempo ---- */
+.cien-tl {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.cien-tl[hidden] {
+  display: none;
+}
+
+.cien-tl li {
+  margin-bottom: 0.9rem;
+}
+
+.cien-tl h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.1rem;
+}
+
+.cien-tl p {
+  margin: 0 0 0.3rem;
+}
+
+.cien-ver {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--celeste-oscuro);
+}
+
+.cien-tl-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.cien-tl-btn {
+  flex: 1 1 72px;
+  min-width: 0;
+  padding: 0.65rem 0.4rem;
+  color: var(--azul);
+  font: inherit;
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.cien-tl-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--celeste-oscuro);
+}
+
+.cien-tl-btn[aria-pressed="true"] {
+  color: #fff;
+  background: var(--azul);
+  border-color: var(--azul);
+}
+
+.cien-tl-btn small {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.3;
+  opacity: 0.85;
+}
+
+.cien-tl-detalle {
+  padding: 1rem 1.1rem;
+  background: var(--gris);
+  border-left: 4px solid var(--celeste);
+  border-radius: 0 12px 12px 0;
+}
+
+.cien-tl-detalle h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.15rem;
+}
+
+.cien-tl-detalle p {
+  margin: 0 0 0.4rem;
+}
+
+/* ---- Mapa ---- */
+.cien-mapa {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  height: 340px;
+  margin-bottom: 0.9rem;
+  background: #d9eaf7;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.cien-mapa-aviso {
+  margin: 0;
+  padding: 1.2rem;
+  color: var(--muted);
+}
+
+.cien-lugares {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.cien-lugar {
+  flex: 1 1 120px;
+  min-width: 0;
+  padding: 0.55rem 0.5rem;
+  color: var(--azul);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cien-lugar:hover {
+  border-color: var(--celeste-oscuro);
+}
+
+.cien-lugar[aria-pressed="true"] {
+  color: #fff;
+  background: var(--azul);
+  border-color: var(--azul);
+}
+
+.cien-lugar-detalle {
+  padding: 1rem 1.1rem;
+  background: var(--gris);
+  border-left: 4px solid var(--celeste);
+  border-radius: 0 12px 12px 0;
+}
+
+.cien-lugar-detalle h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.15rem;
+}
+
+.cien-lugar-detalle p {
+  margin: 0 0 0.4rem;
+}
+
+/* ---- Actividad de relacionar ---- */
+.cien-rel-estado {
+  margin: 0 0 0.9rem;
+  min-height: 1.5em;
+  font-weight: 700;
+  color: var(--azul);
+}
+
+.cien-rel-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 0.7rem;
+}
+
+.cien-rel-col {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+}
+
+.cien-rel-item {
+  padding: 0.7rem 0.75rem;
+  color: var(--texto);
+  font: inherit;
+  font-size: 0.93rem;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.cien-rel-item:hover:not(:disabled) {
+  border-color: var(--celeste-oscuro);
+}
+
+.cien-rel-item[aria-pressed="true"] {
+  color: #fff;
+  background: var(--azul);
+  border-color: var(--azul);
+}
+
+.cien-rel-item.is-correct {
+  color: var(--texto);
+  background: rgba(27, 127, 74, 0.12);
+  border-color: var(--ok);
+}
+
+.cien-rel-item.is-wrong {
+  color: var(--texto);
+  background: rgba(180, 35, 24, 0.1);
+  border-color: var(--error);
+}
+
+.cien-rel-item:disabled {
+  cursor: default;
+}
+
+.cien-rel-acciones {
+  margin-top: 1rem;
+}
+
+/* ---- Glosario ---- */
+.cien-glosario summary {
+  padding: 0.9rem 1.1rem;
+  color: var(--azul);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.cien-glosario dl {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.6rem;
+  margin: 0;
+  padding: 0 1.1rem 1.1rem;
+}
+
+.cien-glosario dt {
+  color: var(--azul);
+  font-weight: 800;
+}
+
+.cien-glosario dd {
+  margin: 0.1rem 0 0;
+  color: var(--texto);
+  font-size: 0.95rem;
+}
+
+/* ---- Fuentes numeradas ---- */
+.cien-fuentes {
+  padding: 1.7rem 0 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.cien-fuentes h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.3rem;
+  color: var(--azul);
+}
+
+.cien-fuentes ol {
+  margin: 0;
+  padding-left: 1.5rem;
+  font-size: 0.93rem;
+}
+
+.cien-fuentes li {
+  margin-bottom: 0.4rem;
+  overflow-wrap: anywhere;
+}
+
+.cien-fuentes li:target {
+  background: rgba(246, 180, 14, 0.18);
+}
+
+/* ---- Pantallas chicas ---- */
+@media (max-width: 720px) {
+  .cien-indice ol {
+    columns: 1;
+  }
+
+  .cien-seccion h2,
+  .cien-bloque > h2 {
+    font-size: 1.3rem;
+  }
+
+  .cien-fig {
+    float: none;
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+
+  .cien-tl-btn {
+    flex: 1 1 calc(25% - 0.5rem);
+  }
+
+  .cien-rel-grid {
+    gap: 0.5rem;
+  }
+
+  .cien-rel-item {
+    padding: 0.6rem 0.55rem;
+    font-size: 0.88rem;
+  }
+
+  .cien-glosario dl {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 721px) {
+  .cien-mapa {
+    height: 400px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cien-tl-btn,
+  .cien-lugar {
+    transition: none;
+  }
+}

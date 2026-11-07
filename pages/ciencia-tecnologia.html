@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/components.css" />
     <link rel="stylesheet" href="../css/secciones.css" />
+    <link rel="stylesheet" href="../css/ciencia.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
   </head>
   <body data-base="../">
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -32,227 +39,409 @@
           </p>
         </div>
 
-        <div class="sec-intro">
-          <p>Diez temas, cada uno con su dato clave y su imagen. Al final hay una trivia de tres preguntas.</p>
-        </div>
+        <div class="cien-columna">
+          <!-- APERTURA -->
+          <div class="cien-apertura">
+            <h2>Qué vas a aprender</h2>
+            <ul class="cien-objetivos">
+              <li>Identificar las principales instituciones científicas públicas del país: CONICET, CONAE, CNEA y las universidades.</li>
+              <li>Reconocer aportes con autor y fecha: premios Nobel, la transfusión de 1914, las huellas dactilares y el satélite ARSAT-1.</li>
+              <li>Relacionar la ciencia con usos concretos: emergencias, salud y comunicaciones.</li>
+            </ul>
 
-        <div class="sec-destacado sec-punto">
-          <div>
-            <p class="sec-punto-num">01</p>
-            <h2>Ciencia</h2>
-            <p class="sec-punto-lead">CONICET, en todo el territorio</p>
+            <nav class="cien-indice" aria-label="Contenido de la sección">
+              <h2>Contenido</h2>
+              <ol>
+                <li><a href="#p01">Ciencia</a></li>
+                <li><a href="#p02">Tecnología</a></li>
+                <li><a href="#p03">Medicina</a></li>
+                <li><a href="#p04">Ingeniería</a></li>
+                <li><a href="#p05">Educación</a></li>
+                <li><a href="#p06">Innovación</a></li>
+                <li><a href="#p07">Empresas y proyectos</a></li>
+                <li><a href="#p08">Inventos y hallazgos</a></li>
+                <li><a href="#p09">Universidades y centros</a></li>
+                <li><a href="#p10">Soluciones sociales</a></li>
+              </ol>
+              <p class="cien-indice-extra">
+                Además: <a href="#linea-tiempo">línea de tiempo</a>,
+                <a href="#mapa">mapa</a>, <a href="#relacionar">actividad</a>,
+                <a href="#glosario">glosario</a>, <a href="#trivia">trivia</a>
+                y <a href="#fuentes">fuentes</a>.
+              </p>
+            </nav>
+          </div>
+
+          <!-- 1 -->
+          <section class="cien-seccion" id="p01">
+            <h2><span class="cien-num">1.</span> Ciencia</h2>
+            <p class="cien-sub">CONICET, en todo el territorio</p>
+            <figure class="shot cien-fig" data-img="ciencia-conicet.jpg" data-alt="CONICET">
+              <figcaption><strong>Figura 1.</strong> El CONICET nuclea institutos en todo el país.</figcaption>
+            </figure>
             <p>
               El CONICET articula institutos en todo el país: biología,
-              ciencias sociales, ingeniería y más. No es un solo edificio en
-              Buenos Aires: hay institutos en las provincias, y por eso sirve
-              para mostrar que la investigación también ocurre lejos de la
-              capital.
+              ciencias sociales, ingeniería y más.<sup class="cien-cita"><a href="#fuente-1" aria-label="Fuente 1">[1]</a></sup>
+              La investigación no se concentra en un solo edificio de Buenos
+              Aires: hay institutos en las provincias, de modo que la ciencia
+              también se hace lejos de la capital.
             </p>
-            <p class="sec-punto-dato"><strong>Dato clave:</strong> institutos en las provincias, no solo en Buenos Aires.</p>
-          </div>
-          <figure class="shot" data-img="ciencia-conicet.jpg" data-alt="CONICET">
-            <figcaption>El CONICET nuclea institutos en todo el país.</figcaption>
-          </figure>
-        </div>
+            <p class="cien-dato"><strong>Dato clave:</strong> institutos en las provincias, no solo en Buenos Aires.</p>
+          </section>
 
-        <div class="sec-destacado sec-destacado--inverso sec-punto">
-          <div>
-            <p class="sec-punto-num">02</p>
-            <h2>Tecnología</h2>
-            <p class="sec-punto-lead">Mirar la Tierra desde el espacio</p>
+          <!-- 2 -->
+          <section class="cien-seccion" id="p02">
+            <h2><span class="cien-num">2.</span> Tecnología</h2>
+            <p class="cien-sub">Mirar la Tierra desde el espacio</p>
+            <figure class="shot cien-fig" data-img="ciencia-satelite.jpg" data-alt="Satélite argentino">
+              <figcaption><strong>Figura 2.</strong> Satélites argentinos de observación de la Tierra.</figcaption>
+            </figure>
             <p>
-              La CONAE coordina el plan espacial. Los satélites SAC y SAOCOM
-              observan el suelo y ayudan en emergencias, agricultura y
-              recursos naturales.
+              La CONAE (Comisión Nacional de Actividades Espaciales) coordina
+              el plan espacial.<sup class="cien-cita"><a href="#fuente-2" aria-label="Fuente 2">[2]</a></sup>
+              Los satélites SAC y SAOCOM observan el suelo y ayudan en
+              emergencias, agricultura y recursos naturales.
             </p>
-            <p class="sec-punto-dato"><strong>Dato clave:</strong> SAOCOM usa radar de apertura sintética y puede «ver» el suelo aunque haya nubes.</p>
-          </div>
-          <figure class="shot" data-img="ciencia-satelite.jpg" data-alt="Satélite argentino">
-            <figcaption>Satélites argentinos de observación de la Tierra.</figcaption>
-          </figure>
-        </div>
+            <p class="cien-dato"><strong>Dato clave:</strong> SAOCOM usa radar de apertura sintética y puede «ver» el suelo aunque haya nubes.</p>
+          </section>
 
-        <div class="sec-destacado sec-punto">
-          <div>
-            <p class="sec-punto-num">03</p>
-            <h2>Medicina</h2>
-            <p class="sec-punto-lead">Premios Nobel y transfusiones</p>
+          <!-- 3 -->
+          <section class="cien-seccion" id="p03">
+            <h2><span class="cien-num">3.</span> Medicina</h2>
+            <p class="cien-sub">Premios Nobel y transfusiones</p>
+            <figure class="shot cien-fig" data-img="ciencia-medicina.jpg" data-alt="Medicina argentina">
+              <figcaption><strong>Figura 3.</strong> Tres argentinos con Premio Nobel en ciencias.</figcaption>
+            </figure>
             <p>
               Bernardo Houssay (Fisiología o Medicina, 1947), Luis Federico
               Leloir (Química, 1970) y César Milstein (Fisiología o Medicina,
-              1984) recibieron el Premio Nobel. En el siglo XX, Luis Agote
-              impulsó la transfusión de sangre citratada.
+              1984) recibieron el Premio Nobel.<sup class="cien-cita"><a href="#fuente-4" aria-label="Fuente 4">[4]</a></sup>
+              En el siglo XX, Luis Agote impulsó la transfusión de sangre
+              citratada.<sup class="cien-cita"><a href="#fuente-5" aria-label="Fuente 5">[5]</a></sup>
             </p>
-            <p class="sec-punto-dato"><strong>Dato clave:</strong> el 9 de noviembre de 1914, Agote hizo en el Hospital Rawson, en Buenos Aires, una transfusión con citrato de sodio.</p>
-          </div>
-          <figure class="shot" data-img="ciencia-medicina.jpg" data-alt="Medicina argentina">
-            <figcaption>Tres argentinos con Premio Nobel en ciencias.</figcaption>
-          </figure>
-        </div>
+            <p class="cien-dato"><strong>Dato clave:</strong> el 9 de noviembre de 1914, Agote hizo en el Hospital Rawson, en Buenos Aires, una transfusión con citrato de sodio.</p>
+          </section>
 
-        <div class="sec-destacado sec-destacado--inverso sec-punto">
-          <div>
-            <p class="sec-punto-num">04</p>
-            <h2>Ingeniería</h2>
-            <p class="sec-punto-lead">Reactores de investigación</p>
+          <!-- 4 -->
+          <section class="cien-seccion" id="p04">
+            <h2><span class="cien-num">4.</span> Ingeniería</h2>
+            <p class="cien-sub">Reactores de investigación</p>
+            <figure class="shot cien-fig" data-img="ciencia-ingenieria.jpg" data-alt="Ingeniería nuclear argentina">
+              <figcaption><strong>Figura 4.</strong> Ingeniería nuclear aplicada a la investigación.</figcaption>
+            </figure>
             <p>
               La CNEA y la empresa INVAP diseñan reactores de investigación
-              que se exportaron a otros países. El Instituto Balseiro forma a
-              parte de esos equipos.
+              que se exportaron a otros países.<sup class="cien-cita"><a href="#fuente-3" aria-label="Fuente 3">[3]</a></sup>
+              El Instituto Balseiro forma a parte de esos equipos.
             </p>
-            <p class="sec-punto-dato"><strong>Dato clave:</strong> INVAP tiene su sede en Bariloche, igual que el Instituto Balseiro.</p>
-          </div>
-          <figure class="shot" data-img="ciencia-ingenieria.jpg" data-alt="Ingeniería nuclear argentina">
-            <figcaption>Ingeniería nuclear aplicada a la investigación.</figcaption>
-          </figure>
-        </div>
+            <p class="cien-dato"><strong>Dato clave:</strong> INVAP tiene su sede en Bariloche, igual que el Instituto Balseiro.</p>
+          </section>
 
-        <div class="sec-destacado sec-punto">
-          <div>
-            <p class="sec-punto-num">05</p>
-            <h2>Educación</h2>
-            <p class="sec-punto-lead">La universidad pública</p>
+          <!-- 5 -->
+          <section class="cien-seccion" id="p05">
+            <h2><span class="cien-num">5.</span> Educación</h2>
+            <p class="cien-sub">La universidad pública</p>
+            <figure class="shot cien-fig" data-img="ciencia-educacion.jpg" data-alt="Universidad pública argentina">
+              <figcaption><strong>Figura 5.</strong> La universidad pública sostiene gran parte de la investigación.</figcaption>
+            </figure>
             <p>
               Las universidades nacionales públicas sostienen gran parte de la
-              investigación. La UBA, la UNC, la UNLP y el Balseiro aparecen
-              una y otra vez en los papeles científicos.
+              investigación. La Universidad de Buenos Aires (UBA), la
+              Universidad Nacional de Córdoba (UNC), la Universidad Nacional de
+              La Plata (UNLP) y el Instituto Balseiro aparecen una y otra vez
+              en los trabajos científicos.
             </p>
-            <p class="sec-punto-dato"><strong>Dato clave:</strong> cuatro nombres para recordar: UBA, UNC, UNLP y el Instituto Balseiro.</p>
-          </div>
-          <figure class="shot" data-img="ciencia-educacion.jpg" data-alt="Universidad pública argentina">
-            <figcaption>La universidad pública sostiene gran parte de la investigación.</figcaption>
-          </figure>
-        </div>
+            <p class="cien-dato"><strong>Dato clave:</strong> cuatro nombres para recordar: UBA, UNC, UNLP y el Instituto Balseiro.</p>
+          </section>
 
-        <div class="sec-destacado sec-destacado--inverso sec-punto">
-          <div>
-            <p class="sec-punto-num">06</p>
-            <h2>Innovación</h2>
-            <p class="sec-punto-lead">Del laboratorio al producto</p>
+          <!-- 6 -->
+          <section class="cien-seccion" id="p06">
+            <h2><span class="cien-num">6.</span> Innovación</h2>
+            <p class="cien-sub">Del laboratorio al producto</p>
+            <figure class="shot cien-fig" data-img="ciencia-innovacion.jpg" data-alt="Innovación y software">
+              <figcaption><strong>Figura 6.</strong> Software y servicios informáticos.</figcaption>
+            </figure>
             <p>
               Hay un polo de software y servicios informáticos, y empresas
-              tecnológicas de alcance regional. La innovación no es solo un
-              laboratorio: también es un producto que se usa.
+              tecnológicas de alcance regional. La innovación no se limita al
+              laboratorio: también se traduce en productos que se usan todos
+              los días.
             </p>
-            <p class="sec-punto-dato"><strong>Dato clave:</strong> software y servicios informáticos, una industria con empresas de alcance regional.</p>
-          </div>
-          <figure class="shot" data-img="ciencia-innovacion.jpg" data-alt="Innovación y software">
-            <figcaption>Software y servicios informáticos.</figcaption>
-          </figure>
-        </div>
+            <p class="cien-dato"><strong>Dato clave:</strong> software y servicios informáticos, una industria con empresas de alcance regional.</p>
+          </section>
 
-        <div class="sec-destacado sec-punto">
-          <div>
-            <p class="sec-punto-num">07</p>
-            <h2>Empresas y proyectos</h2>
-            <p class="sec-punto-lead">Con nombre institucional</p>
+          <!-- 7 -->
+          <section class="cien-seccion" id="p07">
+            <h2><span class="cien-num">7.</span> Empresas y proyectos</h2>
+            <p class="cien-sub">Con nombre institucional</p>
+            <figure class="shot cien-fig" data-img="ciencia-empresas.jpg" data-alt="Empresas tecnológicas argentinas">
+              <figcaption><strong>Figura 7.</strong> INVAP y ARSAT: tecnología espacial argentina.</figcaption>
+            </figure>
             <p>
               INVAP (satélites y reactores), ARSAT (telecomunicaciones) y los
-              proyectos SAOCOM de la CONAE son ejemplos verificables.
+              proyectos SAOCOM de la CONAE son tres ejemplos con nombre
+              institucional.<sup class="cien-cita"><a href="#fuente-3" aria-label="Fuente 3">[3]</a></sup>
             </p>
-            <p class="sec-punto-dato"><strong>Dato clave:</strong> ARSAT-1, construido por INVAP en Bariloche, fue el primer satélite geoestacionario de telecomunicaciones argentino; se lanzó en octubre de 2014 desde Kourou (Guayana Francesa).</p>
-          </div>
-          <figure class="shot" data-img="ciencia-empresas.jpg" data-alt="Empresas tecnológicas argentinas">
-            <figcaption>INVAP y ARSAT: tecnología espacial argentina.</figcaption>
-          </figure>
-        </div>
+            <p class="cien-dato"><strong>Dato clave:</strong> ARSAT-1, construido por INVAP en Bariloche, fue el primer satélite geoestacionario de telecomunicaciones argentino; se lanzó en octubre de 2014 desde Kourou (Guayana Francesa).<sup class="cien-cita"><a href="#fuente-7" aria-label="Fuente 7">[7]</a></sup></p>
+          </section>
 
-        <div class="sec-destacado sec-destacado--inverso sec-punto">
-          <div>
-            <p class="sec-punto-num">08</p>
-            <h2>Inventos y hallazgos</h2>
-            <p class="sec-punto-lead">Hallazgos con autor, no leyendas</p>
+          <!-- 8 -->
+          <section class="cien-seccion" id="p08">
+            <h2><span class="cien-num">8.</span> Inventos y hallazgos</h2>
+            <p class="cien-sub">Hallazgos con autor, no leyendas</p>
+            <figure class="shot cien-fig" data-img="ciencia-inventos.jpg" data-alt="Inventos argentinos">
+              <figcaption><strong>Figura 8.</strong> Huellas dactilares y bolígrafo: dos inventos con autor.</figcaption>
+            </figure>
             <p>
               Juan Vucetich desarrolló un sistema de identificación por huellas
-              dactilares. László Bíró, radicado en Argentina, patentó el
-              bolígrafo.
+              dactilares.<sup class="cien-cita"><a href="#fuente-6" aria-label="Fuente 6">[6]</a></sup>
+              László Bíró, radicado en Argentina, patentó el bolígrafo.
             </p>
-            <p class="sec-punto-dato"><strong>Dato clave:</strong> Vucetich creó su sistema en 1891; en 1892 se usó por primera vez para resolver un crimen, en Necochea.</p>
-          </div>
-          <figure class="shot" data-img="ciencia-inventos.jpg" data-alt="Inventos argentinos">
-            <figcaption>Huellas dactilares y bolígrafo: dos inventos con autor.</figcaption>
-          </figure>
-        </div>
+            <p class="cien-dato"><strong>Dato clave:</strong> Vucetich creó su sistema en 1891; en 1892 se usó por primera vez para resolver un crimen, en Necochea.</p>
+          </section>
 
-        <div class="sec-destacado sec-punto">
-          <div>
-            <p class="sec-punto-num">09</p>
-            <h2>Universidades y centros</h2>
-            <p class="sec-punto-lead">Dónde se hace la ciencia</p>
+          <!-- 9 -->
+          <section class="cien-seccion" id="p09">
+            <h2><span class="cien-num">9.</span> Universidades y centros</h2>
+            <p class="cien-sub">Dónde se hace la ciencia</p>
+            <figure class="shot cien-fig" data-img="ciencia-universidades.jpg" data-alt="Instituto Balseiro">
+              <figcaption><strong>Figura 9.</strong> Centros de investigación y formación científica.</figcaption>
+            </figure>
             <p>
               CONICET, CNEA, Instituto Balseiro (Bariloche), Facultad de
-              Ciencias Exactas de la UBA e Instituto Leloir son puertas de
-              entrada para citar un centro concreto.
+              Ciencias Exactas de la UBA e Instituto Leloir son ejemplos de
+              centros donde se hace ciencia en el país.
             </p>
-            <p class="sec-punto-dato"><strong>Dato clave:</strong> el Instituto Balseiro nació en 1955 por un convenio entre la CNEA y la Universidad Nacional de Cuyo.</p>
-          </div>
-          <figure class="shot" data-img="ciencia-universidades.jpg" data-alt="Instituto Balseiro">
-            <figcaption>Centros de investigación y formación científica.</figcaption>
-          </figure>
-        </div>
+            <p class="cien-dato"><strong>Dato clave:</strong> el Instituto Balseiro nació en 1955 por un convenio entre la CNEA y la Universidad Nacional de Cuyo.<sup class="cien-cita"><a href="#fuente-8" aria-label="Fuente 8">[8]</a></sup></p>
+          </section>
 
-        <div class="sec-destacado sec-destacado--inverso sec-punto">
-          <div>
-            <p class="sec-punto-num">10</p>
-            <h2>Soluciones sociales</h2>
-            <p class="sec-punto-lead">Ciencia con un uso concreto</p>
+          <!-- 10 -->
+          <section class="cien-seccion" id="p10">
+            <h2><span class="cien-num">10.</span> Soluciones sociales</h2>
+            <p class="cien-sub">Ciencia con un uso concreto</p>
+            <figure class="shot cien-fig" data-img="ciencia-social.jpg" data-alt="Ciencia aplicada a problemas sociales">
+              <figcaption><strong>Figura 10.</strong> La ciencia pública aplicada a problemas reales.</figcaption>
+            </figure>
             <p>
               Los satélites de observación se usan en inundaciones e
               incendios. Los reactores de investigación producen radioisótopos
-              para medicina. La ciencia pública se explica mejor con un uso
-              concreto.
+              para medicina. En ambos casos, la ciencia pública se traduce en
+              un uso concreto.
             </p>
-            <p class="sec-punto-dato"><strong>Dato clave:</strong> radioisótopos para medicina y satélites para emergencias: dos usos de la ciencia pública.</p>
-          </div>
-          <figure class="shot" data-img="ciencia-social.jpg" data-alt="Ciencia aplicada a problemas sociales">
-            <figcaption>La ciencia pública aplicada a problemas reales.</figcaption>
-          </figure>
-        </div>
+            <p class="cien-dato"><strong>Dato clave:</strong> radioisótopos para medicina y satélites para emergencias: dos usos de la ciencia pública.</p>
+          </section>
 
-        <section class="sec-bloque" id="trivia">
-          <h2>¿Cuánto aprendiste?</h2>
-          <p class="sec-bajada">Tres preguntas de ciencia y tecnología.</p>
-          <div id="mini-trivia"></div>
-        </section>
+          <!-- LÍNEA DE TIEMPO -->
+          <section class="cien-bloque" id="linea-tiempo">
+            <h2>La ciencia en el tiempo</h2>
+            <p class="cien-bajada">Ocho fechas de esta sección en orden cronológico. Tocá un año para ver qué ocurrió.</p>
+            <div class="cien-panel">
+              <ol class="cien-tl" data-linea-tiempo>
+                <li data-anio="1891" data-area="Identificación">
+                  <h3>1891 · Vucetich crea su sistema de huellas dactilares</h3>
+                  <p>
+                    Juan Vucetich creó su sistema de identificación por huellas
+                    dactilares. En 1892 se usó por primera vez para resolver un
+                    crimen, en Necochea.<sup class="cien-cita"><a href="#fuente-6" aria-label="Fuente 6">[6]</a></sup>
+                  </p>
+                  <a class="cien-ver" href="#p08">Ver en Inventos y hallazgos →</a>
+                </li>
+                <li data-anio="1914" data-area="Medicina">
+                  <h3>1914 · Primera transfusión con citrato de sodio</h3>
+                  <p>
+                    El 9 de noviembre, Luis Agote hizo en el Hospital Rawson, en
+                    Buenos Aires, una transfusión de sangre con citrato de
+                    sodio.<sup class="cien-cita"><a href="#fuente-5" aria-label="Fuente 5">[5]</a></sup>
+                  </p>
+                  <a class="cien-ver" href="#p03">Ver en Medicina →</a>
+                </li>
+                <li data-anio="1947" data-area="Nobel">
+                  <h3>1947 · Houssay recibe el Premio Nobel</h3>
+                  <p>
+                    Bernardo Houssay obtuvo el Premio Nobel de Fisiología o
+                    Medicina.<sup class="cien-cita"><a href="#fuente-4" aria-label="Fuente 4">[4]</a></sup>
+                  </p>
+                  <a class="cien-ver" href="#p03">Ver en Medicina →</a>
+                </li>
+                <li data-anio="1955" data-area="Formación">
+                  <h3>1955 · Nace el Instituto Balseiro</h3>
+                  <p>
+                    Se creó por un convenio entre la CNEA y la Universidad
+                    Nacional de Cuyo. Funciona en Bariloche.<sup class="cien-cita"><a href="#fuente-8" aria-label="Fuente 8">[8]</a></sup>
+                  </p>
+                  <a class="cien-ver" href="#p09">Ver en Universidades y centros →</a>
+                </li>
+                <li data-anio="1970" data-area="Nobel">
+                  <h3>1970 · Leloir recibe el Premio Nobel</h3>
+                  <p>
+                    Luis Federico Leloir obtuvo el Premio Nobel de
+                    Química.<sup class="cien-cita"><a href="#fuente-4" aria-label="Fuente 4">[4]</a></sup>
+                  </p>
+                  <a class="cien-ver" href="#p03">Ver en Medicina →</a>
+                </li>
+                <li data-anio="1984" data-area="Nobel">
+                  <h3>1984 · Milstein recibe el Premio Nobel</h3>
+                  <p>
+                    César Milstein obtuvo el Premio Nobel de Fisiología o
+                    Medicina.<sup class="cien-cita"><a href="#fuente-4" aria-label="Fuente 4">[4]</a></sup>
+                  </p>
+                  <a class="cien-ver" href="#p03">Ver en Medicina →</a>
+                </li>
+                <li data-anio="2014" data-area="Espacio">
+                  <h3>2014 · Se lanza el satélite ARSAT-1</h3>
+                  <p>
+                    En octubre, desde Kourou (Guayana Francesa), se lanzó
+                    ARSAT-1, construido por INVAP en Bariloche: el primer
+                    satélite geoestacionario de telecomunicaciones
+                    argentino.<sup class="cien-cita"><a href="#fuente-7" aria-label="Fuente 7">[7]</a></sup>
+                  </p>
+                  <a class="cien-ver" href="#p07">Ver en Empresas y proyectos →</a>
+                </li>
+                <li data-anio="2018" data-area="Espacio">
+                  <h3>2018 · Se lanza el satélite SAOCOM 1A</h3>
+                  <p>
+                    El 7 de octubre, un cohete Falcon 9 de SpaceX lo lanzó
+                    desde la base Vandenberg, en California. Es un satélite de
+                    observación por microondas que entrega datos con cualquier
+                    clima, de día y de noche.<sup class="cien-cita"><a href="#fuente-9" aria-label="Fuente 9">[9]</a></sup>
+                  </p>
+                  <a class="cien-ver" href="#p02">Ver en Tecnología →</a>
+                </li>
+              </ol>
+            </div>
+          </section>
 
-        <div class="sources sec-fuentes">
-          <details>
-            <summary><strong>Ver fuentes (8)</strong></summary>
-            <ul>
-              <li>
+          <!-- MAPA -->
+          <section class="cien-bloque" id="mapa">
+            <h2>Dónde se hace la ciencia</h2>
+            <p class="cien-bajada">Cinco lugares mencionados en esta sección. Tocá un punto del mapa o un botón.</p>
+            <div class="cien-panel">
+              <div class="cien-mapa" id="cien-mapa" role="region" aria-label="Mapa de lugares científicos de Argentina"></div>
+              <div class="cien-lugares" id="cien-lugares" role="group" aria-label="Elegir un lugar"></div>
+              <div class="cien-lugar-detalle" id="cien-lugar-detalle" aria-live="polite"></div>
+              <p class="cien-nota">Datos de las fuentes 5, 6, 8 y 10. Mapa: © colaboradores de OpenStreetMap.</p>
+            </div>
+          </section>
+
+          <!-- ACTIVIDAD -->
+          <section class="cien-bloque" id="relacionar">
+            <h2>Actividad: ¿quién hizo qué?</h2>
+            <p class="cien-bajada">Tocá una persona y después su aporte. Las parejas correctas quedan en verde.</p>
+            <div class="cien-panel">
+              <div id="cien-relacionar">
+                <noscript><p>Esta actividad necesita JavaScript activado.</p></noscript>
+              </div>
+            </div>
+          </section>
+
+          <!-- GLOSARIO -->
+          <section class="cien-bloque" id="glosario">
+            <h2>Glosario</h2>
+            <details class="cien-panel cien-glosario">
+              <summary>Ver los 10 términos</summary>
+              <dl>
+                <div>
+                  <dt>ARSAT</dt>
+                  <dd>Empresa Argentina de Soluciones Satelitales. Brinda servicios de telecomunicaciones.</dd>
+                </div>
+                <div>
+                  <dt>Citrato de sodio</dt>
+                  <dd>Anticoagulante: evita que la sangre se coagule, lo que permitió almacenarla y transfundirla.</dd>
+                </div>
+                <div>
+                  <dt>CNEA</dt>
+                  <dd>Comisión Nacional de Energía Atómica. Organismo público que investiga y desarrolla aplicaciones de la energía nuclear.</dd>
+                </div>
+                <div>
+                  <dt>CONAE</dt>
+                  <dd>Comisión Nacional de Actividades Espaciales. Organismo que coordina el plan espacial argentino.</dd>
+                </div>
+                <div>
+                  <dt>CONICET</dt>
+                  <dd>Consejo Nacional de Investigaciones Científicas y Técnicas. Organismo público que promueve la investigación científica y tecnológica.</dd>
+                </div>
+                <div>
+                  <dt>INVAP</dt>
+                  <dd>Empresa de tecnología con sede en Bariloche que diseña satélites y reactores de investigación.</dd>
+                </div>
+                <div>
+                  <dt>Radar de apertura sintética</dt>
+                  <dd>Tecnología de radar que obtiene imágenes del suelo aunque haya nubes y sin depender de la luz del sol.</dd>
+                </div>
+                <div>
+                  <dt>Radioisótopo</dt>
+                  <dd>Átomo inestable que emite radiación. En medicina se usa para diagnosticar y tratar enfermedades.</dd>
+                </div>
+                <div>
+                  <dt>SAOCOM</dt>
+                  <dd>Serie de satélites argentinos de observación de la Tierra, con un radar que funciona de día y de noche.</dd>
+                </div>
+                <div>
+                  <dt>Satélite geoestacionario</dt>
+                  <dd>Satélite que se mantiene sobre un mismo punto de la Tierra. Se usa, por ejemplo, para telecomunicaciones.</dd>
+                </div>
+              </dl>
+            </details>
+          </section>
+
+          <!-- TRIVIA -->
+          <section class="cien-bloque" id="trivia">
+            <h2>¿Cuánto aprendiste?</h2>
+            <p class="cien-bajada">Seis preguntas de ciencia y tecnología.</p>
+            <div id="mini-trivia"></div>
+          </section>
+
+          <!-- FUENTES -->
+          <section class="cien-fuentes" id="fuentes">
+            <h2>Fuentes</h2>
+            <ol>
+              <li id="fuente-1">
                 <a href="https://www.conicet.gov.ar" target="_blank" rel="noopener noreferrer">CONICET</a>
               </li>
-              <li>
+              <li id="fuente-2">
                 <a href="https://www.argentina.gob.ar/ciencia/conae" target="_blank" rel="noopener noreferrer">CONAE — Comisión Nacional de Actividades Espaciales</a>
               </li>
-              <li>
+              <li id="fuente-3">
                 <a href="https://www.invap.com.ar" target="_blank" rel="noopener noreferrer">INVAP</a>
               </li>
-              <li>
+              <li id="fuente-4">
                 <a href="https://www.nobelprize.org" target="_blank" rel="noopener noreferrer">Nobel Prize — Houssay, Leloir y Milstein</a>
               </li>
-              <li>
+              <li id="fuente-5">
                 <a href="https://billiken.lat/mi-pais/luis-agote-el-medico-argentino-que-aplico-con-exito-la-transfusion-sanguinea-y-salvo-millones-de-vidas/" target="_blank" rel="noopener noreferrer">Billiken — Luis Agote y la transfusión de 1914</a>
               </li>
-              <li>
+              <li id="fuente-6">
                 <a href="https://billiken.lat/interesante/identificacion-de-personas-por-las-huellas-dactilares-un-invento-argentina-exportado-a-todo-el-mundo/" target="_blank" rel="noopener noreferrer">Billiken — Vucetich y las huellas dactilares</a>
               </li>
-              <li>
+              <li id="fuente-7">
                 <a href="https://www.anbariloche.com.ar/noticias/2014/10/15/44995-3-2-1" target="_blank" rel="noopener noreferrer">ANBariloche — Lanzamiento de ARSAT-1 (2014)</a>
               </li>
-              <li>
+              <li id="fuente-8">
                 <a href="https://www.anbariloche.com.ar/amp/noticias/2021/04/23/80059-el-convenio-que-creo-al-instituto-balseiro-cumplio-66-anos" target="_blank" rel="noopener noreferrer">ANBariloche — Convenio que creó el Instituto Balseiro (1955)</a>
               </li>
-            </ul>
-          </details>
+              <li id="fuente-9">
+                <a href="https://www.argentina.gob.ar/noticias/el-saocom-1a-ya-esta-en-orbita-0" target="_blank" rel="noopener noreferrer">Argentina.gob.ar — El SAOCOM 1A ya está en órbita (2018)</a>
+              </li>
+              <li id="fuente-10">
+                <a href="https://www.argentina.gob.ar/node/95890" target="_blank" rel="noopener noreferrer">Argentina.gob.ar — Centro Espacial Teófilo Tabanera (CONAE)</a>
+              </li>
+            </ol>
+          </section>
         </div>
       </article>
     </main>
     <footer class="site-footer" id="site-footer"></footer>
     <script src="../js/config.js"></script>
     <script src="../js/nav.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="../js/ciencia.js"></script>
     <script>
       window.MINI_TRIVIA = {
+        maximo: 6,
         preguntas: [
           {
             pregunta: "¿Qué organismo nuclea la mayor parte de la investigación científica pública?",
@@ -281,6 +470,34 @@
             ],
             correcta: 1,
             explicacion: "Houssay, Leloir y Milstein fueron premiados en fisiología, medicina o química."
+          },
+          {
+            pregunta: "¿Qué ventaja tiene el radar de apertura sintética de SAOCOM?",
+            opciones: [
+              "Solo funciona de noche",
+              "Puede observar el suelo aunque haya nubes",
+              "Solo mide la temperatura del mar",
+              "Reemplaza a la televisión satelital"
+            ],
+            correcta: 1,
+            explicacion: "Entrega datos con cualquier clima, de día y de noche, porque no depende de la luz del sol."
+          },
+          {
+            pregunta: "¿Qué hizo Luis Agote el 9 de noviembre de 1914?",
+            opciones: [
+              "Inventó el bolígrafo",
+              "Lanzó el primer satélite argentino",
+              "Hizo una transfusión de sangre con citrato de sodio",
+              "Fundó el Instituto Balseiro"
+            ],
+            correcta: 2,
+            explicacion: "Lo hizo en el Hospital Rawson, en Buenos Aires, con sangre tratada con citrato de sodio."
+          },
+          {
+            pregunta: "¿En qué ciudad tienen su sede INVAP y el Instituto Balseiro?",
+            opciones: ["Córdoba", "La Plata", "Necochea", "Bariloche"],
+            correcta: 3,
+            explicacion: "Ambos están en San Carlos de Bariloche, donde también se construyó el satélite ARSAT-1."
           }
         ]
       };
