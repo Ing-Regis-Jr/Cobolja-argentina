@@ -48,12 +48,6 @@ window.SECCIONES = [
     summary: "Agroindustria, energía, servicios y datos verificables.",
   },
   {
-    id: "datos",
-    title: "Datos impactantes",
-    href: "pages/datos-impactantes.html",
-    summary: "Diez datos llamativos con fuentes. Incluye un desafío interactivo.",
-  },
-  {
     id: "gastronomia",
     title: "Arte culinario",
     href: "pages/gastronomia.html",

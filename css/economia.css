@@ -4,6 +4,7 @@
 .eco-mapa {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   margin: 1rem 0 2rem;
   padding: 0;
@@ -37,26 +38,11 @@
 /* Cada punto: número a la izquierda, contenido a la derecha */
 .eco-punto {
   display: grid;
-  grid-template-columns: 110px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.4rem;
   padding: 2rem 0;
   border-top: 1px solid var(--line);
   scroll-margin-top: 1rem;
-}
-
-.eco-riel {
-  position: sticky;
-  top: 1rem;
-  align-self: start;
-}
-
-.eco-num {
-  display: block;
-  color: var(--celeste);
-  font-size: 3.6rem;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.02em;
 }
 
 .eco-cuerpo {
@@ -422,14 +408,6 @@
     gap: 0.4rem;
   }
 
-  .eco-riel {
-    position: static;
-  }
-
-  .eco-num {
-    font-size: 2.6rem;
-  }
-
   .eco-split,
   .eco-dos,
   .eco-socios {
@@ -450,4 +428,11 @@
     grid-column: 1 / -1;
     grid-row: 2;
   }
+}
+
+/* Subtítulo de cada grupo de indicadores */
+.eco-subtitulo {
+  margin: 1.4rem 0 0.2rem;
+  color: var(--azul);
+  font-size: 1.05rem;
 }

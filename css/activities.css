@@ -217,19 +217,6 @@
   gap: 0.8rem;
 }
 
-.flip-card {
-  min-height: 170px;
-  width: 100%;
-  perspective: 900px;
-  border: 0;
-  padding: 0;
-  background: transparent;
-  text-align: left;
-  font: inherit;
-  cursor: pointer;
-  color: inherit;
-}
-
 .flip-inner {
   position: relative;
   width: 100%;

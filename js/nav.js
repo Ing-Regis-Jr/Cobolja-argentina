@@ -34,7 +34,7 @@
     siguiente: '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>',
   };
 
-  // Secciones en el orden oficial A-K.
+  // Secciones en el orden oficial A-J.
   const secciones = [
     { letra: "A", href: "pages/identidad.html", label: "Identidad" },
     { letra: "B", href: "pages/historia.html", label: "Historia" },
@@ -48,16 +48,10 @@
       label: "Ciencia y tecnología",
     },
     { letra: "H", href: "pages/economia.html", label: "Economía" },
-    {
-      letra: "I",
-      href: "pages/datos-impactantes.html",
-      label: "Cifras del país",
-      sub: "10 datos impactantes",
-    },
-    { letra: "J", href: "pages/gastronomia.html", label: "Arte culinario" },
-    { letra: "K", href: "pages/conclusion.html", label: "Conclusión" },
+    { letra: "I", href: "pages/gastronomia.html", label: "Arte culinario" },
+    { letra: "J", href: "pages/conclusion.html", label: "Conclusión" },
   ];
-  // Actividades interactivas (no son secciones informativas A-K).
+  // Actividades interactivas (no son secciones informativas A-J).
   const actividades = [
     { icon: "mapa", href: "pages/mapa.html", label: "Mapa interactivo" },
     { icon: "trivia", href: "pages/trivia.html", label: "Trivia" },
@@ -260,4 +254,11 @@
     probe.onerror = () => el.classList.add("is-empty");
     probe.src = src;
   });
+})();
+
+/* Adorno de temporada (ver js/hornero.js) */
+(function () {
+  var s = document.createElement("script");
+  s.src = (document.body.dataset.base || "") + "js/hornero.js";
+  document.body.appendChild(s);
 })();

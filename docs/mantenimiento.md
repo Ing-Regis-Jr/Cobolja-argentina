@@ -6,7 +6,6 @@ Las páginas de investigación son HTML en `pages/`. Conviene dejar las fuentes 
 
 Preguntas: `data/preguntas.js`  
 Lugares del mapa: `data/lugares.js`  
-Datos impactantes: `data/datos-impactantes.js`
 
 No mezclar esos datos dentro de `trivia.js` o `map.js`.
 

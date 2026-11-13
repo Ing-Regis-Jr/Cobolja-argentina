@@ -18,7 +18,7 @@ También se puede abrir `index.html` haciendo doble clic. El mapa necesita inter
 - `pages/` — secciones, mapa, trivia y conclusión
 - `css/` — estilos
 - `js/` — navegación, trivia, mapa, ranking y desafío
-- `data/` — textos de apoyo, preguntas, lugares y datos impactantes
+- `data/` — textos de apoyo, preguntas y lugares
 - `docs/` — instalación, publicación y mantenimiento
 
 ## Ranking compartido
@@ -37,4 +37,4 @@ El pie de página muestra un código QR de la URL actual. Para el QR definitivo,
 
 ## Reutilizar para otro país
 
-Cambiar textos, imágenes, `data/preguntas.js`, `data/lugares.js`, `data/datos-impactantes.js` y los colores en `css/base.css`. No agregar varios países en esta versión.
+Cambiar textos, imágenes, `data/preguntas.js`, `data/lugares.js` y los colores en `css/base.css`. No agregar varios países en esta versión.
