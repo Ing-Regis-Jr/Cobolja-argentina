@@ -375,10 +375,10 @@
   color: var(--azul);
 }
 
-/* ===== Inicio y página Juegos: tarjetas en 3 columnas ===== */
+/* ===== Inicio: tarjetas de actividades en 2 columnas ===== */
 
 .inicio-juegos {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 /* ===== Pantallas pequeñas ===== */

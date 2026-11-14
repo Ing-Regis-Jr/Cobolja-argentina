@@ -31,6 +31,10 @@
       '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7"/><path d="M12 17h.01"/></svg>',
     juegos:
       '<svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M8 11v4M6 13h4"/><path d="M15.5 12h.01M17.5 14h.01"/></svg>',
+    memoria:
+      '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="9" height="13" rx="2"/><rect x="12" y="7" width="9" height="13" rx="2"/><path d="M7.5 10v4M5.5 12h4"/></svg>',
+    cruza:
+      '<svg viewBox="0 0 24 24"><path d="M3 19 9 8l4 6 3-4 5 9z"/><path d="M3 19h18"/></svg>',
     siguiente: '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>',
   };
 
@@ -55,12 +59,8 @@
   const actividades = [
     { icon: "mapa", href: "pages/mapa.html", label: "Mapa interactivo" },
     { icon: "trivia", href: "pages/trivia.html", label: "Trivia" },
-    {
-      icon: "juegos",
-      href: "pages/juegos.html",
-      label: "Juegos",
-      tambien: ["memoria.html", "rompecabezas.html", "atrapa.html"],
-    },
+    { icon: "memoria", href: "pages/memoria.html", label: "Memoria de lugares" },
+    { icon: "cruza", href: "pages/cruza.html", label: "Cruzá Argentina" },
   ];
   const base = document.body.dataset.base || "";
 
