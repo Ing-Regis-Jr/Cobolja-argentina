@@ -30,18 +30,23 @@
                     <li>Región: <strong id="cruza-region">Quebrada de Humahuaca</strong></li>
                     <li>Soles: <strong id="cruza-soles">0</strong></li>
                     <li>Vidas: <strong class="cruza-vidas" id="cruza-vidas">♥♥♥</strong></li>
+                    <li>Mate: <strong id="cruza-mate">No</strong></li>
                     <li>Tiempo: <strong id="cruza-tiempo">0:00</strong></li>
                 </ul>
 
                 <div class="cruza-stage" id="cruza-stage">
                     <canvas id="cruza-canvas" width="800" height="380" role="img"
-                        aria-label="Un gaucho a caballo galopa por paisajes de Argentina y salta obstáculos"></canvas>
+                        aria-label="Un gaucho a caballo galopa por paisajes de Argentina, salta obstáculos y se agacha para esquivar cóndores"></canvas>
                     <button type="button" class="cruza-pausa" id="cruza-pausa">Pausa</button>
                     <div class="cruza-overlay" id="cruza-overlay" hidden>
                         <div class="cruza-card" role="dialog" aria-live="polite">
                             <span class="cruza-etiqueta" id="cruza-ov-etiqueta"></span>
                             <h2 id="cruza-ov-titulo"></h2>
                             <p id="cruza-ov-texto"></p>
+                            <div class="cruza-vf" id="cruza-vf" hidden>
+                                <button type="button" class="cruza-boton" id="cruza-vf-v">Verdadero</button>
+                                <button type="button" class="cruza-boton" id="cruza-vf-f">Falso</button>
+                            </div>
                             <button type="button" class="cruza-boton" id="cruza-ov-boton">Empezar</button>
                             <a class="cruza-enlace" id="cruza-ov-enlace" href="#" hidden></a>
                         </div>
@@ -49,7 +54,7 @@
                 </div>
 
                 <ol class="cruza-ruta" id="cruza-ruta" aria-label="Recorrido por regiones"></ol>
-                <p class="cruza-ayuda">Saltá con la barra espaciadora, la flecha ↑ o tocando la pantalla. Con P pausás el juego.</p>
+                <p class="cruza-ayuda">Saltá con la barra espaciadora, la flecha ↑ o tocando la pantalla. Agachate con la flecha ↓ o deslizando el dedo hacia abajo. Con P pausás el juego.</p>
             </div>
         </section>
     </main>

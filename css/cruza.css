@@ -32,7 +32,7 @@
   background: #9fcdf0;
   user-select: none;
   -webkit-user-select: none;
-  touch-action: manipulation;
+  touch-action: none;
 }
 
 .cruza-stage canvas {
@@ -211,4 +211,30 @@
   .cruza-ruta li {
     font-size: 0.7rem;
   }
+}
+
+/* ----- Verdadero o falso ----- */
+
+.cruza-vf {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin: 0 0 0.2rem;
+}
+
+.cruza-vf[hidden] {
+  display: none;
+}
+
+.cruza-vf .cruza-boton {
+  flex: 1;
+  max-width: 170px;
+}
+
+#cruza-vf-f {
+  background: var(--celeste-oscuro);
+}
+
+#cruza-vf-f:hover {
+  background: var(--azul-medio);
 }
