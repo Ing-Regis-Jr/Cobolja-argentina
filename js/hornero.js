@@ -41,7 +41,6 @@
   if (!forzado && hoyTxt > HASTA) return;
   if (document.getElementById("hornero-ave")) return;
 
-  const reducido = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const esMovil = () => window.matchMedia("(max-width: 720px)").matches;
 
   // ---- Dibujos ----
@@ -418,7 +417,6 @@
     if (intento === 0) {
       pista = document.createElement("div");
       pista.id = "hornero-pista";
-      pista.textContent = "¡Tocame!";
       document.body.appendChild(pista);
     }
     const t0 = performance.now();
@@ -458,7 +456,7 @@
         { transform: ave.style.transform, opacity: 1 },
         { transform: `translate(${s.x}px, ${s.y}px) scaleX(${s.flip ? -1 : 1}) rotate(${s.rot}deg)`, opacity: id === "sol" ? 1 : 0 },
       ],
-      { duration: reducido ? 1 : s.dur, easing: s.ease, fill: "forwards" }
+      { duration: s.dur, easing: s.ease, fill: "forwards" }
     );
     anim.onfinish = () => { ave.style.display = "none"; anim.cancel(); };
 
@@ -505,7 +503,7 @@
   }
 
   function confeti() {
-    if (reducido) return;
+    
     const colores = ["#74acdf", "#ffffff", "#f6b40e", "#3d7eb3"];
     for (let n = 0; n < 40; n++) {
       const c = document.createElement("i");
@@ -523,21 +521,10 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarDato(); });
 
   // ---- Arranque ----
-  if (hallados.indexOf(id) !== -1) return; // ya lo encontraste: no vuelve a aparecer
+  // ---- Arranque ----
+if (hallados.indexOf(id) !== -1) return;
 
-  if (reducido) {
-    // Sin movimiento: el personaje queda quieto en su lugar y se puede tocar.
-    const ctx = medidas();
-    const ruta = cfg.crear(ctx);
-    ave.classList.add("hn-posado");
-    ave.style.display = "block";
-    colocar(ruta.f(ruta.reposo));
-    ave.addEventListener("click", () => {
-      registrar();
-      ave.style.display = "none";
-    });
-  } else {
-    ave.addEventListener("click", atrapar);
-    programar(forzado ? 800 : 5000);
-  }
+// El personaje vuela automáticamente en PC y móviles.
+ave.addEventListener("click", atrapar);
+programar(forzado ? 800 : 5000);
 })();
