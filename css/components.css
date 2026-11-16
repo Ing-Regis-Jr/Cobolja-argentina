@@ -516,8 +516,6 @@
 .page-hero[data-img="sociedad.jpg"]   { --foco: 60%; }
 .page-hero[data-img="deportes.jpg"]   { --foco: 45%; }
 .page-hero[data-img="economia.jpg"]   { --foco: 25%; }
-.page-hero[data-img="mapa.jpg"]       { --foco: 50%; }
-.page-hero[data-img="trivia.jpg"]     { --foco: 45%; }
 
 /* Tarjetas de regiones y símbolos: sin línea de color bajo la foto */
 .region .shot,

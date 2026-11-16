@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720" width="1280" height="720">
+<defs>
+<linearGradient id="m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9ecfa"/><stop offset="1" stop-color="#8dbfe8"/></linearGradient>
+<clipPath id="k"><rect x="-72" y="-95" width="144" height="190" rx="12"/></clipPath>
+<g id="b"><rect x="-85" y="-108" width="170" height="216" rx="20" fill="#123354" fill-opacity=".22" transform="translate(6 9)"/><rect x="-85" y="-108" width="170" height="216" rx="20" fill="#3d7eb3" stroke="#123354" stroke-width="6"/><rect x="-68" y="-91" width="136" height="182" rx="12" fill="none" stroke="#fff" stroke-opacity=".6" stroke-width="3"/><circle r="30" fill="#f6b40e" stroke="#123354" stroke-width="4"/><path d="M0-42V-54M0 42V54M-42 0H-54M42 0H54M-30-30l-9-9M30 30l9 9M30-30l9-9M-30 30l-9 9" stroke="#f6b40e" stroke-width="6" stroke-linecap="round"/></g>
+<g id="f"><rect x="-85" y="-108" width="170" height="216" rx="20" fill="#123354" fill-opacity=".22" transform="translate(6 9)"/><rect x="-85" y="-108" width="170" height="216" rx="20" fill="#fff" stroke="#123354" stroke-width="6"/></g>
+<g id="s"><rect x="-72" y="-95" width="144" height="190" fill="#bfe0f7"/><circle cy="-30" r="30" fill="#f6b40e"/><path d="M0-76V-88M-46-30H-58M46-30H58M-33-63l-8-8M33-63l8-8" stroke="#f6b40e" stroke-width="6" stroke-linecap="round"/><path d="M-72 95V40Q-30 10 0 40T72 30V95Z" fill="#2f9e63"/></g>
+<g id="n"><rect x="-72" y="-95" width="144" height="190" fill="#bfe0f7"/><path d="M-72 95V10L-28-50 0-10 30-70 72 5V95Z" fill="#1c4a73"/><path d="M-28-50-44-20-28-26-16-14 0-10 4-24ZM30-70 12-38 28-44 40-30 52-26Z" fill="#fff"/><path d="M-72 95V55Q0 30 72 58V95Z" fill="#6bb27d"/></g>
+</defs>
+<rect width="1280" height="720" fill="url(#m)"/>
+<path d="M97 61h0M194 122h0M291 183h0M388 244h0M485 305h0M582 366h0M679 427h0M776 488h0M873 549h0M970 610h0M1067 11h0M1164 72h0M1261 133h0M60 560h0M180 640h0M1100 660h0" stroke="#fff" stroke-opacity=".55" stroke-width="10" stroke-linecap="round"/>
+<use xlink:href="#b" transform="translate(355 178) rotate(-4)"/>
+<g transform="translate(545 178) rotate(3)"><use xlink:href="#f"/><g clip-path="url(#k)"><use xlink:href="#n"/></g></g>
+<use xlink:href="#b" transform="translate(735 178) rotate(-2)"/>
+<g transform="translate(925 178) rotate(4)"><use xlink:href="#f"/><g clip-path="url(#k)"><use xlink:href="#s"/></g></g>
+<g transform="translate(355 418) rotate(3)"><use xlink:href="#f"/><g clip-path="url(#k)"><use xlink:href="#s"/></g></g>
+<use xlink:href="#b" transform="translate(545 418) rotate(-3)"/>
+<g transform="translate(735 418) rotate(-3)"><use xlink:href="#f"/><g clip-path="url(#k)"><use xlink:href="#n"/></g></g>
+<use xlink:href="#b" transform="translate(925 418) rotate(2)"/>
+</svg>
