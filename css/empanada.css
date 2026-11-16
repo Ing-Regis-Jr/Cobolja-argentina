@@ -1,0 +1,156 @@
+/* ===== Armá tu empanada ===== */
+
+.emp-shell {
+  display: block;
+}
+
+.emp-barra {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.2rem 1rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.emp-barra p {
+  margin: 0;
+}
+
+.emp-errores {
+  color: var(--azul);
+}
+
+.emp-consigna {
+  margin: 0.3rem 0 0.7rem;
+  min-height: 2.6em;
+  color: var(--azul);
+  font-weight: 700;
+}
+
+.emp-stage {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #cfe6f8;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.emp-stage canvas {
+  display: block;
+  width: 100%;
+  touch-action: none;
+}
+
+.emp-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 0.8rem;
+  background: rgba(18, 51, 84, 0.55);
+}
+
+.emp-overlay[hidden] {
+  display: none;
+}
+
+.emp-card {
+  max-width: 460px;
+  max-height: 100%;
+  overflow: auto;
+  padding: 1.1rem 1.3rem;
+  border-radius: 18px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);
+}
+
+.emp-card h2 {
+  margin: 0.1rem 0 0.5rem;
+  color: var(--azul);
+  font-size: 1.5rem;
+}
+
+.emp-card p {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+}
+
+.emp-etiqueta {
+  display: inline-block;
+  margin: 0 0 0.2rem;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: #fdf0c9;
+  color: #7a5600 !important;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.emp-boton {
+  padding: 0.7rem 1.6rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--sol);
+  color: var(--azul);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #c98f00;
+}
+
+.emp-boton:hover {
+  filter: brightness(1.05);
+}
+
+.emp-boton:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #c98f00;
+}
+
+.emp-enlace {
+  display: block;
+  margin-top: 0.8rem;
+  color: var(--azul-medio);
+  font-weight: 700;
+}
+
+.emp-enlace[hidden] {
+  display: none;
+}
+
+.emp-mensaje {
+  margin: 0.6rem 0 0;
+  min-height: 1.4em;
+  text-align: center;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.emp-mensaje.ok {
+  color: #1c7a52;
+}
+
+.emp-mensaje.mal {
+  color: #c8321e;
+}
+
+@media (max-width: 560px) {
+  .emp-card h2 {
+    font-size: 1.25rem;
+  }
+
+  .emp-card {
+    padding: 0.9rem 1rem;
+  }
+}

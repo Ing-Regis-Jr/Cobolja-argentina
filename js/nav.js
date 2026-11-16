@@ -35,7 +35,9 @@
       '<svg viewBox="0 0 24 24"><rect x="3" y="5" width="9" height="13" rx="2"/><rect x="12" y="7" width="9" height="13" rx="2"/><path d="M7.5 10v4M5.5 12h4"/></svg>',
     cruza:
       '<svg viewBox="0 0 24 24"><path d="M3 19 9 8l4 6 3-4 5 9z"/><path d="M3 19h18"/></svg>',
-    siguiente: '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>',
+    empanada:
+      '<svg viewBox="0 0 24 24"><path d="M3 17a9 9 0 0 1 18 0z"/><path d="M6 13.5l.9.9M9.2 11.4l.6 1.1M12 10.7v1.3M14.8 11.4l-.6 1.1M18 13.5l-.9.9"/></svg>',
+      siguiente: '<svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>',
   };
 
   // Secciones en el orden oficial A-J.
@@ -56,11 +58,12 @@
     { letra: "J", href: "pages/conclusion.html", label: "Conclusión" },
   ];
   // Actividades interactivas (no son secciones informativas A-J).
-  const actividades = [
+    const actividades = [
     { icon: "mapa", href: "pages/mapa.html", label: "Mapa interactivo" },
     { icon: "trivia", href: "pages/trivia.html", label: "Trivia" },
     { icon: "memoria", href: "pages/memoria.html", label: "Memoria de lugares" },
     { icon: "cruza", href: "pages/cruza.html", label: "Cruzá Argentina" },
+    { icon: "empanada", href: "pages/empanada.html", label: "Armá tu empanada" },
   ];
   const base = document.body.dataset.base || "";
 

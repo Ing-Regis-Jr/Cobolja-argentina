@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Armá tu empanada · Argentina</title>
+    <link rel="icon" href="../assets/icons/sol.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/activities.css" />
+    <link rel="stylesheet" href="../css/juegos.css" />
+    <link rel="stylesheet" href="../css/empanada.css" />
+</head>
+
+<body data-base="../">
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <header class="site-header" id="site-header"></header>
+    <main class="wrap" id="contenido">
+        <div class="act-head">
+            <a class="act-back" href="../index.html">← Inicio</a>
+            <h1>Armá tu empanada</h1>
+        </div>
+
+        <section class="game-shell emp-shell" aria-labelledby="emp-titulo">
+            <h2 id="emp-titulo" class="visually-hidden">Juego de cocina: empanada tucumana</h2>
+
+            <div class="emp-barra">
+                <p class="emp-pasos" id="emp-pasos" aria-live="polite"></p>
+                <p class="emp-errores" id="emp-errores">Errores: 0</p>
+            </div>
+            <p class="emp-consigna" id="emp-consigna" aria-live="polite"></p>
+
+            <div class="emp-stage" id="emp-stage">
+                <canvas id="emp-canvas" width="800" height="480"
+                    aria-label="Cocina: arrastrá o tocá los ingredientes para preparar la empanada tucumana"></canvas>
+
+                <div class="emp-overlay" id="emp-overlay" hidden>
+                    <div class="emp-card" role="dialog" aria-modal="true" aria-labelledby="emp-ov-titulo">
+                        <p class="emp-etiqueta" id="emp-ov-etiqueta"></p>
+                        <h2 id="emp-ov-titulo"></h2>
+                        <p id="emp-ov-texto"></p>
+                        <button type="button" class="emp-boton" id="emp-ov-boton">¡A cocinar!</button>
+                        <a class="emp-enlace" id="emp-ov-enlace" href="gastronomia.html" hidden>Ver la receta completa</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="emp-mensaje" id="emp-mensaje" aria-live="polite"></p>
+        </section>
+    </main>
+    <footer class="site-footer" id="site-footer"></footer>
+    <script src="../js/config.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/empanada.js"></script>
+</body>
+
+</html>
