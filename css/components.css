@@ -203,9 +203,22 @@
   display: inline-block;
 }
 
-.qr-box img {
+.qr-box img,
+.qr-box svg {
+  display: block;
   width: 148px;
   height: 148px;
+}
+
+.qr-nota {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.qr-nota a {
+  color: inherit;
+  text-decoration: underline;
 }
 
 .mode-tabs {

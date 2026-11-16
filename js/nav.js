@@ -209,10 +209,30 @@
     }
   });
 
-  const siteUrl =
-    (window.SITE_CONFIG && window.SITE_CONFIG.publicUrl) ||
-    window.location.href.split("#")[0];
-  const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(siteUrl)}`;
+  /* Dirección pública de la portada, para el código QR del pie:
+     1) SITE_CONFIG.publicUrl, si está definida (dominio propio).
+     2) La portada del sitio donde se está viendo (sirve en cualquier alojamiento).
+     3) Vacía si se abre en la propia computadora (localhost o archivo). */
+  function direccionPublica() {
+    const fija = window.SITE_CONFIG && window.SITE_CONFIG.publicUrl;
+    if (fija) {
+      return fija;
+    }
+    const host = window.location.hostname;
+    const local =
+      window.location.protocol === "file:" ||
+      host === "" ||
+      host === "localhost" ||
+      host === "127.0.0.1" ||
+      host === "[::1]" ||
+      host.endsWith(".local") ||
+      /^(10|192\.168|172\.(1[6-9]|2\d|3[01]))\./.test(host);
+    if (local) {
+      return "";
+    }
+    return new URL(document.body.dataset.base || "", window.location.href).href;
+  }
+  const siteUrl = direccionPublica();
   const footer = document.getElementById("site-footer");
   if (footer) {
     footer.innerHTML = `
@@ -229,13 +249,63 @@
         </div>
         <div>
           <h2>Código QR</h2>
-          <div class="qr-box">
-            <img src="${qrSrc}" alt="Código QR para abrir este sitio" width="160" height="160">
-          </div>
+          <div class="qr-box" id="qr-box" role="img" aria-label="Código QR para abrir este sitio"></div>
+          <p class="qr-nota" id="qr-nota"></p>
         </div>
       </div>
     `;
   }
+
+  /* Código QR del pie: se dibuja en el propio navegador (js/qrcode.js).
+     Si esa librería no carga, se usa un servicio externo como respaldo. */
+  (function dibujarQr() {
+    const caja = document.getElementById("qr-box");
+    const nota = document.getElementById("qr-nota");
+    if (!caja || !nota) {
+      return;
+    }
+    if (!siteUrl) {
+      caja.style.display = "none";
+      nota.textContent =
+        "El código QR aparece cuando el sitio está publicado en internet.";
+      return;
+    }
+    const enlace = document.createElement("a");
+    enlace.href = siteUrl;
+    enlace.textContent = siteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
+    nota.appendChild(enlace);
+
+    const respaldo = () => {
+      const img = document.createElement("img");
+      img.src =
+        "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" +
+        encodeURIComponent(siteUrl);
+      img.alt = "Código QR para abrir este sitio";
+      img.width = 148;
+      img.height = 148;
+      caja.replaceChildren(img);
+    };
+    const dibujar = () => {
+      try {
+        const qr = window.qrcode(0, "M");
+        qr.addData(siteUrl);
+        qr.make();
+        caja.innerHTML = qr.createSvgTag({ cellSize: 4, scalable: true });
+      } catch (error) {
+        respaldo();
+      }
+    };
+
+    if (window.qrcode) {
+      dibujar();
+      return;
+    }
+    const script = document.createElement("script");
+    script.src = (document.body.dataset.base || "") + "js/qrcode.js";
+    script.onload = dibujar;
+    script.onerror = respaldo;
+    document.head.appendChild(script);
+  })();
 
   const imgBase = (document.body.dataset.base || "") + "assets/img/";
   document.querySelectorAll("[data-img]").forEach((el) => {

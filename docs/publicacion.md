@@ -24,9 +24,9 @@ Arrastrar la carpeta del proyecto a [https://app.netlify.com/drop](https://app.n
 ## Código QR
 
 1. Publicar el sitio.
-2. Pegar la URL en `js/config.js` → `SITE_CONFIG.publicUrl`.
-3. Volver a publicar.
-4. Probar el QR del pie desde un celular (red del colegio y datos móviles).
+2. Abrirlo desde su dirección pública: el QR del pie se genera solo con esa dirección y siempre lleva a la portada. No hace falta tocar `js/config.js`, salvo que se use un dominio propio.
+3. Probar el QR del pie desde un celular (red del colegio y datos móviles).
+4. Si se cambia el nombre del enlace, el QR se actualiza solo al volver a abrir el sitio con la dirección nueva.
 
 ## Prueba mínima antes de entregar
 

@@ -33,7 +33,7 @@ Por defecto el ranking se guarda en el navegador. Para compartirlo entre disposi
 
 Ver `docs/publicacion.md`. Nombre sugerido del sitio: `cobolja-mundial2026-argentina`. Si COBOLJA habilita el dominio institucional, la ruta objetivo es `www.cobolja.edu.bo/mundial2026/argentina`.
 
-El pie de página muestra un código QR de la URL actual. Para el QR definitivo, poné la URL pública en `SITE_CONFIG.publicUrl` dentro de `js/config.js`.
+El pie de página muestra un código QR que apunta a la portada del sitio publicado (se dibuja en el navegador con `js/qrcode.js`). Solo aparece con el sitio publicado: en localhost no se muestra. Si se usa un dominio propio, hay que ponerlo en `SITE_CONFIG.publicUrl` dentro de `js/config.js`.
 
 ## Reutilizar para otro país
 
