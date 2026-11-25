@@ -49,6 +49,7 @@
     salpim: { n: "Sal y pimienta", c: "#4a4a4a", ok: "Sal y pimienta a gusto." },
     huevo: { n: "Huevo duro", c: "#ffe58a", ok: "Los huevos duros se agregan picados, con el relleno frío." },
     cebollita: { n: "Cebollita", c: "#5fae3d", ok: "Cebollita verde fresca para terminar el relleno." },
+    aji: { n: "Ají molido", c: "#d4331f", ok: "El ají molido le da el picante." },
     azucar: { n: "Azúcar", mal: "La masa y el relleno de la empanada tucumana no llevan azúcar." },
     chocolate: { n: "Chocolate", mal: "El chocolate no va en una empanada de carne." },
     banana: { n: "Banana", mal: "La banana no forma parte de la receta tucumana." },
@@ -75,6 +76,23 @@
     enfriar: [2, "El relleno"], relleno2: [2, "El relleno"], armar: [3, "El armado"], horno: [4, "Al horno"]
   };
   var N_PUNTOS = 7, N_EMP = 3, DUR_HORNO = 18;
+
+  /* Armado: el cliente pide con lenguaje común y el relleno se arma con ingredientes sueltos.
+     r = [cebolla, huevo, ají]. La tradicional tucumana lleva cebolla y huevo, sin ají. */
+  var ING_ARMAR = ["cebolla", "huevo", "aji"];
+  var PEDIDOS = [
+    [ { t: "Dame la tradicional tucumana.", r: [1, 1, 0] },
+      { t: "Una de las de siempre, por favor.", r: [1, 1, 0] },
+      { t: "Quiero la que pica.", r: [1, 1, 1] } ],
+    [ { t: "No me gusta la cebolla.", r: [0, 1, 0] },
+      { t: "Sin huevo, por favor.", r: [1, 0, 0] },
+      { t: "La que pica, y bien cargada de cebolla.", r: [1, 1, 1] } ],
+    [ { t: "Picante y sin cebolla.", r: [0, 1, 1] },
+      { t: "Sin huevo y que pique.", r: [1, 0, 1] },
+      { t: "Sin cebolla ni huevo, pero con algo que pique.", r: [0, 0, 1] } ]
+  ];
+  /* Cuchara: poco = sosa, zona verde = justo, mucho = se revienta al cerrar */
+  var GAUGE = { lo: 0.5, hi: 0.8, rate: 0.5 };
 
   /* ---------- estado ---------- */
   var W = 800, H = 480, K = 1, MOVIL = false, TY = 205;
@@ -287,6 +305,16 @@
         ctx.fillStyle = "#4fa03a";
         ctx.beginPath(); ctx.moveTo(0, -10); ctx.lineTo(-9, -24); ctx.lineTo(-2, -16); ctx.lineTo(0, -28); ctx.lineTo(2, -16); ctx.lineTo(9, -24); ctx.closePath(); ctx.fill();
         break;
+      case "aji":
+        ctx.lineCap = "round";
+        ctx.strokeStyle = "#c8321e"; ctx.lineWidth = 13;
+        ctx.beginPath(); ctx.moveTo(-14, -14); ctx.quadraticCurveTo(12, -14, 13, 8); ctx.quadraticCurveTo(14, 17, 7, 22); ctx.stroke();
+        ctx.strokeStyle = "#e8573a"; ctx.lineWidth = 4;
+        ctx.beginPath(); ctx.moveTo(-8, -17); ctx.quadraticCurveTo(7, -18, 9, -4); ctx.stroke();
+        ctx.strokeStyle = "#3f8f2a"; ctx.lineWidth = 5;
+        ctx.beginPath(); ctx.moveTo(-17, -15); ctx.lineTo(-23, -22); ctx.stroke();
+        ctx.lineCap = "butt";
+        break;
       case "queso":
         ctx.fillStyle = "#f7cf50"; ctx.strokeStyle = "#d9a82a";
         ctx.beginPath(); ctx.moveTo(-21, 14); ctx.lineTo(21, 14); ctx.lineTo(21, -2); ctx.lineTo(-21, -14); ctx.closePath(); ctx.fill(); ctx.stroke();
@@ -433,7 +461,7 @@
     }
     if (e.fill > 0 && f < 0.85) {
       ctx.save(); ctx.globalAlpha = 1 - f;
-      var fl = contenido.sarten, s = e.fill;
+      var fl = (e.blobs && e.blobs.length) ? e.blobs : contenido.sarten, s = e.fill;
       for (var i = 0; i < fl.length; i++) {
         var b = fl[i];
         ctx.fillStyle = b.c; ell(cx + b.x * r * 0.5 * s, cy + b.y * r * 0.45 * s * (1 - f * 0.6) - r * 0.05, b.r * r * 0.6 * s, b.r * r * 0.5 * s); ctx.fill();
@@ -441,7 +469,7 @@
       ctx.restore();
     }
     ctx.fillStyle = "rgba(255,255,255,.35)"; ell(cx - r * 0.3, cy + r * 0.25, r * 0.22, r * 0.08); ctx.fill();
-    if (e.sub === 2 || e.sig > 0) {
+    if (e.sub === 3 || e.sig > 0) {
       for (var k = 0; k < N_PUNTOS; k++) {
         var p = puntoBorde(cx, cy, r, k);
         if (k < e.sig) {
@@ -490,11 +518,101 @@
       dibEmp(p.x, p.y, p.r, e, e.slide > 0.3);
     });
     var e = emps[empI];
-    if (e && !e.listo && e.llega >= 1 && e.fold < 0.05 || (e && e.sub < 2 && e.llega >= 1)) {
-      var p2 = empPos(e);
-      if (e.sub === 0 || e.sub === 1) pista(p2.x, p2.y + (e.sub === 1 ? 0 : 0), p2.r * 1.05);
+    if (e && !e.listo && e.llega >= 1) {
+      var u = armarUI();
+      if (e.sub === 0) dibSeleccion(e, u);
+      else if (e.sub === 1 && !e.rellenando) dibCarga(e, u);
+      else if (e.sub === 2 && !e.plegando) { var p2 = empPos(e); pista(p2.x, p2.y, p2.r * 1.05); }
     }
+    if (e && !e.listo && !banner) dibPedido(e);
     txt("Empanada " + Math.min(empI + 1, N_EMP) + " de " + N_EMP, W / 2, by - 44, 15, "#1f5f99");
+  }
+
+  /* ---- armado: pedido del cliente, ingredientes y cuchara ---- */
+  function armarUI() {
+    if (MOVIL) {
+      return {
+        tog: [0, 1, 2].map(function (i) { return { x: 48 + i * 74, y: 402, r: 28 }; }),
+        ok: { x: 250, y: 378, w: 110, h: 48 },
+        gauge: { x: 40, y: 390, w: 300, h: 26, vert: false }
+      };
+    }
+    return {
+      tog: [0, 1, 2].map(function (i) { return { x: 690, y: 250 + i * 75, r: 32 }; }),
+      ok: { x: 40, y: 298, w: 140, h: 54 },
+      gauge: { x: 672, y: 235, w: 36, h: 190, vert: true }
+    };
+  }
+  function envolver(s, x, y, maxW, lh, size, col) {
+    ctx.font = "bold " + size + "px 'Segoe UI', system-ui, sans-serif";
+    ctx.fillStyle = col; ctx.textAlign = "left"; ctx.textBaseline = "middle";
+    var pal = s.split(" "), lin = [], act = "";
+    pal.forEach(function (w) {
+      var t = act ? act + " " + w : w;
+      if (act && ctx.measureText(t).width > maxW) { lin.push(act); act = w; } else act = t;
+    });
+    lin.push(act);
+    lin.forEach(function (l, i) { ctx.fillText(l, x, y + (i - (lin.length - 1) / 2) * lh); });
+  }
+  function dibPedido(e) {
+    var bw = MOVIL ? W - 24 : 560, bh = MOVIL ? 78 : 74, bx = W / 2 - bw / 2, by = 10;
+    ctx.fillStyle = "rgba(0,0,0,.12)"; rect(bx + 2, by + 5, bw, bh, 18); ctx.fill();
+    ctx.fillStyle = "#ffffff"; ctx.strokeStyle = "#74acdf"; ctx.lineWidth = 3; rect(bx, by, bw, bh, 18); ctx.fill(); ctx.stroke();
+    var ax = bx + 42, ay = by + bh / 2 + 2;
+    var piel = ["#f1c9a0", "#d9a066", "#b87a4b"][e.k % 3], gorro = ["#74acdf", "#f6b40e", "#e8573a"][e.k % 3];
+    ctx.fillStyle = piel; ctx.strokeStyle = "rgba(0,0,0,.25)"; ctx.lineWidth = 2; ell(ax, ay, 22, 22); ctx.fill(); ctx.stroke();
+    ctx.fillStyle = gorro; ctx.beginPath(); ctx.arc(ax, ay - 8, 22, PI, TAU); ctx.closePath(); ctx.fill();
+    ctx.fillRect(ax - 28, ay - 10, 56, 5);
+    ctx.fillStyle = "#3a2a1a"; ell(ax - 8, ay + 1, 2.5, 2.5); ctx.fill(); ell(ax + 8, ay + 1, 2.5, 2.5); ctx.fill();
+    ctx.strokeStyle = "#3a2a1a"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(ax, ay + 6, 8, 0.15 * PI, 0.85 * PI); ctx.stroke();
+    envolver("“" + e.order.t + "”", bx + 84, by + bh / 2, bw - 100, MOVIL ? 20 : 24, MOVIL ? 15 : 19, "#5a3c1e");
+  }
+  function dibSeleccion(e, u) {
+    u.tog.forEach(function (t, i) {
+      var id = ING_ARMAR[i], on = e.sel[id];
+      ctx.fillStyle = "rgba(0,0,0,.14)"; ell(t.x, t.y + t.r + 3, t.r * 0.85, 5); ctx.fill();
+      ctx.fillStyle = on ? "#e6f8ee" : "rgba(255,255,255,.92)";
+      ctx.strokeStyle = on ? "#1c9a62" : "#9aa5b1"; ctx.lineWidth = on ? 5 : 3;
+      ell(t.x, t.y, t.r, t.r); ctx.fill(); ctx.stroke();
+      icono(id, t.x, t.y + 2, t.r / 26);
+      if (on) {
+        ctx.fillStyle = "#1c9a62"; ell(t.x + t.r * 0.72, t.y - t.r * 0.72, 11, 11); ctx.fill();
+        txt("✓", t.x + t.r * 0.72, t.y - t.r * 0.72 + 1, 14, "#fff");
+      }
+      txt(String(i + 1), t.x - t.r * 0.78, t.y + t.r * 0.78, 12, "#5a3c1e");
+    });
+    var o = u.ok;
+    ctx.fillStyle = "rgba(0,0,0,.15)"; rect(o.x + 2, o.y + 5, o.w, o.h, o.h / 2); ctx.fill();
+    ctx.fillStyle = "#f6b40e"; ctx.strokeStyle = "#c98f00"; ctx.lineWidth = 3; rect(o.x, o.y, o.w, o.h, o.h / 2); ctx.fill(); ctx.stroke();
+    txt("LISTO", o.x + o.w / 2, o.y + o.h / 2, MOVIL ? 16 : 18, "#1f5f99");
+  }
+  function dibCarga(e, u) {
+    var g = u.gauge, v = e.g, zona = v >= GAUGE.lo && v <= GAUGE.hi;
+    ctx.fillStyle = "rgba(255,255,255,.88)"; ctx.strokeStyle = "#8d949c"; ctx.lineWidth = 3;
+    rect(g.x - 4, g.y - 4, g.w + 8, g.h + 8, 12); ctx.fill(); ctx.stroke();
+    var zx, zy, zw, zh, fx, fy, fw, fh;
+    if (g.vert) {
+      zx = g.x; zw = g.w; zh = g.h * (GAUGE.hi - GAUGE.lo); zy = g.y + g.h * (1 - GAUGE.hi);
+      fx = g.x; fw = g.w; fh = g.h * v; fy = g.y + g.h - fh;
+    } else {
+      zy = g.y; zh = g.h; zx = g.x + g.w * GAUGE.lo; zw = g.w * (GAUGE.hi - GAUGE.lo);
+      fy = g.y; fh = g.h; fx = g.x; fw = g.w * v;
+    }
+    ctx.fillStyle = "rgba(46,229,157,.55)"; ctx.fillRect(zx, zy, zw, zh);
+    ctx.fillStyle = v > GAUGE.hi ? "#e8573a" : zona ? "#1c9a62" : "#f6b40e";
+    if (fw > 0 && fh > 0) ctx.fillRect(fx, fy, fw, fh);
+    ctx.strokeStyle = "#1c7a52"; ctx.lineWidth = 3; ctx.strokeRect(zx, zy, zw, zh);
+    var et = !e.cargando ? "Mantené apretado" : v < GAUGE.lo ? "Poco…" : v <= GAUGE.hi ? "¡Soltá ya!" : "¡Demasiado!";
+    var ec = !e.cargando ? "#5a3c1e" : v > GAUGE.hi ? "#c8321e" : zona ? "#1c9a62" : "#5a3c1e";
+    txt(et, g.x + g.w / 2, g.y - (g.vert ? 20 : 18), 14, ec);
+    // cuchara sobre la empanada
+    var p = empPos(e);
+    ctx.save(); ctx.translate(p.x, p.y - p.r - 36);
+    ctx.strokeStyle = "#8d949c"; ctx.lineWidth = 6; ctx.lineCap = "round";
+    ctx.beginPath(); ctx.moveTo(26, -8); ctx.lineTo(80, -30); ctx.stroke(); ctx.lineCap = "butt";
+    ctx.fillStyle = "#c9d2da"; ctx.strokeStyle = "#8d949c"; ctx.lineWidth = 3; ell(0, 0, 30, 16); ctx.fill(); ctx.stroke();
+    if (v > 0) { ctx.fillStyle = "#9c3b2a"; ell(0, -2 - v * 7, 26 * Math.min(1, 0.3 + v), 4 + v * 14); ctx.fill(); }
+    ctx.restore();
   }
 
   /* ---------- dibujo: horno ---------- */
@@ -627,7 +745,7 @@
     confeti(90);
     despues(1.6, function () {
       mostrarOv("Resultado: " + est, res.estrellas === 3 ? "¡Empanadas de campeonato!" : res.estrellas === 2 ? "¡Muy ricas!" : "¡Salieron, pero se puede mejorar!",
-        cierre + " Cometiste " + errores + (errores === 1 ? " error" : " errores") + " con los ingredientes. Dato: el borde decorativo se llama repulgue, y en la empanada tucumana la carne se corta a cuchillo.",
+        cierre + " Cometiste " + errores + (errores === 1 ? " error" : " errores") + " entre ingredientes, pedidos y relleno. Dato: el borde decorativo se llama repulgue, y en la empanada tucumana la carne se corta a cuchillo.",
         "Jugar de nuevo", reiniciar, "Ver la receta completa");
     });
   }
@@ -637,24 +755,92 @@
   }
 
   /* ---- armado ---- */
+  /* sub: 0 = elegir el relleno según el pedido, 1 = cargar la cuchara, 2 = cerrar, 3 = repulgue */
   function nuevoEmp(k) {
-    emps.push({ k: k, sub: 0, fill: 0, fold: 0, sig: 0, llega: 0, slide: 0, listo: false, plegando: 0 });
+    var pool = PEDIDOS[Math.min(k, PEDIDOS.length - 1)];
+    var ped = pool[Math.floor(Math.random() * pool.length)];
+    emps.push({
+      k: k, sub: 0, fill: 0, fillTo: 1, fold: 0, sig: 0, llega: 0, slide: 0, listo: false, plegando: 0,
+      order: ped, sel: { cebolla: false, huevo: false, aji: false }, g: 0, cargando: false, over: false, blobs: []
+    });
     empI = k;
-    setConsigna("Tocá la masa para ponerle el relleno.");
+    setConsigna("El cliente dice: «" + ped.t + "» Armá el relleno tocando los ingredientes y después apretá LISTO.");
   }
   function empActual() { return emps[empI]; }
+  function alternarIng(e, i) {
+    var id = ING_ARMAR[i];
+    e.sel[id] = !e.sel[id]; pulso = 1;
+    mensaje((e.sel[id] ? "Con " : "Sin ") + ITEMS[id].n.toLowerCase() + ".", "ok");
+  }
+  function armarRelleno(e) {
+    var b = [];
+    agregarBlobs(b, "#9c3b2a", 12, 0.13, 0.7);
+    if (e.sel.cebolla) agregarBlobs(b, "#f0d9a0", 5, 0.1, 0.7);
+    if (e.sel.huevo) agregarBlobs(b, "#ffe58a", 4, 0.1, 0.7);
+    if (e.sel.aji) agregarBlobs(b, "#d4331f", 5, 0.06, 0.7);
+    e.blobs = b;
+  }
+  function confirmarPedido(e) {
+    var p = empPos(e);
+    var ok = ING_ARMAR.every(function (id, i) { return !!e.sel[id] === !!e.order.r[i]; });
+    if (!ok) {
+      errores++; setErrores(); sac = 6;
+      mensaje("Ese relleno no es lo que pidió el cliente. Releé el pedido y probá de nuevo.", "mal");
+      flotante(p.x, p.y - 40, "¡No es eso!", "#c8321e");
+      return;
+    }
+    armarRelleno(e); e.sub = 1; e.g = 0;
+    chispas(p.x, p.y, "#f6b40e", 10, 110); flotante(p.x, p.y - 40, "¡Ese es el pedido!", "#1c9a62");
+    mensaje("Ahora la cuchara: mantené apretado y soltá en la zona verde.", "ok");
+    setConsigna("Mantené apretado para cargar la cuchara y soltá cuando la barra esté en la zona verde. Poco queda sosa; mucho se revienta.");
+  }
+  function cargarInicio() {
+    var e = empActual();
+    if (!e || e.sub !== 1 || e.listo || e.llega < 1 || e.rellenando || e.plegando || e.cargando) return;
+    e.cargando = true; e.g = 0;
+  }
+  function cargarFin() {
+    var e = empActual();
+    if (!e || !e.cargando) return;
+    e.cargando = false;
+    var p = empPos(e), v = e.g;
+    if (v < GAUGE.lo) {
+      errores++; setErrores(); sac = 6; e.g = 0;
+      mensaje("¡Quedó sosa! Faltó relleno: probá de nuevo con más.", "mal");
+      flotante(p.x, p.y - 40, "¡Sosa!", "#c8321e");
+    } else {
+      e.over = v > GAUGE.hi;
+      e.fillTo = e.over ? 1.3 : 1; e.fill = 0.001; e.rellenando = 1;
+      chispas(p.x, p.y, "#9c3b2a", 10, 100);
+      if (e.over) mensaje("Mucho relleno… a ver si cierra.", ""); else mensaje("Una buena cucharada, justa.", "ok");
+    }
+  }
+  function reventar(e) {
+    var p = empPos(e);
+    errores++; setErrores(); sac = 10;
+    chispas(p.x, p.y, "#9c3b2a", 22, 200); flotante(p.x, p.y - 40, "¡Se reventó!", "#c8321e");
+    mensaje("¡Se reventó! Era demasiado relleno. Hay que rehacerla con menos.", "mal");
+    e.fold = 0; e.fill = 0; e.fillTo = 1; e.over = false; e.g = 0; e.sub = 1;
+    setConsigna("Rehacé la empanada: mantené apretado y soltá en la zona verde.");
+  }
   function tapArmar(px, py) {
     var e = empActual();
-    if (!e || e.listo || e.llega < 1 || e.plegando) return;
+    if (!e || e.listo || e.llega < 1 || e.plegando || e.rellenando) return;
     var p = empPos(e);
     if (e.sub === 0) {
-      if (px !== null && Math.hypot(px - p.x, py - p.y) > p.r * 1.15) return;
-      e.fill = 0.001; e.rellenando = 1; chispas(p.x, p.y, "#9c3b2a", 10, 100);
-      mensaje("Una cucharada de relleno en el centro.", "ok");
+      if (px === null) { confirmarPedido(e); return; }
+      var u = armarUI();
+      for (var i = 0; i < u.tog.length; i++) {
+        if (Math.hypot(px - u.tog[i].x, py - u.tog[i].y) < u.tog[i].r + 6) { alternarIng(e, i); return; }
+      }
+      var o = u.ok;
+      if (px >= o.x && px <= o.x + o.w && py >= o.y && py <= o.y + o.h) confirmarPedido(e);
     } else if (e.sub === 1) {
+      cargarInicio();
+    } else if (e.sub === 2) {
       if (px !== null && Math.hypot(px - p.x, py - p.y) > p.r * 1.15) return;
       e.plegando = 1; mensaje("Cerrala por la mitad.", "ok");
-    } else if (e.sub === 2) {
+    } else if (e.sub === 3) {
       var idx = -1;
       if (px === null) idx = e.sig;
       else {
@@ -677,15 +863,23 @@
       }
     }
     var ee = e;
-    if (ee.sub === 2 && !ee.listo) setConsigna("Repulgue: tocá los puntos del borde en orden, empezando por el que brilla.");
+    if (ee.sub === 3 && !ee.listo) setConsigna("Repulgue: tocá los puntos del borde en orden, empezando por el que brilla.");
   }
   function actualizarArmar(dt) {
     emps.forEach(function (e) {
       if (e.llega < 1) e.llega = Math.min(1, e.llega + dt / 0.7);
-      if (e.rellenando && e.fill < 1) { e.fill = Math.min(1, e.fill + dt / 0.5); if (e.fill >= 1) { e.rellenando = 0; e.sub = 1; setConsigna("Ahora tocá la masa para cerrarla por la mitad."); } }
+      if (e.cargando) e.g = Math.min(1, e.g + dt * GAUGE.rate);
+      if (e.rellenando && e.fill < e.fillTo) {
+        e.fill = Math.min(e.fillTo, e.fill + dt / 0.5);
+        if (e.fill >= e.fillTo) { e.rellenando = 0; e.sub = 2; setConsigna("Ahora tocá la masa para cerrarla por la mitad."); }
+      }
       if (e.plegando && e.fold < 1) {
         e.fold = Math.min(1, e.fold + dt / 0.6);
-        if (e.fold >= 1) { e.plegando = 0; e.sub = 2; setConsigna("Repulgue: tocá los puntos del borde en orden, empezando por el que brilla."); chispas(tgt.x, tgt.y + 40, "#f3e2b8", 8, 90); }
+        if (e.fold >= 1) {
+          e.plegando = 0;
+          if (e.over) reventar(e);
+          else { e.sub = 3; setConsigna("Repulgue: tocá los puntos del borde en orden, empezando por el que brilla."); chispas(tgt.x, tgt.y + 40, "#f3e2b8", 8, 90); }
+        }
       }
       if (e.slide > 0 && e.slide < 1) {
         e.slide = Math.min(1, e.slide + dt / 0.7);
@@ -767,7 +961,11 @@
     if (!jugable()) return;
     var p = coords(e);
     if (fase.id === "horno") { horno.hold = true; e.preventDefault && e.preventDefault(); try { cv.setPointerCapture(e.pointerId); } catch (x) { /* nada */ } return; }
-    if (fase.id === "armar") { tapArmar(p.x, p.y); return; }
+    if (fase.id === "armar") {
+      tapArmar(p.x, p.y);
+      try { cv.setPointerCapture(e.pointerId); } catch (x) { /* nada */ }
+      return;
+    }
     if (fase.dest) {
       for (var i = items.length - 1; i >= 0; i--) {
         var it = items[i];
@@ -790,6 +988,7 @@
   }
   function alSoltar(e) {
     if (fase.id === "horno") { horno.hold = false; return; }
+    if (fase.id === "armar") { cargarFin(); return; }
     if (!drag) return;
     var it = drag.it, mov = drag.mov, p = coords(e);
     drag = null;
@@ -805,6 +1004,11 @@
   window.addEventListener("keydown", function (e) {
     if (!jugable()) return;
     var k = e.key;
+    if (fase.id === "armar" && /^[1-3]$/.test(k)) {
+      var ea = empActual();
+      if (ea && ea.sub === 0 && !ea.listo && ea.llega >= 1) alternarIng(ea, Number(k) - 1);
+      return;
+    }
     if (fase.dest && /^[1-9]$/.test(k)) {
       var libres = items.filter(function (i) { return i.estado === "shelf"; });
       var it = libres[Number(k) - 1];
@@ -815,12 +1019,17 @@
       e.preventDefault();
       if (e.repeat && fase.id !== "horno") return;
       if (fase.id === "horno") horno.hold = true;
-      else if (fase.id === "armar") tapArmar(null, null);
+      else if (fase.id === "armar") {
+        var eb = empActual();
+        if (eb && eb.sub === 1) cargarInicio(); else tapArmar(null, null);
+      }
       else if (fase.tap) tocarTap();
     }
   });
   window.addEventListener("keyup", function (e) {
-    if ((e.key === " " || e.key === "Enter") && fase.id === "horno") horno.hold = false;
+    if (e.key !== " " && e.key !== "Enter") return;
+    if (fase.id === "horno") horno.hold = false;
+    else if (fase.id === "armar") cargarFin();
   });
 
   /* ---------- bucle ---------- */
@@ -915,7 +1124,7 @@
     elCons.textContent = "Seguí la receta de la empanada tucumana, paso por paso.";
     elPasos.textContent = ""; setErrores();
     mostrarOv("Arte culinario", "Armá tu empanada",
-      "Cociná la empanada tucumana como en la feria: preparás la masa, hacés el relleno, armás con repulgue y la llevás al horno. Arrastrá (o tocá) los ingredientes correctos y cuidado con los que no van.",
+      "Cociná la empanada tucumana como en la feria: preparás la masa, hacés el relleno, atendés los pedidos de los clientes, armás con repulgue y las llevás al horno. Arrastrá (o tocá) los ingredientes correctos y cuidado con los que no van.",
       "¡A cocinar!", empezar, "");
     window.requestAnimationFrame(bucle);
   }
