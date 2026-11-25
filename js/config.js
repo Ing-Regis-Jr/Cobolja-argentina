@@ -3,7 +3,7 @@ window.SITE_CONFIG = {
   // Dejala vacía: el sitio usa la dirección donde está publicado.
   // Completala solo si usás un dominio propio, por ejemplo
   // "https://www.cobolja.edu.bo/mundial2026/argentina/".
-  publicUrl: "https:// cobolja-argentina. netlify.app",
+  publicUrl: "https://ing-regis-jr.github.io/Cobolja-argentina/",
 };
 
 window.RANKING_CONFIG = {
