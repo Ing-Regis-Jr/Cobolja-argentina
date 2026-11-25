@@ -1,0 +1,120 @@
+/* ===== Video de YouTube con vista previa (se reproduce en la misma página) ===== */
+
+.sec-video {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.sec-video h3 {
+  margin: 0 0 0.3rem;
+  color: var(--azul);
+}
+
+.sec-video .sec-bajada {
+  margin-bottom: 1rem;
+}
+
+.yt-card {
+  position: relative;
+  display: block;
+  width: min(100%, 320px);
+  aspect-ratio: 9 / 16;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 0;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #1c4a73, #123354);
+  box-shadow: 0 10px 28px rgba(18, 51, 84, 0.28);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.yt-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.yt-card:hover img,
+.yt-card:focus-visible img {
+  transform: scale(1.04);
+}
+
+.yt-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18, 51, 84, 0.55), rgba(18, 51, 84, 0) 45%);
+}
+
+.yt-card:focus-visible {
+  outline: 3px solid var(--sol);
+  outline-offset: 4px;
+}
+
+.yt-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 74px;
+  height: 74px;
+  margin: -37px 0 0 -37px;
+  border-radius: 50%;
+  background: var(--sol);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease;
+}
+
+.yt-play::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 22px;
+  border-style: solid;
+  border-width: 15px 0 15px 24px;
+  border-color: transparent transparent transparent var(--azul);
+}
+
+.yt-card:hover .yt-play,
+.yt-card:focus-visible .yt-play {
+  transform: scale(1.1);
+}
+
+.yt-etiqueta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  z-index: 1;
+  padding: 0 1rem;
+  color: #fff;
+  font-weight: 800;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.yt-card iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.yt-card.yt-activo {
+  cursor: default;
+}
+
+.yt-card.yt-activo::after {
+  display: none;
+}
+
+.yt-enlace {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: var(--azul-medio);
+  font-weight: 700;
+}
