@@ -332,6 +332,6 @@
 /* Adorno de temporada (ver js/hornero.js) */
 (function () {
   var s = document.createElement("script");
-  s.src = (document.body.dataset.base || "") + "js/hornero.js";
+  s.src = (document.body.dataset.base || "") + "js/hornero.js?v=2";
   document.body.appendChild(s);
 })();

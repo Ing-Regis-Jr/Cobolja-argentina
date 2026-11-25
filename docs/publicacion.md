@@ -34,5 +34,5 @@ Arrastrar la carpeta del proyecto a [https://app.netlify.com/drop](https://app.n
 - [ ] Todos los enlaces del menú funcionan.
 - [ ] Trivia calcula el puntaje y permite repetir.
 - [ ] El mapa muestra marcadores y popups.
-- [ ] El desafío da vuelta las diez tarjetas.
+- [ ] Los juegos (Cruzá Argentina, Armá tu plato y memoria) cargan y se pueden jugar.
 - [ ] El QR abre el sitio correcto.

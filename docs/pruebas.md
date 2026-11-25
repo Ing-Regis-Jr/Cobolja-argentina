@@ -9,7 +9,7 @@ Probar en una computadora y en un celular antes de la feria.
 | Trivia completa + repetir | | | |
 | Envío de apodo al ranking | | | |
 | Mapa: zoom, filtro y ficha | | | |
-| Diez tarjetas del desafío | | | |
+| Juegos: Cruzá Argentina, empanada y memoria | | | |
 | QR abre el enlace público | | | |
 | Enlaces rotos | | | |
 

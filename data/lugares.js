@@ -68,7 +68,7 @@ window.LUGARES = [
     lng: -54.4367,
     emoji: "🌊",
     imagen: "assets/lugares/iguazu.svg",
-    foto: "assets/img/lugares-iguazu.jpg",
+    foto: "assets/img/patrimonio-iguazu.jpg",
     fotoIdeal: "Garganta del Diablo o una pasarela con la caída de agua.",
     dato: "El conjunto tiene unos 275 saltos; el más famoso es la Garganta del Diablo.",
     descripcion:

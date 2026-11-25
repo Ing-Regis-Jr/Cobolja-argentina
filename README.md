@@ -2,7 +2,7 @@
 
 Plataforma educativa estática sobre Argentina para la Feria Digital del Colegio Boliviano Japonés (Mundial de Saberes Americanos 2026).
 
-Sitio de varias páginas, con mapa Leaflet, trivia, desafío de datos y ranking por apodo. No usa cuentas ni servidor propio.
+Sitio de varias páginas, con mapa Leaflet, trivia, juegos interactivos y ranking por apodo. No usa cuentas ni servidor propio.
 
 ## Cómo abrir el proyecto
 
@@ -17,7 +17,7 @@ También se puede abrir `index.html` haciendo doble clic. El mapa necesita inter
 - `index.html` — portada
 - `pages/` — secciones, mapa, trivia y conclusión
 - `css/` — estilos
-- `js/` — navegación, trivia, mapa, ranking y desafío
+- `js/` — navegación, trivia, mapa, ranking y juegos
 - `data/` — textos de apoyo, preguntas y lugares
 - `docs/` — instalación, publicación y mantenimiento
 

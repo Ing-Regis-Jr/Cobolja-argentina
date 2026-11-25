@@ -13,7 +13,7 @@
    - ?hornero=reset  → borra la colección guardada (útil para mostrarlo en la feria).
    - Para apagarlo del todo: borrá la línea que carga este archivo al final de js/nav.js. */
 (function () {
-  const HASTA = "2026-11-20"; // AAAA-MM-DD
+  const HASTA = "2099-12-31"; // AAAA-MM-DD (prácticamente sin límite)
   const CLAVE = "cobolja-cazadatos-v2";
 
   // Qué personaje va en cada página (nombre del archivo).
@@ -417,6 +417,7 @@
     if (intento === 0) {
       pista = document.createElement("div");
       pista.id = "hornero-pista";
+      pista.textContent = "¡Tocame!";
       document.body.appendChild(pista);
     }
     const t0 = performance.now();
@@ -520,7 +521,6 @@
 
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarDato(); });
 
-  // ---- Arranque ----
   // ---- Arranque ----
 if (hallados.indexOf(id) !== -1) return;
 
